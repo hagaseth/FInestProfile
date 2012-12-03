@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ns0:GoodsItemItineraryCoreProfile xmlns:udt="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2"
+ xmlns:ccts="urn:un:unece:uncefact:documentation:2"
+ xmlns:qdt="urn:oasis:names:specification:ubl:schema:xsd:QualifiedDataTypes-2"
+ xmlns:xades="http://uri.etsi.org/01903/v1.3.2#"
+ xmlns:sac="urn:oasis:names:specification:ubl:schema:xsd:SignatureAggregateComponents-2"
+ xmlns:cct="urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2"
+ xmlns:ds="http://www.w3.org/2000/09/xmldsig#"
+ xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+ xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+ xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2"
+ xmlns:sbc="urn:oasis:names:specification:ubl:schema:xsd:SignatureBasicComponents-2"
+ xmlns:ns0="urn:oasis:names:specification:ubl:schema:xsd:GoodsItemItineraryCoreProfile-2"
+ xmlns:ns1="urn:oasis:names:specification:ubl:schema:xsd:CommonSignatureComponents-2"
+ xmlns:ns2="http://uri.etsi.org/01903/v1.4.1#"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="urn:oasis:names:specification:ubl:schema:xsd:GoodsItemItineraryCoreProfile-2 file:/T:/Prosjekt/P2801/280158%20FInest/04%20Analyser%20og%20draft/WP7/D7.4%20Prototype%20implementation/datamodel-FInest-19-10-2012/prototype/FinestProfile/TCP/TCPfinestProfile/xsd/maindoc/UBL-TCPfinestProfile.xsd">
+    <cbc:UBLVersionID schemeID="schemeID0" schemeName="schemeName0" schemeAgencyID="schemeAgencyID0" schemeAgencyName="schemeAgencyName0"
+         schemeVersionID="schemeVersionID0" schemeDataURI="http://www.oxygenxml.com/" schemeURI="http://www.oxygenxml.com/">UBLVersionID0</cbc:UBLVersionID>
+    <cbc:CustomizationID schemeID="schemeID1" schemeName="schemeName1" schemeAgencyID="schemeAgencyID1" schemeAgencyName="schemeAgencyName1"
+         schemeVersionID="schemeVersionID1" schemeDataURI="http://www.oxygenxml.com/" schemeURI="http://www.oxygenxml.com/">CustomizationID0</cbc:CustomizationID>
+    <cbc:ProfileID schemeID="schemeID2" schemeName="schemeName2" schemeAgencyID="schemeAgencyID2" schemeAgencyName="schemeAgencyName2"
+         schemeVersionID="schemeVersionID2" schemeDataURI="http://www.oxygenxml.com/" schemeURI="http://www.oxygenxml.com/">ProfileID0</cbc:ProfileID>
+    <cbc:ID schemeID="schemeID3" schemeName="schemeName3" schemeAgencyID="schemeAgencyID3" schemeAgencyName="schemeAgencyName3"
+         schemeVersionID="schemeVersionID3" schemeDataURI="http://www.oxygenxml.com/" schemeURI="http://www.oxygenxml.com/">ID0</cbc:ID>
+    <cbc:IssueDate>2006-05-04</cbc:IssueDate>
+    <cbc:IssueTime>01:01:01.001</cbc:IssueTime>
+    <cbc:VersionID schemeID="schemeID4" schemeName="schemeName4" schemeAgencyID="schemeAgencyID4" schemeAgencyName="schemeAgencyName4"
+         schemeVersionID="schemeVersionID4" schemeDataURI="http://www.oxygenxml.com/" schemeURI="http://www.oxygenxml.com/">VersionID0</cbc:VersionID>
+    <cbc:TransportExecutionPlanReferenceID schemeID="schemeID5" schemeName="schemeName5" schemeAgencyID="schemeAgencyID5" schemeAgencyName="schemeAgencyName5"
+        schemeVersionID="schemeVersionID5" schemeDataURI="http://www.oxygenxml.com/" schemeURI="http://www.oxygenxml.com/">TEP1.2</cbc:TransportExecutionPlanReferenceID>
+     <cac:TransportationSegment>
+        <cbc:SequenceNumeric format="format0">1</cbc:SequenceNumeric>
+        <cbc:TransportExecutionPlanReferenceID schemeID="schemeID8" schemeName="schemeName8" schemeAgencyID="schemeAgencyID8" schemeAgencyName="schemeAgencyName8"
+             schemeVersionID="schemeVersionID8" schemeDataURI="http://www.oxygenxml.com/" schemeURI="http://www.oxygenxml.com/">TEP2.1</cbc:TransportExecutionPlanReferenceID>
+    </cac:TransportationSegment>
+    <cac:TransportationSegment>
+        <cbc:SequenceNumeric format="format0">2</cbc:SequenceNumeric>
+        <cbc:TransportExecutionPlanReferenceID schemeID="schemeID8" schemeName="schemeName8" schemeAgencyID="schemeAgencyID8" schemeAgencyName="schemeAgencyName8"
+            schemeVersionID="schemeVersionID8" schemeDataURI="http://www.oxygenxml.com/" schemeURI="http://www.oxygenxml.com/">TEP2.2</cbc:TransportExecutionPlanReferenceID>
+    </cac:TransportationSegment> 
+    <cac:TransportationSegment>
+        <cbc:SequenceNumeric format="format0">3</cbc:SequenceNumeric>
+        <cbc:TransportExecutionPlanReferenceID schemeID="schemeID8" schemeName="schemeName8" schemeAgencyID="schemeAgencyID8" schemeAgencyName="schemeAgencyName8"
+            schemeVersionID="schemeVersionID8" schemeDataURI="http://www.oxygenxml.com/" schemeURI="http://www.oxygenxml.com/">TEP2.3</cbc:TransportExecutionPlanReferenceID>
+    </cac:TransportationSegment>
+</ns0:GoodsItemItineraryCoreProfile>

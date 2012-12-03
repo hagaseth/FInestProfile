@@ -1,0 +1,930 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ns2:TransportExecutionPlanCoreProfile xmlns:ds="http://www.w3.org/2000/09/xmldsig#"
+    xmlns:udt="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2"
+    xmlns:ccts="urn:un:unece:uncefact:documentation:2"
+    xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+    xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+    xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2"
+    xmlns:ccts-cct="urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2"
+    xmlns:sac="urn:oasis:names:specification:ubl:schema:xsd:SignatureAggregateComponents-2"
+    xmlns:qdt="urn:oasis:names:specification:ubl:schema:xsd:QualifiedDataTypes-2"
+    xmlns:xades="http://uri.etsi.org/01903/v1.3.2#"
+    xmlns:sbc="urn:oasis:names:specification:ubl:schema:xsd:SignatureBasicComponents-2"
+    xmlns:ns0="urn:oasis:names:specification:ubl:schema:xsd:CommonSignatureComponents-2"
+    xmlns:ns1="http://uri.etsi.org/01903/v1.4.1#"
+    xmlns:ns2="urn:oasis:names:specification:ubl:schema:xsd:TransportExecutionPlanCoreProfile-2"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="urn:oasis:names:specification:ubl:schema:xsd:TransportExecutionPlanCoreProfile-2 file:/T:/Prosjekt/P2801/280158%20FInest/04%20Analyser%20og%20draft/WP7/D7.4%20Prototype%20implementation/datamodel-FInest-19-10-2012/prototype/FinestProfile-12112012/TEP/TEPCoreProfile/xsd/maindoc/UBL-TEPfinestProfile.xsd">
+    <cbc:UBLVersionID>2.1</cbc:UBLVersionID>
+    <cbc:CustomizationID>1.0</cbc:CustomizationID>
+    <cbc:ProfileID>FInest</cbc:ProfileID>
+    <cbc:ID>TEP-1-2</cbc:ID>
+    <cbc:VersionID>1</cbc:VersionID>
+    <cbc:IssueDate>2012-04-13</cbc:IssueDate>
+    <cbc:IssueTime>10:05:10+01:00</cbc:IssueTime>
+    <!-- DocumentStatusCode
+       8	Confirmed
+    -->
+    <cbc:DocumentStatusCode>8</cbc:DocumentStatusCode>
+    <!-- this is the sender of the TEP. This will be the LSC or the LSP, dependent on 
+    which of them sends the last confirmation.
+    2-stage TEP exchange means that Sender is the LSP
+    3-stage TEP exchange means that Sender is the LSC-->
+    <!-- This example: Sender is the TPM,
+    Sender means sender of the TEP, as this can be different from the LSC or LSP
+    -->
+    <cac:SenderParty>
+        <cac:PartyIdentification>
+            <cbc:ID>200</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+            <cbc:Name>TPM</cbc:Name>
+        </cac:PartyName>
+    </cac:SenderParty>
+    <!-- This example: Receiver is the BCM
+        Receiver means receiver of the TEP, as this can be different from the LSC or LSP
+    -->
+    <cac:ReceiverParty>
+        <cac:PartyIdentification>
+            <cbc:ID>201</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+            <cbc:Name>BCM</cbc:Name>
+        </cac:PartyName>
+    </cac:ReceiverParty>
+    <cac:TransportUserParty>
+        <cac:PartyIdentification>
+            <cbc:ID>101</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+            <cbc:Name>WEST NORWAY FISH EXPORT</cbc:Name>
+        </cac:PartyName>
+        <cac:PostalAddress>
+            <cbc:Postbox>327</cbc:Postbox>
+            <cbc:StreetName>Løvenvoldgate</cbc:StreetName>
+            <cbc:BuildingNumber>11</cbc:BuildingNumber>
+            <cbc:CityName>Aalesund</cbc:CityName>
+            <cbc:PostalZone>6002</cbc:PostalZone>
+            <cac:Country>
+                <cbc:IdentificationCode>NO</cbc:IdentificationCode>
+                <cbc:Name>Norway</cbc:Name>
+            </cac:Country>
+        </cac:PostalAddress>
+        <cac:Contact>
+            <cbc:ID>ID5</cbc:ID>
+            <cbc:Name>Arne Røst</cbc:Name>
+            <cbc:Telephone>+47 70 10 15 51</cbc:Telephone>
+            <cbc:Telefax>+47 70 10 15 60</cbc:Telefax>
+        </cac:Contact>
+    </cac:TransportUserParty>
+    <cac:TransportServiceProviderParty>
+        <cac:PartyIdentification>
+            <cbc:ID>107</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+            <!-- Tyrholm and Farstad working as cargo agent -->
+            <cbc:Name>Tyrholm and Farstad</cbc:Name>
+        </cac:PartyName>
+        <cac:PostalAddress>
+            <cbc:Postbox>1313</cbc:Postbox>
+            <cbc:CityName>AAlesund</cbc:CityName>
+            <cbc:PostalZone>6001</cbc:PostalZone>
+            <cac:Country>
+                <cbc:IdentificationCode>NO</cbc:IdentificationCode>
+                <cbc:Name>Norway</cbc:Name>
+            </cac:Country>
+        </cac:PostalAddress>
+        <cac:Contact>
+            <cbc:ID>ID4</cbc:ID>
+            <cbc:Name>AAge Gangsoey</cbc:Name>
+            <cbc:Telephone>+47 91 57 66 10</cbc:Telephone>
+            <cbc:ElectronicMail>aage.gangsoy@tyrholm.no</cbc:ElectronicMail>
+        </cac:Contact>
+    </cac:TransportServiceProviderParty>
+    <cac:TransportExecutionPlanRequestDocumentReference>
+        <!-- This is the reference to the TEP request sent from LSC to LSP. -->
+        <cbc:ID>TEP-REQ-1-2</cbc:ID>
+    </cac:TransportExecutionPlanRequestDocumentReference>
+    <cac:TransportServiceDescriptionDocumentReference>
+        <cbc:ID>TSD1-2</cbc:ID>
+    </cac:TransportServiceDescriptionDocumentReference>
+    <!-- Possibly reference to contract -->
+    <cac:TransportContract>
+        <cbc:ID>ID2012</cbc:ID>
+        <cac:ContractDocumentReference>
+            <cbc:ID>ID2112</cbc:ID>
+        </cac:ContractDocumentReference>
+    </cac:TransportContract>
+    <!-- Used in the negotiation process
+        <cac:TransportServiceProviderResponseDeadlinePeriod>
+        <cbc:StartDate>2006-05-04</cbc:StartDate>
+        <cbc:StartTime>01:01:01.001</cbc:StartTime>
+        <cbc:EndDate>2006-05-04</cbc:EndDate>
+        <cbc:EndTime>01:01:01.001</cbc:EndTime>
+        <cbc:DurationMeasure unitCode="unitCode20">0</cbc:DurationMeasure>
+    </cac:TransportServiceProviderResponseDeadlinePeriod>
+    <cac:TransportUserResponseDeadlinePeriod>
+        <cbc:StartDate>2006-05-04</cbc:StartDate>
+        <cbc:StartTime>01:01:01.001</cbc:StartTime>
+        <cbc:EndDate>2006-05-04</cbc:EndDate>
+        <cbc:EndTime>01:01:01.001</cbc:EndTime>
+        <cbc:DurationMeasure unitCode="unitCode21">0</cbc:DurationMeasure>
+    </cac:TransportUserResponseDeadlinePeriod>
+
+    -->
+    <!-- Used in the negotiation process    <cac:ValidityPeriod>
+        <cbc:StartDate>2012-04-20</cbc:StartDate>
+        <cbc:StartTime>01:01:01.001</cbc:StartTime>
+        <cbc:EndDate>2012-07-04</cbc:EndDate>
+        <cbc:EndTime>01:01:01.001</cbc:EndTime>
+    </cac:ValidityPeriod> -->
+    <!-- More details can be copied from the TSD.TransportationService. Reference to the TSD is found in TransportServiceDescriptionDocumentReference -->
+    <cac:MainTransportationService>
+        <!-- TransportServiceCode:
+        -->
+        <!-- 13 Agent service: -->
+        <cbc:TransportServiceCode>13</cbc:TransportServiceCode>
+        <cbc:TransportationServiceDescription>CArgo agent service handling container transport from Ålesund to Brazil</cbc:TransportationServiceDescription>
+        <cbc:Name>Cargo agent service</cbc:Name>
+        <cbc:SequenceNumeric>1</cbc:SequenceNumeric>
+    </cac:MainTransportationService>
+    <cac:ServiceStartTimePeriod>
+        <cbc:StartDate>2012-05-07</cbc:StartDate>
+        <cbc:StartTime>10:00:00.00</cbc:StartTime>
+        <cbc:EndDate>2012-05-07</cbc:EndDate>
+        <cbc:EndTime>14:00:00.00</cbc:EndTime>
+    </cac:ServiceStartTimePeriod>
+    <cac:ServiceEndTimePeriod>
+        <cbc:StartDate>2012-05-11</cbc:StartDate>
+        <cbc:StartTime>13:00:00.00</cbc:StartTime>
+        <cbc:EndDate>2012-05-11</cbc:EndDate>
+        <cbc:EndTime>16:00:00.00</cbc:EndTime>
+    </cac:ServiceEndTimePeriod>
+    <cac:FromLocation>
+        <cbc:ID>101</cbc:ID>
+        <cac:Address>
+            <cbc:CityName>Aalesund</cbc:CityName>
+            <cbc:PostalZone>6005</cbc:PostalZone>
+            <cac:AddressLine>
+                <cbc:Line>Skutvika container terminal</cbc:Line>
+            </cac:AddressLine>
+            <cac:Country>
+                <cbc:IdentificationCode>NO</cbc:IdentificationCode>
+                <cbc:Name>Norway</cbc:Name>
+            </cac:Country>
+        </cac:Address>
+    </cac:FromLocation>
+    <cac:ToLocation>
+        <cbc:ID>104</cbc:ID>
+        <cac:Address>
+            <cbc:CityName>Rotterdam</cbc:CityName>
+            <cac:AddressLine>
+                <cbc:Line>Rotterdam-Maersk terminal</cbc:Line>
+            </cac:AddressLine>
+            <cac:Country>
+                <cbc:IdentificationCode>NL</cbc:IdentificationCode>
+                <cbc:Name>Netherlands</cbc:Name>
+            </cac:Country>
+        </cac:Address>
+    </cac:ToLocation>
+    <cac:TransportExecutionTerms>
+        <cac:DeliveryTerms>
+            <cac:DeliveryLocation>
+                <cbc:ID>104</cbc:ID>
+                <cac:Address>
+                    <cbc:CityName>Rotterdam</cbc:CityName>
+                    <cac:AddressLine>
+                        <cbc:Line>Rotterdam-Maersk terminal</cbc:Line>
+                    </cac:AddressLine>
+                    <cac:Country>
+                        <cbc:IdentificationCode>NL</cbc:IdentificationCode>
+                        <cbc:Name>Netherlands</cbc:Name>
+                    </cac:Country>
+                </cac:Address>
+            </cac:DeliveryLocation>
+        </cac:DeliveryTerms>
+        <cac:ServiceChargePaymentTerms>
+            <!-- Note is used to hold the Agreed incoterms, if relevant -->
+            <cbc:Note>FOB</cbc:Note>
+            <!--  COST * (€ / TEU**) : 1200 . 2 containers = 2400 euro ** 1 TEU (=1/2 40ft Container) = 8 000 Kg !-->
+            <cbc:Amount currencyID="Euro">2400</cbc:Amount>
+            <cbc:PaymentDueDate>2012-06-01</cbc:PaymentDueDate>
+        </cac:ServiceChargePaymentTerms>
+    </cac:TransportExecutionTerms>
+    <cac:Consignment>
+        <!-- 2 containers each containing 7 pallets of dried fish -->
+        <cbc:ID>ID3112</cbc:ID>
+        <!-- kg -->
+        <cbc:GrossWeightMeasure unitCode="kg">16000</cbc:GrossWeightMeasure>
+        <cbc:NetWeightMeasure unitCode="kg">15000</cbc:NetWeightMeasure>
+        <!-- m3 -->
+        <cbc:GrossVolumeMeasure unitCode="cubic metre">60</cbc:GrossVolumeMeasure>
+        <cbc:NetVolumeMeasure unitCode="cubic metre">56</cbc:NetVolumeMeasure>
+        <cbc:HazardousRiskIndicator>false</cbc:HazardousRiskIndicator>
+        <!-- Handling codes: 
+            1	Heat sensitive 
+            2	Store in dry environment 
+            3	Stacked 
+        -->
+        <cbc:HandlingCode>3</cbc:HandlingCode>
+        <cbc:HandlingInstructions>HandlingInstructions0</cbc:HandlingInstructions>
+        <cbc:TotalTransportHandlingUnitQuantity>2</cbc:TotalTransportHandlingUnitQuantity>
+        <!-- No preCarriageShipmentStage-->
+        <cac:MainCarriageShipmentStage>
+            <cbc:ID>ID3212</cbc:ID>
+            <!-- Transport mode codes:
+            0	Transport mode not specified
+            1	Maritime transport
+            2	Rail transport
+            3	Road transport
+            4	Air transport
+            5	Mail
+            6	Multimodal transport
+            7	Fixed transport installation
+            8	Inland water transport
+            9	Transport mode not applicable
+            !-->
+            <cbc:TransportModeCode>1</cbc:TransportModeCode>
+            <!-- Forwarder service does not have any carrier Party
+            <cac:CarrierParty>
+            </cac:CarrierParty>
+              -->
+            <cac:PlannedArrivalTransportEvent>
+                <cac:Location>
+                    <cbc:ID>104</cbc:ID>
+                    <cac:Address>
+                        <cbc:CityName>Rotterdam</cbc:CityName>
+                        <cac:AddressLine>
+                            <cbc:Line>Rotterdam-Maersk terminal</cbc:Line>
+                        </cac:AddressLine>
+                        <cac:Country>
+                            <cbc:IdentificationCode>NL</cbc:IdentificationCode>
+                            <cbc:Name>Netherlands</cbc:Name>
+                        </cac:Country>
+                    </cac:Address>
+                </cac:Location>
+                <cac:Period>
+                    <cbc:StartDate>2012-05-11</cbc:StartDate>
+                    <cbc:StartTime>11:00:00.00</cbc:StartTime>
+                    <cbc:EndDate>2012-05-11</cbc:EndDate>
+                    <cbc:EndTime>14:00:00.00</cbc:EndTime>
+                </cac:Period>
+            </cac:PlannedArrivalTransportEvent>
+            <cac:PlannedDischargeTransportEvent>
+                <cac:Location>
+                    <cbc:ID>104</cbc:ID>
+                    <cac:Address>
+                        <cbc:CityName>Rotterdam</cbc:CityName>
+                        <cac:AddressLine>
+                            <cbc:Line>Rotterdam-Maersk terminal</cbc:Line>
+                        </cac:AddressLine>
+                        <cac:Country>
+                            <cbc:IdentificationCode>NL</cbc:IdentificationCode>
+                            <cbc:Name>Netherlands</cbc:Name>
+                        </cac:Country>
+                    </cac:Address>
+                </cac:Location>
+                <cac:Period>
+                    <cbc:StartDate>2012-05-11</cbc:StartDate>
+                    <cbc:StartTime>13:00:00.00</cbc:StartTime>
+                    <cbc:EndDate>2012-05-11</cbc:EndDate>
+                    <cbc:EndTime>16:00:00.00</cbc:EndTime>
+                </cac:Period>
+            </cac:PlannedDischargeTransportEvent>
+        </cac:MainCarriageShipmentStage>
+        <!--The consignment consists of 2 containers, each filled with 12 pallets of dried fish.-->
+        <!-- TransportHandlingUnit: In this case: Description of the 2 containers -->
+        <cac:TransportHandlingUnit>
+            <!-- TRansportHandlingUnit is a description of bulk, package, aplletized or containerized cargo-->
+            <!-- In this example: 1 20 ft container-->
+            <cbc:ID>ID38</cbc:ID>
+            <!-- TransportHandlingUnitTypeCode: 
+              1	Bulk cargo
+              2	Packaged Cargo
+              3	Palletized  Cargo
+              4	Containerized Cargo
+              5	Hazardous cargo
+              6	Out of gauge
+            -->
+            <!--4 is Containerized Cargo-->
+            <cbc:TransportHandlingUnitTypeCode>4</cbc:TransportHandlingUnitTypeCode>
+            <cbc:HazardousRiskIndicator>false</cbc:HazardousRiskIndicator>
+            <!-- 7 pallets (Packages) in this container (TransportHandlingUnit) -->
+            <cbc:TotalPackageQuantity>7</cbc:TotalPackageQuantity>
+            <cac:TransportEquipment>
+                <!-- Details on physical Container-->
+                <cbc:ID>TE1</cbc:ID>
+                <cbc:Description>Container with pallets of dried fish</cbc:Description>
+                <!--CN is Container-->
+                <!-- 
+                TransportEquipmentTypeCode	UN/CEFACT 8053 Equipment type code qualifier:
+                -->
+                <cbc:TransportEquipmentTypeCode>CN</cbc:TransportEquipmentTypeCode>
+                <cbc:RefrigeratedIndicator>false</cbc:RefrigeratedIndicator>
+                <!-- kg -->
+                <cbc:GrossWeightMeasure unitCode="kg">8000</cbc:GrossWeightMeasure>
+                <!-- m3 -->
+                <cbc:GrossVolumeMeasure unitCode="cubic metre">30</cbc:GrossVolumeMeasure>
+                <cbc:PowerIndicator>false</cbc:PowerIndicator>
+                <!-- PackagingTypeCode	UNECE Package Type Code 
+                    -->
+                <!--PX is Pallet-->
+                <!-- Package is in this case the pallet (with dried fish). -->
+                <!--7 pallets of fish in this container-->
+                <cac:Package>
+                    <cbc:ID>ID53</cbc:ID>
+                    <!--   <cbc:Quantity>0</cbc:Quantity> Number of items in the package.-->
+                    <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
+                    <cac:GoodsItem>
+                        <!--Goods Item is the description of the Dried Fish-->
+                        <cbc:ID>ID54</cbc:ID>
+                        <cbc:Description>Dried fish</cbc:Description>
+                        <!-- Dangerous goods yes or no -->
+                        <cbc:HazardousRiskIndicator>false</cbc:HazardousRiskIndicator>
+                        <!--Weight of one pallet in kg -->
+                        <cbc:GrossWeightMeasure unitCode="kg">600</cbc:GrossWeightMeasure>
+                        <!--Weight of one pallet in kg-->
+                        <cbc:NetWeightMeasure unitCode="kg">590</cbc:NetWeightMeasure>
+                        <!--volume in m3-->
+                        <cbc:GrossVolumeMeasure unitCode="cubic metre">3</cbc:GrossVolumeMeasure>
+                        <cbc:NetVolumeMeasure unitCode="cubic metre">1</cbc:NetVolumeMeasure>
+                        <cac:Item>
+                            <cbc:Name>Dried and Salted Fillet</cbc:Name>
+                            <cbc:ModelName>2 X 5kgs</cbc:ModelName>
+                            <cac:CommodityClassification>
+                                <!-- CargoTypeCode	UN/CEFACT 7085 Nature of cargo, coded
+                                1	Documents
+                                2	Low value non-dutiable consignments
+                                3	Low value dutiable consignments
+                                4	High value consignments
+                                5	Other non-containerized
+                                6	Vehicles
+                                7	Roll-on roll-off
+                                8	Palletized
+                                9	Containerized
+                                10	Breakbulk
+                                11	Hazardous cargo
+                                12	General cargo
+                                13	Liquid cargo
+                                14	Temperature controlled cargo
+                                15	Environmental pollutant cargo
+                                16	Not-hazardous cargo
+                                17	Diplomatic
+                                18	Military
+                                19	Obnoxious
+                                20	Out of gauge
+                                21	Household goods and personal effects
+                                22	Frozen cargo
+                                -->
+                                <!--12 is General Cargo-->
+                                <cbc:CargoTypeCode>12</cbc:CargoTypeCode>
+                            </cac:CommodityClassification>
+                            <!-- UNDGcode -->
+                            <!-- HazardousCategoryCode -->
+                            <!-- not in use here
+                            <cac:HazardousItem>
+                                <cbc:AdditionalInformation>Some description</cbc:AdditionalInformation>
+                                <cbc:UNDGCode>SomeCodeFromList</cbc:UNDGCode>
+                                <cbc:HazardousCategoryCode>HazardousCategoryCode0</cbc:HazardousCategoryCode>
+                            </cac:HazardousItem>
+                            -->
+                            <cac:ItemInstance>
+                                <!-- ProductTraceID: An identifier used for tracing the item, such as the EPC number used in RFID. -->
+                                <cbc:ProductTraceID>ProductTraceID3</cbc:ProductTraceID>
+                            </cac:ItemInstance>
+                        </cac:Item>
+                    </cac:GoodsItem>
+                </cac:Package>
+                <cac:Package>
+                    <cbc:ID>PAC2</cbc:ID>
+                    <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
+                    <cac:GoodsItem>
+                        <!--Goods Item is the description of the Dried Fish-->
+                        <cbc:ID>PAC3</cbc:ID>
+                        <cbc:Description>Dried fish</cbc:Description>
+                        <!--Weight of one pallet in kg -->
+                        <cbc:GrossWeightMeasure unitCode="kg">600</cbc:GrossWeightMeasure>
+                        <!--Weight of one pallet in kg-->
+                        <cbc:NetWeightMeasure unitCode="kg">590</cbc:NetWeightMeasure>
+                        <!--volume in m3-->
+                        <cbc:GrossVolumeMeasure unitCode="cubic metre">3</cbc:GrossVolumeMeasure>
+                        <cbc:NetVolumeMeasure unitCode="cubic metre">1</cbc:NetVolumeMeasure>
+                        <cac:Item>
+                            <cbc:Name>Dried and Salted Fillet</cbc:Name>
+                            <cbc:ModelName>2 X 5kgs</cbc:ModelName>
+                            <cac:CommodityClassification>
+                                <!-- CargoTypeCode	UN/CEFACT 7085 Nature of cargo, coded
+                                1	Documents
+                                2	Low value non-dutiable consignments
+                                3	Low value dutiable consignments
+                                4	High value consignments
+                                5	Other non-containerized
+                                6	Vehicles
+                                7	Roll-on roll-off
+                                8	Palletized
+                                9	Containerized
+                                10	Breakbulk
+                                11	Hazardous cargo
+                                12	General cargo
+                                13	Liquid cargo
+                                14	Temperature controlled cargo
+                                15	Environmental pollutant cargo
+                                16	Not-hazardous cargo
+                                17	Diplomatic
+                                18	Military
+                                19	Obnoxious
+                                20	Out of gauge
+                                21	Household goods and personal effects
+                                22	Frozen cargo
+                                -->
+                                <!--12 is General Cargo-->
+                                <cbc:CargoTypeCode>12</cbc:CargoTypeCode>
+                            </cac:CommodityClassification>
+                            <cac:ItemInstance>
+                                <!-- ProductTraceID: An identifier used for tracing the item, such as the EPC number used in RFID. -->
+                                <cbc:ProductTraceID>PAC4</cbc:ProductTraceID>
+                            </cac:ItemInstance>
+                        </cac:Item>
+                    </cac:GoodsItem>
+                </cac:Package>
+                <cac:Package>
+                    <cbc:ID>PAC5</cbc:ID>
+                    <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
+                    <cac:GoodsItem>
+                        <!--Goods Item is the description of the Dried Fish-->
+                        <cbc:ID>PAC6</cbc:ID>
+                        <cbc:Description>Dried fish</cbc:Description>
+                        <!--Weight of one pallet in kg -->
+                        <cbc:GrossWeightMeasure unitCode="kg">600</cbc:GrossWeightMeasure>
+                        <!--Weight of one pallet in kg-->
+                        <cbc:NetWeightMeasure unitCode="kg">590</cbc:NetWeightMeasure>
+                        <!--volume in m3-->
+                        <cbc:GrossVolumeMeasure unitCode="cubic metre">3</cbc:GrossVolumeMeasure>
+                        <cbc:NetVolumeMeasure unitCode="cubic metre">1</cbc:NetVolumeMeasure>
+                        <cac:Item>
+                            <cbc:Name>Dried and Salted Fillet</cbc:Name>
+                            <cbc:ModelName>2 X 5kgs</cbc:ModelName>
+                            <cac:CommodityClassification>
+                                <!-- CargoTypeCode	UN/CEFACT 7085 Nature of cargo, coded
+                                -->
+                                <!--12 is General Cargo-->
+                                <cbc:CargoTypeCode>12</cbc:CargoTypeCode>
+                            </cac:CommodityClassification>
+                            <cac:ItemInstance>
+                                <!-- ProductTraceID: An identifier used for tracing the item, such as the EPC number used in RFID. -->
+                                <cbc:ProductTraceID>PAC7</cbc:ProductTraceID>
+                            </cac:ItemInstance>
+                        </cac:Item>
+                    </cac:GoodsItem>
+                </cac:Package>
+                <cac:Package>
+                    <cbc:ID>PAC8</cbc:ID>
+                    <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
+                    <cac:GoodsItem>
+                        <!--Goods Item is the description of the Dried Fish-->
+                        <cbc:ID>PAC9</cbc:ID>
+                        <cbc:Description>Dried fish</cbc:Description>
+                        <!--Weight of one pallet in kg -->
+                        <cbc:GrossWeightMeasure unitCode="kg">600</cbc:GrossWeightMeasure>
+                        <!--Weight of one pallet in kg-->
+                        <cbc:NetWeightMeasure unitCode="kg">590</cbc:NetWeightMeasure>
+                        <!--volume in m3-->
+                        <cbc:GrossVolumeMeasure unitCode="cubic metre">3</cbc:GrossVolumeMeasure>
+                        <cbc:NetVolumeMeasure unitCode="cubic metre">1</cbc:NetVolumeMeasure>
+                        <cac:Item>
+                            <cbc:Name>Dried and Salted Fillet</cbc:Name>
+                            <cbc:ModelName>2 X 5kgs</cbc:ModelName>
+                            <cac:CommodityClassification>
+                                <!-- CargoTypeCode	UN/CEFACT 7085 Nature of cargo, coded
+                                -->
+                                <!--12 is General Cargo-->
+                                <cbc:CargoTypeCode>12</cbc:CargoTypeCode>
+                            </cac:CommodityClassification>
+                            <cac:ItemInstance>
+                                <!-- ProductTraceID: An identifier used for tracing the item, such as the EPC number used in RFID. -->
+                                <cbc:ProductTraceID>PAC10</cbc:ProductTraceID>
+                            </cac:ItemInstance>
+                        </cac:Item>
+                    </cac:GoodsItem>
+                </cac:Package>
+                <cac:Package>
+                    <cbc:ID>PAC11</cbc:ID>
+                    <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
+                    <cac:GoodsItem>
+                        <!--Goods Item is the description of the Dried Fish-->
+                        <cbc:ID>PAC12</cbc:ID>
+                        <cbc:Description>Dried fish</cbc:Description>
+                        <!--Weight of one pallet in kg -->
+                        <cbc:GrossWeightMeasure unitCode="kg">600</cbc:GrossWeightMeasure>
+                        <!--Weight of one pallet in kg-->
+                        <cbc:NetWeightMeasure unitCode="kg">590</cbc:NetWeightMeasure>
+                        <!--volume in m3-->
+                        <cbc:GrossVolumeMeasure unitCode="cubic metre">3</cbc:GrossVolumeMeasure>
+                        <cbc:NetVolumeMeasure unitCode="cubic metre">1</cbc:NetVolumeMeasure>
+                        <cac:Item>
+                            <cbc:Name>Dried and Salted Fillet</cbc:Name>
+                            <cbc:ModelName>2 X 5kgs</cbc:ModelName>
+                            <cac:CommodityClassification>
+                                <!-- CargoTypeCode	UN/CEFACT 7085 Nature of cargo, coded
+                                -->
+                                <!--12 is General Cargo-->
+                                <cbc:CargoTypeCode>12</cbc:CargoTypeCode>
+                            </cac:CommodityClassification>
+                            <cac:ItemInstance>
+                                <!-- ProductTraceID: An identifier used for tracing the item, such as the EPC number used in RFID. -->
+                                <cbc:ProductTraceID>PAC13</cbc:ProductTraceID>
+                            </cac:ItemInstance>
+                        </cac:Item>
+                    </cac:GoodsItem>
+                </cac:Package>
+                <cac:Package>
+                    <cbc:ID>PAC14</cbc:ID>
+                    <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
+                    <cac:GoodsItem>
+                        <!--Goods Item is the description of the Dried Fish-->
+                        <cbc:ID>PAC15</cbc:ID>
+                        <cbc:Description>Dried fish</cbc:Description>
+                        <!--Weight of one pallet in kg -->
+                        <cbc:GrossWeightMeasure unitCode="kg">600</cbc:GrossWeightMeasure>
+                        <!--Weight of one pallet in kg-->
+                        <cbc:NetWeightMeasure unitCode="kg">590</cbc:NetWeightMeasure>
+                        <!--volume in m3-->
+                        <cbc:GrossVolumeMeasure unitCode="cubic metre">3</cbc:GrossVolumeMeasure>
+                        <cbc:NetVolumeMeasure unitCode="cubic metre">1</cbc:NetVolumeMeasure>
+                        <cac:Item>
+                            <cbc:Name>Dried and Salted Fillet</cbc:Name>
+                            <cbc:ModelName>2 X 5kgs</cbc:ModelName>
+                            <cac:CommodityClassification>
+                                <!-- CargoTypeCode	UN/CEFACT 7085 Nature of cargo, coded
+                                -->
+                                <!--12 is General Cargo-->
+                                <cbc:CargoTypeCode>12</cbc:CargoTypeCode>
+                            </cac:CommodityClassification>
+                            <cac:ItemInstance>
+                                <!-- ProductTraceID: An identifier used for tracing the item, such as the EPC number used in RFID. -->
+                                <cbc:ProductTraceID>PAC15</cbc:ProductTraceID>
+                            </cac:ItemInstance>
+                        </cac:Item>
+                    </cac:GoodsItem>
+                </cac:Package>
+                <cac:Package>
+                    <cbc:ID>PAC16</cbc:ID>
+                    <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
+                    <cac:GoodsItem>
+                        <!--Goods Item is the description of the Dried Fish-->
+                        <cbc:ID>PAC17</cbc:ID>
+                        <cbc:Description>Dried fish</cbc:Description>
+                        <!--Weight of one pallet in kg -->
+                        <cbc:GrossWeightMeasure unitCode="kg">600</cbc:GrossWeightMeasure>
+                        <!--Weight of one pallet in kg-->
+                        <cbc:NetWeightMeasure unitCode="kg">590</cbc:NetWeightMeasure>
+                        <!--volume in m3-->
+                        <cbc:GrossVolumeMeasure unitCode="cubic metre">3</cbc:GrossVolumeMeasure>
+                        <cbc:NetVolumeMeasure unitCode="cubic metre">1</cbc:NetVolumeMeasure>
+                        <cac:Item>
+                            <cbc:Name>Dried and Salted Fillet</cbc:Name>
+                            <cbc:ModelName>2 X 5kgs</cbc:ModelName>
+                            <cac:CommodityClassification>
+                                <!-- CargoTypeCode	UN/CEFACT 7085 Nature of cargo, coded
+                                -->
+                                <!--12 is General Cargo-->
+                                <cbc:CargoTypeCode>12</cbc:CargoTypeCode>
+                            </cac:CommodityClassification>
+                            <cac:ItemInstance>
+                                <!-- ProductTraceID: An identifier used for tracing the item, such as the EPC number used in RFID. -->
+                                <cbc:ProductTraceID>PAC17</cbc:ProductTraceID>
+                            </cac:ItemInstance>
+                        </cac:Item>
+                    </cac:GoodsItem>
+                </cac:Package>
+            </cac:TransportEquipment>
+            <cac:MinimumTemperature>
+                <cbc:AttributeID>AttributeID11</cbc:AttributeID>
+                <cbc:Measure unitCode="degree Celsius">1</cbc:Measure>
+                <cbc:Description>Min temp in Celsius</cbc:Description>
+            </cac:MinimumTemperature>
+            <cac:MaximumTemperature>
+                <cbc:AttributeID>AttributeID12</cbc:AttributeID>
+                <cbc:Measure unitCode="degree Celsius">20</cbc:Measure>
+                <cbc:Description>Max temp in Celsius</cbc:Description>
+            </cac:MaximumTemperature>
+            <!-- Reference to all shipments for this TransportHandlingUnit, that is, for this container. -->
+            <cac:ReferencedShipment>
+                <cbc:ID>ID52</cbc:ID>
+            </cac:ReferencedShipment>
+        </cac:TransportHandlingUnit>
+        <cac:TransportHandlingUnit>
+            <!-- TRansportHandlingUnit is a description of bulk, package, aplletized or containerized cargo-->
+            <!-- In this example: 1 20 ft container-->
+            <cbc:ID>Id380</cbc:ID>
+            <!-- TransportHandlingUnitTypeCode: 
+            -->
+            <!--4 is Containerized Cargo-->
+            <cbc:TransportHandlingUnitTypeCode>4</cbc:TransportHandlingUnitTypeCode>
+            <cbc:HazardousRiskIndicator>false</cbc:HazardousRiskIndicator>
+            <!-- 7 pallets (Packages) in this container (TransportHandlingUnit) -->
+            <cbc:TotalPackageQuantity>7</cbc:TotalPackageQuantity>
+            <cac:TransportEquipment>
+                <!-- Details on physical Container-->
+                <cbc:ID>TE2</cbc:ID>
+                <!--CN is Container-->
+                <!-- 
+                TransportEquipmentTypeCode	UN/CEFACT 8053 Equipment type code qualifier:
+                -->
+                <cbc:Description>Container with pallets of dried fish</cbc:Description>
+                <cbc:TransportEquipmentTypeCode>CN</cbc:TransportEquipmentTypeCode>
+                <cbc:RefrigeratedIndicator>false</cbc:RefrigeratedIndicator>
+                <!-- kg -->
+                <cbc:GrossWeightMeasure unitCode="kg">8000</cbc:GrossWeightMeasure>
+                <!-- m3 -->
+                <cbc:GrossVolumeMeasure unitCode="cubic metre">30</cbc:GrossVolumeMeasure>
+                <cbc:PowerIndicator>false</cbc:PowerIndicator>
+                <!-- PackagingTypeCode	UNECE Package Type Code 
+                    -->
+                <!--PX is Pallet-->
+                <!-- Package is in this case the pallet (with dried fish). -->
+                <!--7 pallets of fish in this container-->
+                <cac:Package>
+                    <cbc:ID>ID530</cbc:ID>
+                    <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
+                    <cac:GoodsItem>
+                        <!--Goods Item is the description of the Dried Fish-->
+                        <cbc:ID>ID540</cbc:ID>
+                        <cbc:Description>Dried fish</cbc:Description>
+                        <!--Weight of one pallet in kg -->
+                        <cbc:GrossWeightMeasure unitCode="kg">600</cbc:GrossWeightMeasure>
+                        <!--Weight of one pallet in kg-->
+                        <cbc:NetWeightMeasure unitCode="kg">590</cbc:NetWeightMeasure>
+                        <!--volume in m3-->
+                        <cbc:GrossVolumeMeasure unitCode="cubic metre">3</cbc:GrossVolumeMeasure>
+                        <cbc:NetVolumeMeasure unitCode="cubic metre">1</cbc:NetVolumeMeasure>
+                        <cac:Item>
+                            <cbc:Name>Dried and Salted Fillet</cbc:Name>
+                            <cbc:ModelName>2 X 5kgs</cbc:ModelName>
+                            <cac:CommodityClassification>
+                                <!-- CargoTypeCode	UN/CEFACT 7085 Nature of cargo, coded
+                                -->
+                                <!--12 is General Cargo-->
+                                <cbc:CargoTypeCode>12</cbc:CargoTypeCode>
+                            </cac:CommodityClassification>
+                            <cac:ItemInstance>
+                                <!-- ProductTraceID: An identifier used for tracing the item, such as the EPC number used in RFID. -->
+                                <cbc:ProductTraceID>ProductTraceID3</cbc:ProductTraceID>
+                            </cac:ItemInstance>
+                        </cac:Item>
+                    </cac:GoodsItem>
+                </cac:Package>
+                <cac:Package>
+                    <cbc:ID>PAC20</cbc:ID>
+                    <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
+                    <cac:GoodsItem>
+                        <!--Goods Item is the description of the Dried Fish-->
+                        <cbc:ID>PAC30</cbc:ID>
+                        <cbc:Description>Dried fish</cbc:Description>
+                        <!--Weight of one pallet in kg -->
+                        <cbc:GrossWeightMeasure unitCode="kg">600</cbc:GrossWeightMeasure>
+                        <!--Weight of one pallet in kg-->
+                        <cbc:NetWeightMeasure unitCode="kg">590</cbc:NetWeightMeasure>
+                        <!--volume in m3-->
+                        <cbc:GrossVolumeMeasure unitCode="cubic metre">3</cbc:GrossVolumeMeasure>
+                        <cbc:NetVolumeMeasure unitCode="cubic metre">1</cbc:NetVolumeMeasure>
+                        <cac:Item>
+                            <cbc:Name>Dried and Salted Fillet</cbc:Name>
+                            <cbc:ModelName>2 X 5kgs</cbc:ModelName>
+                            <cac:CommodityClassification>
+                                <!-- CargoTypeCode	UN/CEFACT 7085 Nature of cargo, coded
+                                -->
+                                <!--12 is General Cargo-->
+                                <cbc:CargoTypeCode>12</cbc:CargoTypeCode>
+                            </cac:CommodityClassification>
+                            <cac:ItemInstance>
+                                <!-- ProductTraceID: An identifier used for tracing the item, such as the EPC number used in RFID. -->
+                                <cbc:ProductTraceID>PAC4</cbc:ProductTraceID>
+                            </cac:ItemInstance>
+                        </cac:Item>
+                    </cac:GoodsItem>
+                </cac:Package>
+                <cac:Package>
+                    <cbc:ID>PAC50</cbc:ID>
+                    <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
+                    <cac:GoodsItem>
+                        <!--Goods Item is the description of the Dried Fish-->
+                        <cbc:ID>PAC60</cbc:ID>
+                        <cbc:Description>Dried fish</cbc:Description>
+                        <!--Weight of one pallet in kg -->
+                        <cbc:GrossWeightMeasure unitCode="kg">600</cbc:GrossWeightMeasure>
+                        <!--Weight of one pallet in kg-->
+                        <cbc:NetWeightMeasure unitCode="kg">590</cbc:NetWeightMeasure>
+                        <!--volume in m3-->
+                        <cbc:GrossVolumeMeasure unitCode="cubic metre">3</cbc:GrossVolumeMeasure>
+                        <cbc:NetVolumeMeasure unitCode="cubic metre">1</cbc:NetVolumeMeasure>
+                        <cac:Item>
+                            <cbc:Name>Dried and Salted Fillet</cbc:Name>
+                            <cbc:ModelName>2 X 5kgs</cbc:ModelName>
+                            <cac:CommodityClassification>
+                                <!-- CargoTypeCode	UN/CEFACT 7085 Nature of cargo, coded
+                                -->
+                                <!--12 is General Cargo-->
+                                <cbc:CargoTypeCode>12</cbc:CargoTypeCode>
+                            </cac:CommodityClassification>
+                            <cac:ItemInstance>
+                                <!-- ProductTraceID: An identifier used for tracing the item, such as the EPC number used in RFID. -->
+                                <cbc:ProductTraceID>PAC7</cbc:ProductTraceID>
+                            </cac:ItemInstance>
+                        </cac:Item>
+                    </cac:GoodsItem>
+                </cac:Package>
+                <cac:Package>
+                    <cbc:ID>PAC80</cbc:ID>
+                    <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
+                    <cac:GoodsItem>
+                        <!--Goods Item is the description of the Dried Fish-->
+                        <cbc:ID>PAC90</cbc:ID>
+                        <cbc:Description>Dried fish</cbc:Description>
+                        <!--Weight of one pallet in kg -->
+                        <cbc:GrossWeightMeasure unitCode="kg">600</cbc:GrossWeightMeasure>
+                        <!--Weight of one pallet in kg-->
+                        <cbc:NetWeightMeasure unitCode="kg">590</cbc:NetWeightMeasure>
+                        <!--volume in m3-->
+                        <cbc:GrossVolumeMeasure unitCode="cubic metre">3</cbc:GrossVolumeMeasure>
+                        <cbc:NetVolumeMeasure unitCode="cubic metre">1</cbc:NetVolumeMeasure>
+                        <cac:Item>
+                            <cbc:Name>Dried and Salted Fillet</cbc:Name>
+                            <cbc:ModelName>2 X 5kgs</cbc:ModelName>
+                            <cac:CommodityClassification>
+                                <!-- CargoTypeCode	UN/CEFACT 7085 Nature of cargo, coded
+                                -->
+                                <!--12 is General Cargo-->
+                                <cbc:CargoTypeCode>12</cbc:CargoTypeCode>
+                            </cac:CommodityClassification>
+                            <cac:ItemInstance>
+                                <!-- ProductTraceID: An identifier used for tracing the item, such as the EPC number used in RFID. -->
+                                <cbc:ProductTraceID>PAC10</cbc:ProductTraceID>
+                            </cac:ItemInstance>
+                        </cac:Item>
+                    </cac:GoodsItem>
+                </cac:Package>
+                <cac:Package>
+                    <cbc:ID>PAC110</cbc:ID>
+                    <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
+                    <cac:GoodsItem>
+                        <!--Goods Item is the description of the Dried Fish-->
+                        <cbc:ID>PAC120</cbc:ID>
+                        <cbc:Description>Dried fish</cbc:Description>
+                        <!--Weight of one pallet in kg -->
+                        <cbc:GrossWeightMeasure unitCode="kg">600</cbc:GrossWeightMeasure>
+                        <!--Weight of one pallet in kg-->
+                        <cbc:NetWeightMeasure unitCode="kg">590</cbc:NetWeightMeasure>
+                        <!--volume in m3-->
+                        <cbc:GrossVolumeMeasure unitCode="cubic metre">3</cbc:GrossVolumeMeasure>
+                        <cbc:NetVolumeMeasure unitCode="cubic metre">1</cbc:NetVolumeMeasure>
+                        <cac:Item>
+                            <cbc:Name>Dried and Salted Fillet</cbc:Name>
+                            <cbc:ModelName>2 X 5kgs</cbc:ModelName>
+                            <cac:CommodityClassification>
+                                <!-- CargoTypeCode	UN/CEFACT 7085 Nature of cargo, coded
+                                -->
+                                <!--12 is General Cargo-->
+                                <cbc:CargoTypeCode>12</cbc:CargoTypeCode>
+                            </cac:CommodityClassification>
+                            <cac:ItemInstance>
+                                <!-- ProductTraceID: An identifier used for tracing the item, such as the EPC number used in RFID. -->
+                                <cbc:ProductTraceID>PAC13</cbc:ProductTraceID>
+                            </cac:ItemInstance>
+                        </cac:Item>
+                    </cac:GoodsItem>
+                </cac:Package>
+                <cac:Package>
+                    <cbc:ID>PAC140</cbc:ID>
+                    <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
+                    <cac:GoodsItem>
+                        <!--Goods Item is the description of the Dried Fish-->
+                        <cbc:ID>PAC150</cbc:ID>
+                        <cbc:Description>Dried fish</cbc:Description>
+                        <!--Weight of one pallet in kg -->
+                        <cbc:GrossWeightMeasure unitCode="kg">600</cbc:GrossWeightMeasure>
+                        <!--Weight of one pallet in kg-->
+                        <cbc:NetWeightMeasure unitCode="kg">590</cbc:NetWeightMeasure>
+                        <!--volume in m3-->
+                        <cbc:GrossVolumeMeasure unitCode="cubic metre">3</cbc:GrossVolumeMeasure>
+                        <cbc:NetVolumeMeasure unitCode="cubic metre">1</cbc:NetVolumeMeasure>
+                        <cac:Item>
+                            <cbc:Name>Dried and Salted Fillet</cbc:Name>
+                            <cbc:ModelName>2 X 5kgs</cbc:ModelName>
+                            <cac:CommodityClassification>
+                                <!-- CargoTypeCode	UN/CEFACT 7085 Nature of cargo, coded
+                                -->
+                                <!--12 is General Cargo-->
+                                <cbc:CargoTypeCode>12</cbc:CargoTypeCode>
+                            </cac:CommodityClassification>
+                            <cac:ItemInstance>
+                                <!-- ProductTraceID: An identifier used for tracing the item, such as the EPC number used in RFID. -->
+                                <cbc:ProductTraceID>PAC15</cbc:ProductTraceID>
+                            </cac:ItemInstance>
+                        </cac:Item>
+                    </cac:GoodsItem>
+                </cac:Package>
+                <cac:Package>
+                    <cbc:ID>PAC160</cbc:ID>
+                    <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
+                    <cac:GoodsItem>
+                        <!--Goods Item is the description of the Dried Fish-->
+                        <cbc:ID>PAC170</cbc:ID>
+                        <cbc:Description>Dried fish</cbc:Description>
+                        <!--Weight of one pallet in kg -->
+                        <cbc:GrossWeightMeasure unitCode="kg">600</cbc:GrossWeightMeasure>
+                        <!--Weight of one pallet in kg-->
+                        <cbc:NetWeightMeasure unitCode="kg">590</cbc:NetWeightMeasure>
+                        <!--volume in m3-->
+                        <cbc:GrossVolumeMeasure unitCode="cubic metre">3</cbc:GrossVolumeMeasure>
+                        <cbc:NetVolumeMeasure unitCode="cubic metre">1</cbc:NetVolumeMeasure>
+                        <cac:Item>
+                            <cbc:Name>Dried and Salted Fillet</cbc:Name>
+                            <cbc:ModelName>2 X 5kgs</cbc:ModelName>
+                            <cac:CommodityClassification>
+                                <!-- CargoTypeCode	UN/CEFACT 7085 Nature of cargo, coded
+                                -->
+                                <!--12 is General Cargo-->
+                                <cbc:CargoTypeCode>12</cbc:CargoTypeCode>
+                            </cac:CommodityClassification>
+                            <cac:ItemInstance>
+                                <!-- ProductTraceID: An identifier used for tracing the item, such as the EPC number used in RFID. -->
+                                <cbc:ProductTraceID>PAC17</cbc:ProductTraceID>
+                            </cac:ItemInstance>
+                        </cac:Item>
+                    </cac:GoodsItem>
+                </cac:Package>
+            </cac:TransportEquipment>
+            <!-- No need to know of transport means in this TEP.           <cac:TransportMeans>
+                <cbc:JourneyID>JourneyID0</cbc:JourneyID> -->
+            <!-- TransportMeansTypeCode
+ -->
+            <!-- 31=truck -->
+            <!--                <cbc:TransportMeansTypeCode>31</cbc:TransportMeansTypeCode>
+            </cac:TransportMeans> -->
+            <cac:MinimumTemperature>
+                <cbc:AttributeID>AttributeID11</cbc:AttributeID>
+                <cbc:Measure unitCode="degree Celsius">1</cbc:Measure>
+                <cbc:Description>Min temp in Celsius</cbc:Description>
+            </cac:MinimumTemperature>
+            <cac:MaximumTemperature>
+                <cbc:AttributeID>AttributeID12</cbc:AttributeID>
+                <cbc:Measure unitCode="degree Celsius">20</cbc:Measure>
+                <cbc:Description>Max temp in Celsius</cbc:Description>
+            </cac:MaximumTemperature>
+            <!-- Reference to all shipments for this TransportHandlingUnit, that is, for this container. -->
+            <cac:ReferencedShipment>
+                <cbc:ID>ID52</cbc:ID>
+            </cac:ReferencedShipment>
+        </cac:TransportHandlingUnit>
+        <!--    reference to the import Licence needed to load the cargo on the ship -->
+        <cac:CustomsIdentification>
+            <cbc:ID>ID630</cbc:ID>
+        </cac:CustomsIdentification>
+        <!--ConsolidatedShipment is the reference to the product order between Consignor and Consignee. Sales PO number or Purchasing PO number -->
+        <cac:ConsolidatedShipment>
+            <cbc:ID>1234512</cbc:ID>
+        </cac:ConsolidatedShipment>
+        <!-- receiver of goods !-->
+        <cac:ConsigneeParty>
+            <cac:PartyIdentification>
+                <cbc:ID>104</cbc:ID>
+            </cac:PartyIdentification>
+            <cac:PostalAddress>
+                <cbc:CityName>Rotterdam</cbc:CityName>
+                <cac:AddressLine>
+                    <cbc:Line>Rotterdam-Maersk terminal</cbc:Line>
+                </cac:AddressLine>
+                <cac:Country>
+                    <cbc:IdentificationCode>NL</cbc:IdentificationCode>
+                    <cbc:Name>Netherlands</cbc:Name>
+                </cac:Country>
+            </cac:PostalAddress>
+        </cac:ConsigneeParty>
+        <!-- sender/owner of goods !-->
+        <cac:ConsignorParty>
+            <cac:PartyIdentification>
+                <cbc:ID>107</cbc:ID>
+            </cac:PartyIdentification>
+            <cac:PartyName>
+                <!-- Tyrholm and Farstad working as cargo agent -->
+                <cbc:Name>Tyrholm and Farstad</cbc:Name>
+            </cac:PartyName>
+            <cac:PostalAddress>
+                <cbc:Postbox>1313</cbc:Postbox>
+                <cbc:CityName>AAlesund</cbc:CityName>
+                <cbc:PostalZone>6001</cbc:PostalZone>
+                <cac:Country>
+                    <cbc:IdentificationCode>NO</cbc:IdentificationCode>
+                    <cbc:Name>Norway</cbc:Name>
+                </cac:Country>
+            </cac:PostalAddress>
+            <cac:Contact>
+                <cbc:ID>ID4</cbc:ID>
+                <cbc:Name>AAge Gangsoey</cbc:Name>
+                <cbc:Telephone>+47 91 57 66 10</cbc:Telephone>
+                <cbc:ElectronicMail>aage.gangsoy@tyrholm.no</cbc:ElectronicMail>
+            </cac:Contact>
+        </cac:ConsignorParty>
+    </cac:Consignment>
+</ns2:TransportExecutionPlanCoreProfile>

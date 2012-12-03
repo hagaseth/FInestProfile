@@ -1,0 +1,2923 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ns2:TransportExecutionPlanCoreProfile xmlns:ds="http://www.w3.org/2000/09/xmldsig#"
+    xmlns:udt="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2"
+    xmlns:ccts="urn:un:unece:uncefact:documentation:2"
+    xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+    xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+    xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2"
+    xmlns:ccts-cct="urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2"
+    xmlns:sac="urn:oasis:names:specification:ubl:schema:xsd:SignatureAggregateComponents-2"
+    xmlns:qdt="urn:oasis:names:specification:ubl:schema:xsd:QualifiedDataTypes-2"
+    xmlns:xades="http://uri.etsi.org/01903/v1.3.2#"
+    xmlns:sbc="urn:oasis:names:specification:ubl:schema:xsd:SignatureBasicComponents-2"
+    xmlns:ns0="urn:oasis:names:specification:ubl:schema:xsd:CommonSignatureComponents-2"
+    xmlns:ns1="http://uri.etsi.org/01903/v1.4.1#"
+    xmlns:ns2="urn:oasis:names:specification:ubl:schema:xsd:TransportExecutionPlanCoreProfile-2"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="urn:oasis:names:specification:ubl:schema:xsd:TransportExecutionPlanCoreProfile-2 file:/T:/Prosjekt/P2801/280158%20FInest/04%20Analyser%20og%20draft/WP7/D7.4%20Prototype%20implementation/datamodel-FInest-19-10-2012/prototype/FinestProfile-12112012/TEP/TEPCoreProfile/xsd/maindoc/UBL-TEPfinestProfile.xsd">
+    <cbc:UBLVersionID>2.1</cbc:UBLVersionID>
+    <cbc:CustomizationID>CustomizationID0</cbc:CustomizationID>
+    <cbc:ProfileID>FInest</cbc:ProfileID>
+    <cbc:ID>TEP-1-1</cbc:ID>
+    <cbc:VersionID>1</cbc:VersionID>
+    <cbc:IssueDate>2012-01-13</cbc:IssueDate>
+    <cbc:IssueTime>10:05:10+01:00</cbc:IssueTime>
+    <cbc:DocumentStatusCode>CONFIRMED</cbc:DocumentStatusCode>
+    <!-- this is the sender of the TEP. This will be the LSC or the LSP, dependent on 
+    which of them sends the last confirmation.
+    2-stage TEP exchange means that Sender is the LSP
+    3-stage TEP exchange means that Sender is the LSC-->
+    <!-- This example: Sender is the LSP,
+        In TEP-1-1: Transferd AS.
+    Sender means sender of the TEP, as this can be different from the LSC or LSP
+    -->
+    <cac:SenderParty>
+        <cac:PartyIdentification>
+            <cbc:ID>100</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+            <cbc:Name>Transferd AS</cbc:Name>
+        </cac:PartyName>
+        <cac:PostalAddress>
+            <cbc:Postbox>204</cbc:Postbox>
+            <cbc:CityName>Forde</cbc:CityName>
+            <cbc:PostalZone>6802</cbc:PostalZone>
+            <cac:Country>
+                <cbc:IdentificationCode>NO</cbc:IdentificationCode>
+                <cbc:Name>Norway</cbc:Name>
+            </cac:Country>
+        </cac:PostalAddress>
+        <cac:Contact>
+            <cbc:ID>ID2</cbc:ID>
+            <cbc:Name>Leif Kåre Nogva</cbc:Name>
+            <cbc:Telephone>70133022</cbc:Telephone>
+            <cbc:ElectronicMail>leif.kaare.nogva@transferd.no</cbc:ElectronicMail>
+        </cac:Contact>
+    </cac:SenderParty>
+    <!-- This example: Receiver is the LSC, this is the fish producer
+        Receiver means receiver of the TEP, as this can be different from the LSC or LSP
+    -->
+    <cac:ReceiverParty>
+        <cac:PartyIdentification>
+            <cbc:ID>101</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+            <cbc:Name>WEST NORWAY FISH EXPORT</cbc:Name>
+        </cac:PartyName>
+        <cac:PostalAddress>
+            <cbc:Postbox>327</cbc:Postbox>
+            <cbc:StreetName>Løvenvoldgate</cbc:StreetName>
+            <cbc:BuildingNumber>11</cbc:BuildingNumber>
+            <cbc:CityName>Aalesund</cbc:CityName>
+            <cbc:PostalZone>6002</cbc:PostalZone>
+            <cac:Country>
+                <cbc:IdentificationCode>NO</cbc:IdentificationCode>
+                <cbc:Name>Norway</cbc:Name>
+            </cac:Country>
+        </cac:PostalAddress>
+        <cac:Contact>
+            <cbc:ID>ID5</cbc:ID>
+            <cbc:Name>Arne Røst</cbc:Name>
+            <cbc:Telephone>+47 70 10 15 51</cbc:Telephone>
+            <cbc:Telefax>+47 70 10 15 60</cbc:Telefax>
+        </cac:Contact>
+    </cac:ReceiverParty>
+    <cac:TransportUserParty>
+        <cac:PartyIdentification>
+            <cbc:ID>101</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+            <cbc:Name>WEST NORWAY FISH EXPORT</cbc:Name>
+        </cac:PartyName>
+        <cac:PostalAddress>
+            <cbc:Postbox>327</cbc:Postbox>
+            <cbc:StreetName>Løvenvoldgate</cbc:StreetName>
+            <cbc:BuildingNumber>11</cbc:BuildingNumber>
+            <cbc:CityName>Aalesund</cbc:CityName>
+            <cbc:PostalZone>6002</cbc:PostalZone>
+            <cac:Country>
+                <cbc:IdentificationCode>NO</cbc:IdentificationCode>
+                <cbc:Name>Norway</cbc:Name>
+            </cac:Country>
+        </cac:PostalAddress>
+        <cac:Contact>
+            <cbc:ID>ID5</cbc:ID>
+            <cbc:Name>Arne Røst</cbc:Name>
+            <cbc:Telephone>+47 70 10 15 51</cbc:Telephone>
+            <cbc:Telefax>+47 70 10 15 60</cbc:Telefax>
+        </cac:Contact>
+    </cac:TransportUserParty>
+    <cac:TransportServiceProviderParty>
+        <cac:PartyIdentification>
+            <cbc:ID>100</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+            <cbc:Name>Transferd AS</cbc:Name>
+        </cac:PartyName>
+        <cac:PostalAddress>
+            <cbc:Postbox>204</cbc:Postbox>
+            <cbc:CityName>Forde</cbc:CityName>
+            <cbc:PostalZone>6802</cbc:PostalZone>
+            <cac:Country>
+                <cbc:IdentificationCode>NO</cbc:IdentificationCode>
+                <cbc:Name>Norway</cbc:Name>
+            </cac:Country>
+        </cac:PostalAddress>
+        <cac:Contact>
+            <cbc:ID>ID2</cbc:ID>
+            <cbc:Name languageID="en-US" languageLocaleID="languageLocaleID11">Leif Kåre Nogva</cbc:Name>
+            <cbc:Telephone languageID="en-US" languageLocaleID="languageLocaleID12">70133022</cbc:Telephone>
+            <cbc:ElectronicMail languageID="en-US" languageLocaleID="languageLocaleID14">leif.kaare.nogva@transferd.no</cbc:ElectronicMail>
+        </cac:Contact>
+    </cac:TransportServiceProviderParty>
+    <cac:TransportExecutionPlanRequestDocumentReference>
+        <!-- This is the reference to the TEP request sent from LSC to LSP. -->
+        <cbc:ID schemeID="schemeID20" schemeName="schemeName20" schemeAgencyID="schemeAgencyID20" schemeAgencyName="schemeAgencyName20" schemeVersionID="schemeVersionID20" schemeDataURI="http://www.oxygenxml.com/" schemeURI="http://www.oxygenxml.com/">TEP-REQ-1-1</cbc:ID>
+    </cac:TransportExecutionPlanRequestDocumentReference>
+    <cac:TransportServiceDescriptionDocumentReference>
+        <cbc:ID schemeID="schemeID22" schemeName="schemeName22" schemeAgencyID="schemeAgencyID22" schemeAgencyName="schemeAgencyName22" schemeVersionID="schemeVersionID22" schemeDataURI="http://www.oxygenxml.com/" schemeURI="http://www.oxygenxml.com/">TSD1-1</cbc:ID>
+    </cac:TransportServiceDescriptionDocumentReference>
+    <cac:TransportContract>
+        <cbc:ID schemeID="schemeID24" schemeName="schemeName24" schemeAgencyID="schemeAgencyID24" schemeAgencyName="schemeAgencyName24" schemeVersionID="schemeVersionID24" schemeDataURI="http://www.oxygenxml.com/" schemeURI="http://www.oxygenxml.com/">ID20</cbc:ID>
+        <cac:ContractDocumentReference>
+            <cbc:ID schemeID="schemeID25" schemeName="schemeName25" schemeAgencyID="schemeAgencyID25" schemeAgencyName="schemeAgencyName25" schemeVersionID="schemeVersionID25" schemeDataURI="http://www.oxygenxml.com/" schemeURI="http://www.oxygenxml.com/">ID21</cbc:ID>
+        </cac:ContractDocumentReference>
+    </cac:TransportContract>
+    <cac:ValidityPeriod>
+        <cbc:StartDate>2012-04-20</cbc:StartDate>
+        <cbc:StartTime>01:01:01.001</cbc:StartTime>
+        <cbc:EndDate>2012-05-04</cbc:EndDate>
+        <cbc:EndTime>01:01:01.001</cbc:EndTime>
+        <cbc:DurationMeasure unitCode="unitCode20" unitCodeListVersionID="unitCodeListVersionID20"
+            >0</cbc:DurationMeasure>
+    </cac:ValidityPeriod>
+    <cac:MainTransportationService>
+        <!-- TransportServiceCode:
+1 TermoService
+2 DangerousGoodsService
+3 Transport
+4 HandlingService
+5 Stuffing
+6 Splitting
+7 Combined
+8 Single
+9 Loading
+10 Unloading
+11 Insurance
+12 DocumentHandling
+13 AgentService
+14 InspectionService
+15 MaintenanceService
+16 DeviationNotification
+17 DGdeclaration
+18 CustomsDeclaration
+19 ChangeOfStatusNotification
+20 Warehousing
+        -->
+        <cbc:TransportServiceCode listID="listID32" listAgencyID="listAgencyID32" listAgencyName="listAgencyName32" listName="listName32" listVersionID="listVersionID32" name="name32" languageID="en-US" listURI="http://www.oxygenxml.com/" listSchemeURI="http://www.oxygenxml.com/">TransportServiceCode0</cbc:TransportServiceCode>
+        <cbc:TransportationServiceDescription languageID="en-US" languageLocaleID="languageLocaleID113">TransportationServiceDescription0</cbc:TransportationServiceDescription>
+        <cbc:Name languageID="en-US" languageLocaleID="languageLocaleID114">Truck transport</cbc:Name>
+        <cbc:SequenceNumeric format="format0">1</cbc:SequenceNumeric>
+    </cac:MainTransportationService>
+    <cac:ServiceStartTimePeriod>
+        <cbc:StartDate>2012-05-06</cbc:StartDate>
+        <cbc:StartTime>10:00:00.00</cbc:StartTime>
+        <cbc:EndDate>2012-05-06</cbc:EndDate>
+        <cbc:EndTime>12:00:00.00</cbc:EndTime>
+    </cac:ServiceStartTimePeriod>
+    <cac:ServiceEndTimePeriod>
+        <cbc:StartDate>2012-05-07</cbc:StartDate>
+        <cbc:StartTime>10:00:00.00</cbc:StartTime>
+        <cbc:EndDate>2012-05-07</cbc:EndDate>
+        <cbc:EndTime>12:00:00.00</cbc:EndTime>
+    </cac:ServiceEndTimePeriod>
+    <cac:FromLocation>
+        <!--9 Place of loading-->
+        <!-- LocationTypeCode UN/CEFACT Location function code qualifier:
+        1 Place of terms of delivery
+2 Payment location
+3 Tare check place
+4 Goods receipt place
+5 Place of departure
+6 Ward bed
+7 Place of delivery
+8 Place of destination
+9 Place of loading
+10 Place of acceptance
+11 Place of discharge
+12 Port of discharge
+13 Place of transhipment
+14 Goods item storage location
+15 Place of transfer responsibility
+16 Place of transfer of ownership
+17 Border crossing place
+18 Warehouse
+19 Factory/plant
+20 Place of ultimate destination of goods
+21 Terms of sale place
+22 Customs clearance location
+23 Port of release
+24 Port of entry
+25 Country
+26 City
+27 Country of origin
+28 Country of destination of goods
+29 Railway station
+30 Country of source
+31 Building
+32 Beginning of chargeable section
+33 Baseport of discharge
+34 Baseport of loading
+35 Exportation country
+36 Country of ultimate destination
+37 Consignment final exportation country
+38 Consignment first destination country
+39 Country of production
+40 Country of trading
+41 Consignment entry customs office location
+42 Consignment exit customs office location
+43 Place of Customs examination
+44 Place of authentication of document
+45 Customs office of destination (transit)
+46 Region of despatch
+47 Region of destination
+48 Region of production
+49 Transit country
+50 Transit customs office location
+51 Country of invalid transit guarantee
+52 Country of destination (transit)
+53 Charge and freight due from
+54 Manufacturing department
+55 Freight charge payable to location
+56 End of chargeable section
+57 Place of payment
+58 Full track loading or unloading
+59 Place of loss
+60 Place of arrival
+61 Next port of call
+62 On‐carriage port
+63 Sub‐project location
+64 First optional place of discharge
+65 Final port or place of discharge
+66 Express railway station
+67 Mixed cargo railway station
+68 Second optional place of discharge
+69 Next non‐discharge port of call
+70 Third optional place of discharge
+71 Reconsolidation point
+72 Fourth optional place of discharge
+73 Bill of lading release office
+74 Transhipment excluding this place
+75 Transhipment limited to this place
+76 Original port of loading
+77 First port of call ‐ non‐discharging
+78 First port of call ‐ discharging
+79 Place/port of first entry
+80 Place of despatch
+81 Fifth optional place of discharge
+82 Pre‐carriage port
+83 Place of delivery (by on carriage)
+84 Transport contract place of acceptance
+85 Transport contract place of destination
+86 Country of valid transit guarantee
+87 Place/port of conveyance initial arrival
+88 Place of receipt
+89 Place of registration
+90 Special treatment place
+91 Place of document issue
+92 Routing
+93 Station of application of additional costs
+94 Previous port of call
+95 Sailing destination area
+96 Place of lodgement of documents
+97 Optional place of discharge
+98 Place of empty equipment despatch
+99 Place of empty equipment return
+100 Place/port of warehouse entry
+101 Country of first sale
+103 Place of transfer
+104 Place of deconsolidation
+105 Place of consumption
+106 Region of origin
+107 Place of consolidation
+108 Rate combination point
+109 Place of prolongation decision of delivery delay
+110 Recharging place/location
+111 Customs office of despatch
+112 Region of equipment availability
+113 Country of despatch
+114 Customs office of export
+115 Free zone of export
+116 Region of export/despatch
+117 Place of collection
+118 Customs office of departure
+119 Transit guarantee customs office location
+120 Country of transhipment
+122 Customs office of destination
+123 Wagon‐load railway station
+124 Siding
+125 Last place/port of call of conveyance
+126 Country of previous Customs procedure
+127 Customs office of registration of previous Customs declaration
+128 Participant sender location
+129 Wage negotiation district
+130 Place of ultimate destination of conveyance
+131 Place of loading of empty equipment
+132 Place of discharge of empty equipment
+133 Region of delivery
+134 Petroleum warehouse
+135 Place of entry (Customs)
+136 Living animals care place
+137 Re‐icing place
+138 Weighting place
+139 Marshalling yard
+140 Stopping station
+141 Loading dock
+142 Port connection
+143 Place of expiry
+144 Place of negotiation
+145 Claims payable place
+146 Documentary credit available in
+147 Transport means stowage location
+148 For transportation to
+149 Loading on board/despatch/taking in charge at/from
+150 Container stack position
+151 Private box
+152 Next port of discharge
+153 Port of call
+154 Place/location of on‐hire
+155 Place/location of off‐hire
+156 Other carriers terminal
+157 Country of Value Added Tax (VAT) jurisdiction
+158 Contact location
+159 Additional internal destination
+160 Foreign port of call
+161 Maintenance location
+162 Place or location of sale
+163 Direct investment country
+164 Berth
+165 Construction country
+166 Donation acting country
+167 Payment transaction country
+168 Physical place of return of item
+169 Relay port
+170 Final port of discharge
+171 Place of destination for pre‐stacking prior to stowage
+172 Reporting location
+173 Transport contract place of despatch
+174 Place of residence
+175 Activity location
+176 Pick‐up location
+177 Construction site
+178 Place of embarkation
+179 Place of disembarkation
+180 Person birth location
+181 Registered office
+182 Place of incorporation
+183 Place of business
+184 Physical location
+185 Location to send mail
+186 Foreign registration location
+187 Tax filed from location
+188 Filing location
+189 Former location
+190 Head office
+191 Property
+192 Correct location
+193 Branch location
+194 Former registered location
+195 Future location
+196 Changed to location
+197 Place of inquiry
+198 Original location
+199 Country of last source
+200 Place of handling
+201 Country of origin as defined by transportation agency
+202 Terminal
+203 Sample location
+204 Hospital Advanced Dependency Unit (ADU)
+205 Hospital Neonatal Intensive Care Unit (NICU)
+206 Hospital Paediatric Care Unit (PCU)
+207 Hospital Intensive Care Unit (ICU)
+208 Hospital luxury room
+209 Hospital shared room
+210 Hospital private room
+211 Bidding area
+212 Price area
+213 Country of destination of equipment
+214 Aircraft airport stand
+215 Airport passenger terminal
+216 Previous berth
+217 Next berth
+218 Entity location
+219 Goods depot
+220 Disinfecting place
+221 Harbour rail station
+222 Place of live animal care
+223 Phytosanitary control place
+224 Place for re‐icing or de‐icing
+225 Place of refuelling      
+        226 Place of provision of an unexpected service
+227 Private container terminal
+228 Railway container terminal
+229 Inspection site
+230 Request only stop
+231 Grid area
+232 Source power area
+233 Sink power area
+234 Scheduled berth
+235 Scheduled berth, bow
+236 Scheduled berth, stern
+237 Balance settlement area
+238 Market area
+239 Metering grid area
+240 Climate zone
+241 Country of birth
+242 Country of fattening
+243 Country of slaughter
+244 Country of meat cutting
+245 Meat cutting location
+246 Slaughterhouse
+247 Country of meat mincing
+248 Place of discharge and loading
+249 Cargo facility location
+250 Tourist point of interest
+251 Customs office of payment
+252 Conveyance facility location at departure
+253 Conveyance facility location at arrival
+254 Bus station
+255 Ferry terminal
+256 Place of packing
+257 Country of assembly
+258 Town sales office
+259 Travel agency
+        260 Inland clearance depot
+261 Place of final production
+262 Place of growth
+263 Place of intermediate production
+264 Place of nutrient origin
+265 Place of package material production
+266 Place of processing
+267 Place of species origin
+268 Place of catch
+269 Government appeal office
+270 Regulatory office of cross‐border goods entry
+271 Regulatory office of cross‐border goods exit
+272 Government approved establishment
+273 Free trade zone
+274 Place of physical examination
+275 Permitted location
+276 Landing location
+277 Place of loading on final means of transport
+278 Place of regulatory declaration review
+279 Travel document issuing country or political entity
+280 Compliant facility, registered
+281 Bonded warehouse
+282 Goods destruction site, designated
+283 Goods disposal location, designated
+284 Incineration facility
+285 Laboratory
+286 Place of assembly
+287 Processing site
+288 Quarantine facility
+289 Reclamation facility
+290 Refinery
+291 Smelter
+292 Prescribed treatment facility
+293 Embassy
+        294 Region of source
+295 Region of storage
+296 Ship security incident location
+297 Ship‐to‐ship activity location
+298 Country of last processing
+ZZZ Mutually defined
+        -->
+        <cbc:ID schemeID="schemeID26" schemeName="schemeName26" schemeAgencyID="schemeAgencyID26" schemeAgencyName="schemeAgencyName26" schemeVersionID="schemeVersionID26" schemeDataURI="http://www.oxygenxml.com/" schemeURI="http://www.oxygenxml.com/">100</cbc:ID>
+        <cac:Address>
+            <cbc:StreetName languageID="en-US" languageLocaleID="languageLocaleID118">Løvenvoldgate</cbc:StreetName>
+            <cbc:BuildingNumber languageID="en-US" languageLocaleID="languageLocaleID119">11</cbc:BuildingNumber>
+            <cbc:CityName languageID="en-US" languageLocaleID="languageLocaleID120">Ålesund</cbc:CityName>
+            <cbc:PostalZone languageID="en-US" languageLocaleID="languageLocaleID121">6001</cbc:PostalZone>
+            <cac:Country>
+                <cbc:IdentificationCode listID="listID34" listAgencyID="listAgencyID34" listAgencyName="listAgencyName34" listName="listName34" listVersionID="listVersionID34" name="name34" languageID="en-US" listURI="http://www.oxygenxml.com/" listSchemeURI="http://www.oxygenxml.com/">NO</cbc:IdentificationCode>
+                <cbc:Name languageID="en-US" languageLocaleID="languageLocaleID123">Norway</cbc:Name>
+            </cac:Country>
+        </cac:Address>
+    </cac:FromLocation>
+    <cac:ToLocation>
+        <cbc:ID schemeID="schemeID27" schemeName="schemeName27" schemeAgencyID="schemeAgencyID27" schemeAgencyName="schemeAgencyName27" schemeVersionID="schemeVersionID27" schemeDataURI="http://www.oxygenxml.com/" schemeURI="http://www.oxygenxml.com/">101</cbc:ID>
+        <cac:Address>
+            <cbc:CityName languageID="en-US" languageLocaleID="languageLocaleID127">Aalesund</cbc:CityName>
+            <cbc:PostalZone languageID="en-US" languageLocaleID="languageLocaleID128">6005</cbc:PostalZone>
+            <cac:AddressLine>
+                <cbc:Line languageID="en-US" languageLocaleID="languageLocaleID129">Skutvika container terminal</cbc:Line>
+            </cac:AddressLine>
+            <cac:Country>
+                <cbc:IdentificationCode listID="listID41" listAgencyID="listAgencyID41" listAgencyName="listAgencyName41" listName="listName41" listVersionID="listVersionID41" name="name41" languageID="en-US" listURI="http://www.oxygenxml.com/" listSchemeURI="http://www.oxygenxml.com/">NO</cbc:IdentificationCode>
+                <cbc:Name languageID="en-US" languageLocaleID="languageLocaleID130">Norway</cbc:Name>
+            </cac:Country>
+        </cac:Address>
+    </cac:ToLocation>
+    <cac:TransportExecutionTerms>
+        <cac:DeliveryTerms>
+            <!-- Question: Which Terms are relevant here ?-->
+            <cbc:ID schemeID="schemeID29" schemeName="schemeName29" schemeAgencyID="schemeAgencyID29" schemeAgencyName="INCOTERMS" schemeVersionID="schemeVersionID29" schemeDataURI="http://www.oxygenxml.com/" schemeURI="http://www.oxygenxml.com/">EXW</cbc:ID>
+            <cac:DeliveryLocation>
+                <cbc:ID schemeID="schemeID27" schemeName="schemeName27" schemeAgencyID="schemeAgencyID27" schemeAgencyName="schemeAgencyName27" schemeVersionID="schemeVersionID27" schemeDataURI="http://www.oxygenxml.com/" schemeURI="http://www.oxygenxml.com/">101</cbc:ID>
+                <cac:Address>
+                    <cbc:CityName languageID="en-US" languageLocaleID="languageLocaleID127">Aalesund</cbc:CityName>
+                    <cbc:PostalZone languageID="en-US" languageLocaleID="languageLocaleID128">6005</cbc:PostalZone>
+                    <cac:AddressLine>
+                        <cbc:Line languageID="en-US" languageLocaleID="languageLocaleID129">Skutvika container terminal</cbc:Line>
+                    </cac:AddressLine>
+                    <cac:Country>
+                        <cbc:IdentificationCode listID="listID41" listAgencyID="listAgencyID41" listAgencyName="listAgencyName41" listName="listName41" listVersionID="listVersionID41" name="name41" languageID="en-US" listURI="http://www.oxygenxml.com/" listSchemeURI="http://www.oxygenxml.com/">NO</cbc:IdentificationCode>
+                        <cbc:Name languageID="en-US" languageLocaleID="languageLocaleID130">Norway</cbc:Name>
+                    </cac:Country>
+                </cac:Address>
+            </cac:DeliveryLocation>
+        </cac:DeliveryTerms>
+        <cac:ServiceChargePaymentTerms>
+            <!--  COST * (€ / TEU**) : 300 . 2 containers = 600 euro ** 1 TEU (=1/2 40ft Container) = 8 000 Kg !-->
+            <cbc:Amount currencyID="currencyID0"
+                currencyCodeListVersionID="currencyCodeListVersionID0">600</cbc:Amount>
+            <cbc:PaymentDueDate>2012-06-01</cbc:PaymentDueDate>
+        </cac:ServiceChargePaymentTerms>
+    </cac:TransportExecutionTerms>
+    <cac:Consignment>
+        <!-- 2 containers each containing 7 pallets of dried fish -->
+        <cbc:ID schemeID="schemeID35" schemeName="schemeName35" schemeAgencyID="schemeAgencyID35" schemeAgencyName="schemeAgencyName35" schemeVersionID="schemeVersionID35" schemeDataURI="http://www.oxygenxml.com/" schemeURI="http://www.oxygenxml.com/">ID31</cbc:ID>
+        <!-- kg -->
+        <cbc:GrossWeightMeasure unitCode="unitCode70"
+            unitCodeListVersionID="unitCodeListVersionID70">16000</cbc:GrossWeightMeasure>
+        <cbc:NetWeightMeasure unitCode="unitCode71" unitCodeListVersionID="unitCodeListVersionID71"
+            >15000</cbc:NetWeightMeasure>
+        <!-- m3 -->
+        <cbc:GrossVolumeMeasure unitCode="unitCode74"
+            unitCodeListVersionID="unitCodeListVersionID74">60</cbc:GrossVolumeMeasure>
+        <cbc:NetVolumeMeasure unitCode="unitCode75" unitCodeListVersionID="unitCodeListVersionID75"
+            >56</cbc:NetVolumeMeasure>
+        <cbc:HazardousRiskIndicator>false</cbc:HazardousRiskIndicator>
+        <!-- Handling codes: 
+            1	Heat sensitive 
+            2	Store in dry environment 
+            3	Stacked 
+        -->
+        <cbc:HandlingCode listID="listID76" listAgencyID="listAgencyID76" listAgencyName="listAgencyName76" listName="listName76" listVersionID="listVersionID76" name="name76" languageID="en-US" listURI="http://www.oxygenxml.com/" listSchemeURI="http://www.oxygenxml.com/">HandlingCode0</cbc:HandlingCode>
+        <cbc:HandlingInstructions languageID="en-US" languageLocaleID="languageLocaleID178">HandlingInstructions0</cbc:HandlingInstructions>
+        <!-- No preCarriageShipmentStage-->
+        <cac:MainCarriageShipmentStage>
+            <cbc:ID schemeID="schemeID36" schemeName="schemeName36" schemeAgencyID="schemeAgencyID36" schemeAgencyName="schemeAgencyName36" schemeVersionID="schemeVersionID36" schemeDataURI="http://www.oxygenxml.com/" schemeURI="http://www.oxygenxml.com/">ID32</cbc:ID>
+            <!-- Transport mode codes:
+            0	Transport mode not specified
+            1	Maritime transport
+            2	Rail transport
+            3	Road transport
+            4	Air transport
+            5	Mail
+            6	Multimodal transport
+            7	Fixed transport installation
+            8	Inland water transport
+            9	Transport mode not applicable
+            !-->
+            <cbc:TransportModeCode listID="listID77" listAgencyID="listAgencyID77" listAgencyName="listAgencyName77" listName="listName77" listVersionID="listVersionID77" name="name77" languageID="en-US" listURI="http://www.oxygenxml.com/" listSchemeURI="http://www.oxygenxml.com/">3</cbc:TransportModeCode>
+            <cac:CarrierParty>
+                <cac:PartyIdentification>
+                    <cbc:ID schemeID="schemeID5" schemeName="schemeName5" schemeAgencyID="schemeAgencyID5" schemeAgencyName="schemeAgencyName5" schemeVersionID="schemeVersionID5" schemeDataURI="http://www.oxygenxml.com/" schemeURI="http://www.oxygenxml.com/">100</cbc:ID>
+                </cac:PartyIdentification>
+                <cac:PartyName>
+                    <cbc:Name languageID="en-US" languageLocaleID="languageLocaleID3">Transferd AS</cbc:Name>
+                </cac:PartyName>
+                <cac:PostalAddress>
+                    <cbc:Postbox languageID="en-US" languageLocaleID="languageLocaleID4">204</cbc:Postbox>
+                    <cbc:CityName languageID="en-US" languageLocaleID="languageLocaleID7">Forde</cbc:CityName>
+                    <cbc:PostalZone languageID="en-US" languageLocaleID="languageLocaleID8">6802</cbc:PostalZone>
+                    <cac:Country>
+                        <cbc:IdentificationCode listID="listID2" listAgencyID="listAgencyID2" listAgencyName="listAgencyName2" listName="listName2" listVersionID="listVersionID2" name="name2" languageID="en-US" listURI="http://www.oxygenxml.com/" listSchemeURI="http://www.oxygenxml.com/">NO</cbc:IdentificationCode>
+                        <cbc:Name languageID="en-US" languageLocaleID="languageLocaleID10">Norway</cbc:Name>
+                    </cac:Country>
+                </cac:PostalAddress>
+                <cac:Contact>
+                    <cbc:ID schemeID="schemeID6" schemeName="schemeName6" schemeAgencyID="schemeAgencyID6" schemeAgencyName="schemeAgencyName6" schemeVersionID="schemeVersionID6" schemeDataURI="http://www.oxygenxml.com/" schemeURI="http://www.oxygenxml.com/">ID2</cbc:ID>
+                    <cbc:Name languageID="en-US" languageLocaleID="languageLocaleID11">Leif Kåre Nogva</cbc:Name>
+                    <cbc:Telephone languageID="en-US" languageLocaleID="languageLocaleID12">70133022</cbc:Telephone>
+                    <cbc:ElectronicMail languageID="en-US" languageLocaleID="languageLocaleID14">leif.kaare.nogva@transferd.no</cbc:ElectronicMail>
+                </cac:Contact>
+            </cac:CarrierParty>
+            <!-- PlannedDepartureTransportEvent not set up during planning -->
+            <!-- PlannedArrivalTransportEvent not set up during planning -->
+        </cac:MainCarriageShipmentStage>
+        <!--The consignment consists of 2 containers, each filled with 12 pallets of dried fish.-->
+        <!-- TransportHandlingUnit: In this case: Description of the 2 containers -->        
+        <cac:TransportHandlingUnit>
+            <!-- TRansportHandlingUnit is a description of bulk, package, aplletized or containerized cargo-->
+            <!-- In this example: 1 20 ft container-->
+            <cbc:ID schemeID="schemeID42" schemeName="schemeName42" schemeAgencyID="schemeAgencyID42" schemeAgencyName="schemeAgencyName42" schemeVersionID="schemeVersionID42" schemeDataURI="http://www.oxygenxml.com/" schemeURI="http://www.oxygenxml.com/">ID38</cbc:ID>
+            <!-- TransportHandlingUnitTypeCode: 
+              1	Bulk cargo
+              2	Packaged Cargo
+              3	Palletized  Cargo
+              4	Containerized Cargo
+              5	Hazardous cargo
+              6	Out of gauge
+            -->
+            <!--4 is Containerized Cargo-->
+            <cbc:TransportHandlingUnitTypeCode listID="listID100" listAgencyID="listAgencyID100" listAgencyName="listAgencyName100" listName="listName100" listVersionID="listVersionID100" name="name100" languageID="en-US" listURI="http://www.oxygenxml.com/" listSchemeURI="http://www.oxygenxml.com/">4</cbc:TransportHandlingUnitTypeCode>
+            <cbc:HazardousRiskIndicator>false</cbc:HazardousRiskIndicator>
+            <cac:TransportEquipment>
+                <!-- Details on physical Container-->
+                <cbc:ID schemeID="schemeID43" schemeName="schemeName43" schemeAgencyID="schemeAgencyID43" schemeAgencyName="schemeAgencyName43" schemeVersionID="schemeVersionID43" schemeDataURI="http://www.oxygenxml.com/" schemeURI="http://www.oxygenxml.com/">CN</cbc:ID>
+                <!--CN is Container-->
+                <!-- 
+                TransportEquipmentTypeCode	UN/CEFACT 8053 Equipment type code qualifier:
+AA	Ground equipment
+AB	Chain
+AD	Temperature recorder
+AE	Body trailer
+AG	Slipsheet
+AH	No special equipment needed
+AI	Vessel hold
+AJ	Flat rack
+AK	Aircraft
+AL	Medical device
+AM	Refrigerated container
+AN	Synthetic pallet 80*120cm
+AO	Synthetic pallet 100*120cm
+AP	Clothing hanger rack
+AQ	Road/rail trailer
+AT	Overhang wagon
+BL	Blocks
+BPN	Box pallet non-exchangeable
+BPO	Truck being transported
+BPP	Truck and trailer combination being transported
+BPQ	Tractor and trailer being transported
+BPR	Postal bag
+BPS	Letter Tray
+BPT	Roller Cage
+BPU	Flats Tray
+BPV	Out of bag parcel
+BPW	Wheeled Platform
+BPX	Container non-compliant with the Customs Convention on Containers
+BPY	Box pallet EUR Y non exchangeable
+BPZ	Roll Pallet 1
+BR	Barge
+BX	Boxcar
+CH	Chassis
+CN	Container
+DPA	Deadlight (panel)
+DPB	Roll Pallet 2
+EFP	Exchangeable EUR flat pallet
+EYP	Exchangeable EUR Y box pallet
+FPN	Flat pallet EUR non exchangeable
+FPR	Flat pallet (railway property) non-exchangeable
+IL	Lidded stackable rigid tray (CEN TS 14482:2002)
+LAR	Lashing rope
+LU	Load/unload device on equipment
+MPA	Movable panel
+PA	Pallet
+PBP	Identified private box pallet
+PFP	Identified private flat pallet
+PL	Platform
+PPA	Protecting panel
+PST	Portable stove
+RF	Flat car
+RG	Reefer generator
+RGF	Ground facility
+RO	Rope
+RR	Rail car
+SPP	Identified special pallet
+STR	Strap
+SW	Swap body
+TE	Trailer
+TP	Tarpaulin
+TS	Tackles
+TSU	Tarpaulin support
+UL	A device to support a tarpaulin.
+
+                -->
+                <cbc:TransportEquipmentTypeCode listID="listID102" listAgencyID="listAgencyID102" listAgencyName="listAgencyName102" listName="listName102" listVersionID="listVersionID102" name="name102" languageID="en-US" listURI="http://www.oxygenxml.com/" listSchemeURI="http://www.oxygenxml.com/">TransportEquipmentTypeCode0</cbc:TransportEquipmentTypeCode>
+               <cbc:RefrigeratedIndicator>false</cbc:RefrigeratedIndicator>
+                <!-- kg -->
+                <cbc:GrossWeightMeasure unitCode="unitCode99"
+                    unitCodeListVersionID="unitCodeListVersionID99">8000</cbc:GrossWeightMeasure>
+                <!-- m3 -->
+                <cbc:GrossVolumeMeasure unitCode="unitCode100"
+                    unitCodeListVersionID="unitCodeListVersionID100">30</cbc:GrossVolumeMeasure>
+                <cbc:PowerIndicator>false</cbc:PowerIndicator>
+                <!-- PackagingTypeCode	UNECE Package Type Code 
+                    43	Bag, super bulk
+                    1A	Drum, steel
+                    1B	Drum, aluminium
+                    1D	Drum, plywood
+                    1G	Drum, fibre
+                    1W	Drum, wooden
+                    2C	Barrel, wooden
+                    3A	Jerrican, steel
+                    3H	Jerrican, plastic
+                    4A	Box, steel
+                    4B	Box, aluminium
+                    4C	Box, natural wood
+                    4D	Box, plywood
+                    4F	Box, reconstituted wood
+                    4G	Box, fibreboard
+                    4H	Box, plastic
+                    5H	Bag, woven plastic
+                    |	Bag, textile
+                    5M	Bag, paper
+                    6H	Composite packaging, plastic receptacle
+                    6P	Composite packaging, glass receptacle
+                    AA	Intermediate bulk container, rigid plastic
+                    AB	Receptacle, fibre
+                    AC	Receptacle, paper
+                    AD	Receptacle, wooden
+                    AE	Aerosol
+                    AF	Pallet, modular, collars 80cms × 60cms
+                    AG	Pallet, shrinkwrapped
+                    AH	Pallet, 100cms × 110cms
+                    AI	Clamshell
+                    AJ	Cone
+                    AM	Ampoule, non-protected
+                    AP	Ampoule, protected
+                    AT	Atomizer
+                    AV	Capsule
+                    BA	Barrel
+                    BB	Bobbin
+                    BC	Bottlecrate / bottlerack
+                    BD	Board
+                    BE	Bundle
+                    BF	Balloon, non-protected
+                    BG	Bag
+                    BH	Bunch
+                    BI	Bin
+                    BJ	Bucket
+                    BK	Basket
+                    BL	Bale, compressed
+                    BM	Basin
+                    BN	Bale, non-compressed
+                    BO	Bottle, non-protected, cylindrical
+                    BP	Balloon, protected
+                    BQ	Bottle, protected cylindrical
+                    BR	Bar
+                    BS	Bottle, non-protected, bulbous
+                    BT	Bolt
+                    BU	Butt
+                    BV	Bottle, protected bulbous
+                    BW	Box, for liquids
+                    BX	Box
+                    BY	Board, in bundle/bunch/truss
+                    BZ	Bars, in bundle/bunch/truss
+                    CA	Can, rectangular
+                    CB	Crate, beer
+                    CC	Churn
+                    CD	Can, with handle and spout
+                    CE	Creel
+                    CF	Coffer
+                    CG	Cage
+                    CH	Chest
+                    CI	Canister
+                    CJ	Coffin
+                    CK	Cask
+                    CL	Coil
+                    CM	Card
+                    CN	Container, not otherwise specified as transport equipment
+                    CO	Carboy, non-protected
+                    CP	Carboy, protected
+                    CQ	Cartridge
+                    CR	Crate
+                    CS	Case
+                    CT	Carton
+                    CU	Cup
+                    CV	Cover
+                    CW	Cage, roll
+                    CX	Can, cylindrical
+                    CY	Cylinder
+                    CZ	Canvas
+                    DA	Crate, multiple layer, plastic
+                    DB	Crate, multiple layer, wooden
+                    DC	Crate, multiple layer, cardboard
+                    DG	Cage, Commonwealth Handling Equipment Pool  (CHEP)
+                    DH	Box, Commonwealth Handling Equipment Pool (CHEP), Eurobox
+                    DI	Drum, iron
+                    DJ	Demijohn, non-protected
+                    DK	Crate, bulk, cardboard
+                    DL	Crate, bulk, plastic
+                    DM	Crate, bulk, wooden
+                    DN	Dispenser
+                    DP	Demijohn, protected
+                    DR	Drum
+                    DS	Tray, one layer no cover, plastic
+                    DT	Tray, one layer no cover, wooden
+                    DU	Tray, one layer no cover, polystyrene
+                    DV	Tray, one layer no cover, cardboard
+                    DW	Tray, two layers no cover, plastic tray
+                    DX	Tray, two layers no cover, wooden
+                    DY	Tray, two layers no cover, cardboard
+                    EC	Bag, plastic
+                    ED	Case, with pallet base
+                    EE	Case, with pallet base, wooden
+                    EF	Case, with pallet base, cardboard
+                    EG	Case, with pallet base, plastic
+                    EH	Case, with pallet base, metal
+                    EI	Case, isothermic
+                    EN	Envelope
+                    FC	Crate, fruit
+                    FD	Crate, framed
+                    FI	Firkin
+                    FL	Flask
+                    FO	Footlocker
+                    FP	Filmpack
+                    FR	Frame
+                    FT	Foodtainer
+                    FW	Cart, flatbed
+                    FX	Bag, flexible container
+                    GB	Bottle, gas
+                    GI	Girder
+                    GR	Receptacle, glass
+                    GU	Tray, containing horizontally stacked flat items
+                    GZ	Girders, in bundle/bunch/truss
+                    HA	Basket, with handle, plastic
+                    HB	Basket, with handle, wooden
+                    HC	Basket, with handle, cardboard
+                    HG	Hogshead
+                    HR	Hamper
+                    IA	Package, display, wooden
+                    IB	Package, display, cardboard
+                    IC	Package, display, plastic
+                    ID	Package, display, metal
+                    IE	Package, show
+                    IF	Package, flow
+                    IG	Package, paper wrapped
+                    IH	Drum, plastic
+                    IK	Package, cardboard, with bottle grip-holes
+                    IL	Tray, rigid, lidded stackable (CEN TS 14482:2002)
+                    IN	Ingot
+                    IZ	Ingots, in bundle/bunch/truss
+                    JC	Jerrican, rectangular
+                    JG	Jug
+                    JR	Jar
+                    JT	Jutebag
+                    JY	Jerrican, cylindrical
+                    KG	Keg
+                    LG	Log
+                    LT	Lot
+                    LV	Liftvan
+                    LZ	Logs, in bundle/bunch/truss
+                    MB	Bag, multiply
+                    MC	Crate, milk
+                    MR	Receptacle, metal
+                    MS	Sack, multi-wall
+                    MT	Mat
+                    MW	Receptacle, plastic wrapped
+                    MX	Matchbox
+                    NA	Not available
+                    NE	Unpacked or unpackaged
+                    NF	Unpacked or unpackaged, single unit
+                    NG	Unpacked or unpackaged, multiple units
+                    NS	Nest
+                    NT	Net
+                    NU	Net, tube, plastic
+                    NV	Net, tube, textile
+                    OA	Pallet, CHEP 40 cm x 60 cm
+                    OB	Pallet, CHEP 80 cm x 120 cm
+                    OC	Pallet, CHEP 100 cm x 120 cm
+                    OD	Pallet, AS 4068-1993
+                    OE	Pallet, ISO T11
+                    OF	Platform, unspecified weight or dimension
+                    OK	Block
+                    PA	Packet
+                    PB	Pallet, box
+                    PC	Parcel
+                    PD	Pallet, modular, collars 80cms * 100cms
+                    PE	Pallet, modular, collars 80cms * 120cms
+                    PF	Pen
+                    PG	Plate
+                    PH	Pitcher
+                    PI	Pipe
+                    PJ	Punnet
+                    PK	Package
+                    PL	Pail
+                    PN	Plank
+                    PO	Pouch
+                    PR	Receptacle, plastic
+                    PT	Pot
+                    PU	Tray pack
+                    PV	Pipes, in bundle/bunch/truss
+                    PX	Pallet
+                    PY	Plates, in bundle/bunch/truss
+                    PZ	Planks, in bundle/bunch/truss
+                    QA	Drum, steel, non-removable head
+                    QB	Drum, steel, removable head
+                    QC	Drum, aluminium, non-removable head
+                    QD	Drum, aluminium, removable head
+                    QF	Drum, plastic, non-removable head
+                    QG	Drum, plastic, removable head
+                    QH	Barrel, wooden, bung type
+                    QJ	Barrel, wooden, removable head
+                    QK	Jerrican, steel, non-removable head
+                    QL	Jerrican, steel, removable head
+                    QM	Jerrican, plastic, non-removable head
+                    QN	Jerrican, plastic, removable head
+                    QP	Box, wooden, natural wood, ordinary
+                    QQ	Box, wooden, natural wood, with sift proof walls
+                    QR	Box, plastic, expanded
+                    QS	Box, plastic, solid
+                    RD	Rod
+                    RG	Ring
+                    RJ	Rack, clothing hanger
+                    RK	Rack
+                    RL	Reel
+                    RO	Roll
+                    RT	Rednet
+                    RZ	Rods, in bundle/bunch/truss
+                    SA	Sack
+                    SB	Slab
+                    SC	Crate, shallow
+                    SD	Spindle
+                    SE	Sea-chest
+                    SH	Sachet
+                    SI	Skid
+                    SK	Case, skeleton
+                    SL	Slipsheet
+                    SM	Sheetmetal
+                    SO	Spool
+                    SP	Sheet, plastic wrapping
+                    SS	Case, steel
+                    ST	Sheet
+                    SU	Suitcase
+                    SV	Envelope, steel
+                    SW	Shrinkwrapped
+                    SX	Set
+                    SY	Sleeve
+                    SZ	Sheets, in bundle/bunch/truss
+                    TB	Tub
+                    TC	Tea-chest
+                    TD	Tube, collapsible
+                    TI	Tierce TI
+                    TK	Tank, rectangular
+                    TL	Tub, with lid
+                    TN	Tin
+                    TO	Tun
+                    TR	Trunk
+                    TS	Truss
+                    TU	Tube
+                    TV	Tube, with nozzle
+                    TY	Tank, cylindrical
+                    TZ	Tubes, in bundle/bunch/truss
+                    UC	Uncaged
+                    VA	Vat
+                    VG	Bulk, gas (at 1031 mbar and 15 degree C)
+                    VI	Vial
+                    VK	Vanpack
+                    VL	Bulk, liquid
+                    VN	Vehicle
+                    VO	Bulk, solid, large particles ("nodules")
+                    VP	Vacuum-packed
+                    VQ	Bulk, liquefied gas (at abnormal temperature/pressure)
+                    VR	Bulk, solid, granular particles ("grains")
+                    VY	Bulk, solid, fine particles ("powders")
+                    WA	Intermediate bulk container
+                    WB	Wickerbottle
+                    WC	Intermediate bulk container, steel
+                    WD	Intermediate bulk container, aluminium
+                    WF	Intermediate bulk container, metal
+                    WG	Intermediate bulk container, steel, pressurised > 10 kpa
+                    WH	Intermediate bulk container, aluminium, pressurised > 10 kpa
+                    WJ	Intermediate bulk container, metal, pressure 10 kpa
+                    WK	Intermediate bulk container, steel, liquid
+                    WL	Intermediate bulk container, aluminium, liquid
+                    WM	Intermediate bulk container, metal, liquid
+                    WN	Intermediate bulk container, woven plastic, without coat/liner
+                    WP	Intermediate bulk container, woven plastic, coated
+                    WQ	Intermediate bulk container, woven plastic, with liner
+                    WR	Intermediate bulk container, woven plastic, coated and liner
+                    WS	Intermediate bulk container, plastic film
+                    WT	Intermediate bulk container, textile with out coat/liner
+                    WU	Intermediate bulk container, natural wood, with inner liner
+                    WV	Intermediate bulk container, textile, coated
+                    WW	Intermediate bulk container, textile, with liner
+                    WX	Intermediate bulk container, textile, coated and liner
+                    WY	Intermediate bulk container, plywood, with inner liner
+                    WZ	Intermediate bulk container, reconstituted wood, with inner liner
+                    XA	Bag, woven plastic, without inner coat/liner
+                    XB	Bag, woven plastic, sift proof
+                    XC	Bag, woven plastic, water resistant
+                    XD	Bag, plastics film
+                    XF	Bag, textile, without inner coat/liner
+                    XG	Bag, textile, sift proof
+                    XH	Bag, textile, water resistant
+                    XJ	Bag, paper, multi-wall
+                    XK	Bag, paper, multi-wall, water resistant
+                    YA	Composite packaging, plastic receptacle in steel drum
+                    YB	Composite packaging, plastic receptacle in steel crate box
+                    YC	Composite packaging, plastic receptacle in aluminium drum
+                    YD	Composite packaging, plastic receptacle in aluminium crate
+                    YF	Composite packaging, plastic receptacle in wooden box
+                    YG	Composite packaging, plastic receptacle in plywood drum
+                    YH	Composite packaging, plastic receptacle in plywood box
+                    YJ	Composite packaging, plastic receptacle in fibre drum
+                    YK	Composite packaging, plastic receptacle in fibreboard box
+                    YL	Composite packaging, plastic receptacle in plastic drum
+                    YM	Composite packaging, plastic receptacle in solid plastic box
+                    YN	Composite packaging, glass receptacle in steel drum
+                    YP	Composite packaging, glass receptacle in steel crate box
+                    YQ	Composite packaging, glass receptacle in aluminium drum
+                    YR	Composite packaging, glass receptacle in aluminium crate
+                    YS	Composite packaging, glass receptacle in wooden box
+                    YT	Composite packaging, glass receptacle in plywood drum
+                    YV	Composite packaging, glass receptacle in wickerwork hamper
+                    YW	Composite packaging, glass receptacle in fibre drum
+                    YX	Composite packaging, glass receptacle in fibreboard box
+                    YY	Composite packaging, glass receptacle in expandable plastic pack
+                    YZ	Composite packaging, glass receptacle in solid plastic pack
+                    ZA	Intermediate bulk container, paper, multi-wall
+                    ZB	Bag, large
+                    ZC	Intermediate bulk container, paper, multi-wall, water resistant
+                    ZD	Intermediate bulk container, rigid plastic, with structural equipment, solids
+                    ZF	Intermediate bulk container, rigid plastic, freestanding, solids
+                    ZG	Intermediate bulk container, rigid plastic, with structural equipment, pressurised
+                    ZH	Intermediate bulk container, rigid plastic, freestanding, pressurised
+                    ZJ	Intermediate bulk container, rigid plastic, with structural equipment, liquids
+                    ZK	Intermediate bulk container, rigid plastic, freestanding, liquids
+                    ZL	Intermediate bulk container, composite, rigid plastic, solids
+                    ZM	Intermediate bulk container, composite, flexible plastic, solids
+                    ZN	Intermediate bulk container, composite, rigid plastic, pressurised
+                    ZP	Intermediate bulk container, composite, flexible plastic, pressurised
+                    ZQ	Intermediate bulk container, composite, rigid plastic, liquids
+                    ZR	Intermediate bulk container, composite, flexible plastic, liquids
+                    ZS	Intermediate bulk container, composite
+                    ZT	Intermediate bulk container, fibreboard
+                    ZU	Intermediate bulk container, flexible
+                    ZV	Intermediate bulk container, metal, other than steel
+                    ZW	Intermediate bulk container, natural wood
+                    ZX	Intermediate bulk container, plywood
+                    ZY	Intermediate bulk container, reconstituted wood
+                    ZZ	Mutually defined
+
+                    -->
+                <!--PX is Pallet-->
+                <!-- Package is in this case the pallet (with dried fish). -->
+                <!--7 pallets of fish in this container-->
+                <cac:Package>
+                <cbc:ID schemeID="schemeID86" schemeName="schemeName86" schemeAgencyID="schemeAgencyID86" schemeAgencyName="schemeAgencyName86" schemeVersionID="schemeVersionID86" schemeDataURI="http://www.oxygenxml.com/" schemeURI="http://www.oxygenxml.com/">ID53</cbc:ID>
+                <cbc:PackagingTypeCode listID="listID73" listAgencyID="listAgencyID73" listAgencyName="listAgencyName73" listName="listName73"
+                    listVersionID="listVersionID73" name="name73" languageID="en-US" listURI="http://www.oxygenxml.com/"
+                    listSchemeURI="http://www.oxygenxml.com/">PX</cbc:PackagingTypeCode>
+                <cac:GoodsItem>
+                    <!--Goods Item is the description of the Dried Fish-->
+                    <cbc:ID schemeID="schemeID87" schemeName="schemeName87" schemeAgencyID="schemeAgencyID87" schemeAgencyName="schemeAgencyName87" schemeVersionID="schemeVersionID87" schemeDataURI="http://www.oxygenxml.com/" schemeURI="http://www.oxygenxml.com/">ID54</cbc:ID>
+                    <cbc:Description languageID="en-US" languageLocaleID="languageLocaleID279">Dried fish</cbc:Description>
+                    <!--Weight of one pallet in kg -->
+                    <cbc:GrossWeightMeasure unitCode="unitCode156"
+                        unitCodeListVersionID="unitCodeListVersionID156">600</cbc:GrossWeightMeasure>
+                    <!--Weight of one pallet in kg-->
+                    <cbc:NetWeightMeasure unitCode="unitCode157"
+                        unitCodeListVersionID="unitCodeListVersionID157">590</cbc:NetWeightMeasure>
+                    <!--volume in m3-->
+                    <cbc:GrossVolumeMeasure unitCode="unitCode160"
+                        unitCodeListVersionID="unitCodeListVersionID160">3</cbc:GrossVolumeMeasure>
+                    <cbc:NetVolumeMeasure unitCode="unitCode161"
+                        unitCodeListVersionID="unitCodeListVersionID161">1</cbc:NetVolumeMeasure>
+                    <cac:Item>
+                        <cbc:Description languageID="en-US" languageLocaleID="languageLocaleID280">Description21</cbc:Description>
+                        <cac:CommodityClassification>
+                            <!-- CargoTypeCode	UN/CEFACT 7085 Nature of cargo, coded
+                                1	Documents
+                                2	Low value non-dutiable consignments
+                                3	Low value dutiable consignments
+                                4	High value consignments
+                                5	Other non-containerized
+                                6	Vehicles
+                                7	Roll-on roll-off
+                                8	Palletized
+                                9	Containerized
+                                10	Breakbulk
+                                11	Hazardous cargo
+                                12	General cargo
+                                13	Liquid cargo
+                                14	Temperature controlled cargo
+                                15	Environmental pollutant cargo
+                                16	Not-hazardous cargo
+                                17	Diplomatic
+                                18	Military
+                                19	Obnoxious
+                                20	Out of gauge
+                                21	Household goods and personal effects
+                                22	Frozen cargo
+                                -->             
+                            <!--12 is General Cargo-->
+                            <cbc:CargoTypeCode listID="listID126" listAgencyID="listAgencyID126" listAgencyName="listAgencyName126" listName="listName126" listVersionID="listVersionID126" name="name126" languageID="en-US" listURI="http://www.oxygenxml.com/" listSchemeURI="http://www.oxygenxml.com/">12</cbc:CargoTypeCode>
+                        </cac:CommodityClassification>
+                        <cac:ItemInstance>
+                            <!-- ProductTraceID: An identifier used for tracing the item, such as the EPC number used in RFID. -->
+                            <cbc:ProductTraceID schemeID="schemeID94" schemeName="schemeName94" schemeAgencyID="schemeAgencyID94" schemeAgencyName="schemeAgencyName94" schemeVersionID="schemeVersionID94" schemeDataURI="http://www.oxygenxml.com/" schemeURI="http://www.oxygenxml.com/">ProductTraceID3</cbc:ProductTraceID>
+                        </cac:ItemInstance>
+                    </cac:Item>
+                </cac:GoodsItem>
+            </cac:Package>
+                <cac:Package>
+                <cbc:ID schemeID="schemeID86" schemeName="schemeName86" schemeAgencyID="schemeAgencyID86" schemeAgencyName="schemeAgencyName86" schemeVersionID="schemeVersionID86" schemeDataURI="http://www.oxygenxml.com/" schemeURI="http://www.oxygenxml.com/">PAC2</cbc:ID>
+                <cbc:PackagingTypeCode listID="listID73" listAgencyID="listAgencyID73" listAgencyName="listAgencyName73" listName="listName73"
+                    listVersionID="listVersionID73" name="name73" languageID="en-US" listURI="http://www.oxygenxml.com/"
+                    listSchemeURI="http://www.oxygenxml.com/">PX</cbc:PackagingTypeCode>
+                <cac:GoodsItem>
+                    <!--Goods Item is the description of the Dried Fish-->
+                    <cbc:ID schemeID="schemeID87" schemeName="schemeName87" schemeAgencyID="schemeAgencyID87" schemeAgencyName="schemeAgencyName87" schemeVersionID="schemeVersionID87" schemeDataURI="http://www.oxygenxml.com/" schemeURI="http://www.oxygenxml.com/">PAC3</cbc:ID>
+                    <cbc:Description languageID="en-US" languageLocaleID="languageLocaleID279">Dried fish</cbc:Description>
+                    <!--Weight of one pallet in kg -->
+                    <cbc:GrossWeightMeasure unitCode="unitCode156"
+                        unitCodeListVersionID="unitCodeListVersionID156">600</cbc:GrossWeightMeasure>
+                    <!--Weight of one pallet in kg-->
+                    <cbc:NetWeightMeasure unitCode="unitCode157"
+                        unitCodeListVersionID="unitCodeListVersionID157">590</cbc:NetWeightMeasure>
+                    <!--volume in m3-->
+                    <cbc:GrossVolumeMeasure unitCode="unitCode160"
+                        unitCodeListVersionID="unitCodeListVersionID160">3</cbc:GrossVolumeMeasure>
+                    <cbc:NetVolumeMeasure unitCode="unitCode161"
+                        unitCodeListVersionID="unitCodeListVersionID161">1</cbc:NetVolumeMeasure>
+                    <cac:Item>
+                        <cbc:Description languageID="en-US" languageLocaleID="languageLocaleID280">Description21</cbc:Description>
+                        <cac:CommodityClassification>
+                            <!-- CargoTypeCode	UN/CEFACT 7085 Nature of cargo, coded
+                                1	Documents
+                                2	Low value non-dutiable consignments
+                                3	Low value dutiable consignments
+                                4	High value consignments
+                                5	Other non-containerized
+                                6	Vehicles
+                                7	Roll-on roll-off
+                                8	Palletized
+                                9	Containerized
+                                10	Breakbulk
+                                11	Hazardous cargo
+                                12	General cargo
+                                13	Liquid cargo
+                                14	Temperature controlled cargo
+                                15	Environmental pollutant cargo
+                                16	Not-hazardous cargo
+                                17	Diplomatic
+                                18	Military
+                                19	Obnoxious
+                                20	Out of gauge
+                                21	Household goods and personal effects
+                                22	Frozen cargo
+                                -->             
+                            <!--12 is General Cargo-->
+                            <cbc:CargoTypeCode listID="listID126" listAgencyID="listAgencyID126" listAgencyName="listAgencyName126" listName="listName126" listVersionID="listVersionID126" name="name126" languageID="en-US" listURI="http://www.oxygenxml.com/" listSchemeURI="http://www.oxygenxml.com/">12</cbc:CargoTypeCode>
+                        </cac:CommodityClassification>
+                        <cac:ItemInstance>
+                            <!-- ProductTraceID: An identifier used for tracing the item, such as the EPC number used in RFID. -->
+                            <cbc:ProductTraceID schemeID="schemeID94" schemeName="schemeName94" schemeAgencyID="schemeAgencyID94" schemeAgencyName="schemeAgencyName94" schemeVersionID="schemeVersionID94" schemeDataURI="http://www.oxygenxml.com/" schemeURI="http://www.oxygenxml.com/">PAC4</cbc:ProductTraceID>
+                        </cac:ItemInstance>
+                    </cac:Item>
+                </cac:GoodsItem>
+            </cac:Package>
+                <cac:Package>
+                <cbc:ID schemeID="schemeID86" schemeName="schemeName86" schemeAgencyID="schemeAgencyID86" schemeAgencyName="schemeAgencyName86" schemeVersionID="schemeVersionID86" schemeDataURI="http://www.oxygenxml.com/" schemeURI="http://www.oxygenxml.com/">PAC5</cbc:ID>
+                <cbc:PackagingTypeCode listID="listID73" listAgencyID="listAgencyID73" listAgencyName="listAgencyName73" listName="listName73"
+                    listVersionID="listVersionID73" name="name73" languageID="en-US" listURI="http://www.oxygenxml.com/"
+                    listSchemeURI="http://www.oxygenxml.com/">PX</cbc:PackagingTypeCode>
+                <cac:GoodsItem>
+                    <!--Goods Item is the description of the Dried Fish-->
+                    <cbc:ID schemeID="schemeID87" schemeName="schemeName87" schemeAgencyID="schemeAgencyID87" schemeAgencyName="schemeAgencyName87" schemeVersionID="schemeVersionID87" schemeDataURI="http://www.oxygenxml.com/" schemeURI="http://www.oxygenxml.com/">PAC6</cbc:ID>
+                    <cbc:Description languageID="en-US" languageLocaleID="languageLocaleID279">Dried fish</cbc:Description>
+                    <!--Weight of one pallet in kg -->
+                    <cbc:GrossWeightMeasure unitCode="unitCode156"
+                        unitCodeListVersionID="unitCodeListVersionID156">600</cbc:GrossWeightMeasure>
+                    <!--Weight of one pallet in kg-->
+                    <cbc:NetWeightMeasure unitCode="unitCode157"
+                        unitCodeListVersionID="unitCodeListVersionID157">590</cbc:NetWeightMeasure>
+                    <!--volume in m3-->
+                    <cbc:GrossVolumeMeasure unitCode="unitCode160"
+                        unitCodeListVersionID="unitCodeListVersionID160">3</cbc:GrossVolumeMeasure>
+                    <cbc:NetVolumeMeasure unitCode="unitCode161"
+                        unitCodeListVersionID="unitCodeListVersionID161">1</cbc:NetVolumeMeasure>
+                    <cac:Item>
+                        <cbc:Description languageID="en-US" languageLocaleID="languageLocaleID280">Description21</cbc:Description>
+                        <cac:CommodityClassification>
+                            <!-- CargoTypeCode	UN/CEFACT 7085 Nature of cargo, coded
+                                1	Documents
+                                2	Low value non-dutiable consignments
+                                3	Low value dutiable consignments
+                                4	High value consignments
+                                5	Other non-containerized
+                                6	Vehicles
+                                7	Roll-on roll-off
+                                8	Palletized
+                                9	Containerized
+                                10	Breakbulk
+                                11	Hazardous cargo
+                                12	General cargo
+                                13	Liquid cargo
+                                14	Temperature controlled cargo
+                                15	Environmental pollutant cargo
+                                16	Not-hazardous cargo
+                                17	Diplomatic
+                                18	Military
+                                19	Obnoxious
+                                20	Out of gauge
+                                21	Household goods and personal effects
+                                22	Frozen cargo
+                                -->             
+                            <!--12 is General Cargo-->
+                            <cbc:CargoTypeCode listID="listID126" listAgencyID="listAgencyID126" listAgencyName="listAgencyName126" listName="listName126" listVersionID="listVersionID126" name="name126" languageID="en-US" listURI="http://www.oxygenxml.com/" listSchemeURI="http://www.oxygenxml.com/">12</cbc:CargoTypeCode>
+                        </cac:CommodityClassification>
+                        <cac:ItemInstance>
+                            <!-- ProductTraceID: An identifier used for tracing the item, such as the EPC number used in RFID. -->
+                            <cbc:ProductTraceID schemeID="schemeID94" schemeName="schemeName94" schemeAgencyID="schemeAgencyID94" schemeAgencyName="schemeAgencyName94" schemeVersionID="schemeVersionID94" schemeDataURI="http://www.oxygenxml.com/" schemeURI="http://www.oxygenxml.com/">PAC7</cbc:ProductTraceID>
+                        </cac:ItemInstance>
+                    </cac:Item>
+                </cac:GoodsItem>
+            </cac:Package>
+                <cac:Package>
+                <cbc:ID schemeID="schemeID86" schemeName="schemeName86" schemeAgencyID="schemeAgencyID86" schemeAgencyName="schemeAgencyName86" schemeVersionID="schemeVersionID86" schemeDataURI="http://www.oxygenxml.com/" schemeURI="http://www.oxygenxml.com/">PAC8</cbc:ID>
+                <cbc:PackagingTypeCode listID="listID73" listAgencyID="listAgencyID73" listAgencyName="listAgencyName73" listName="listName73"
+                    listVersionID="listVersionID73" name="name73" languageID="en-US" listURI="http://www.oxygenxml.com/"
+                    listSchemeURI="http://www.oxygenxml.com/">PX</cbc:PackagingTypeCode>
+                <cac:GoodsItem>
+                    <!--Goods Item is the description of the Dried Fish-->
+                    <cbc:ID schemeID="schemeID87" schemeName="schemeName87" schemeAgencyID="schemeAgencyID87" schemeAgencyName="schemeAgencyName87" schemeVersionID="schemeVersionID87" schemeDataURI="http://www.oxygenxml.com/" schemeURI="http://www.oxygenxml.com/">PAC9</cbc:ID>
+                    <cbc:Description languageID="en-US" languageLocaleID="languageLocaleID279">Dried fish</cbc:Description>
+                    <!--Weight of one pallet in kg -->
+                    <cbc:GrossWeightMeasure unitCode="unitCode156"
+                        unitCodeListVersionID="unitCodeListVersionID156">600</cbc:GrossWeightMeasure>
+                    <!--Weight of one pallet in kg-->
+                    <cbc:NetWeightMeasure unitCode="unitCode157"
+                        unitCodeListVersionID="unitCodeListVersionID157">590</cbc:NetWeightMeasure>
+                    <!--volume in m3-->
+                    <cbc:GrossVolumeMeasure unitCode="unitCode160"
+                        unitCodeListVersionID="unitCodeListVersionID160">3</cbc:GrossVolumeMeasure>
+                    <cbc:NetVolumeMeasure unitCode="unitCode161"
+                        unitCodeListVersionID="unitCodeListVersionID161">1</cbc:NetVolumeMeasure>
+                    <cac:Item>
+                        <cbc:Description languageID="en-US" languageLocaleID="languageLocaleID280">Description21</cbc:Description>
+                        <cac:CommodityClassification>
+                            <!-- CargoTypeCode	UN/CEFACT 7085 Nature of cargo, coded
+                                1	Documents
+                                2	Low value non-dutiable consignments
+                                3	Low value dutiable consignments
+                                4	High value consignments
+                                5	Other non-containerized
+                                6	Vehicles
+                                7	Roll-on roll-off
+                                8	Palletized
+                                9	Containerized
+                                10	Breakbulk
+                                11	Hazardous cargo
+                                12	General cargo
+                                13	Liquid cargo
+                                14	Temperature controlled cargo
+                                15	Environmental pollutant cargo
+                                16	Not-hazardous cargo
+                                17	Diplomatic
+                                18	Military
+                                19	Obnoxious
+                                20	Out of gauge
+                                21	Household goods and personal effects
+                                22	Frozen cargo
+                                -->             
+                            <!--12 is General Cargo-->
+                            <cbc:CargoTypeCode listID="listID126" listAgencyID="listAgencyID126" listAgencyName="listAgencyName126" listName="listName126" listVersionID="listVersionID126" name="name126" languageID="en-US" listURI="http://www.oxygenxml.com/" listSchemeURI="http://www.oxygenxml.com/">12</cbc:CargoTypeCode>
+                        </cac:CommodityClassification>
+                        <cac:ItemInstance>
+                            <!-- ProductTraceID: An identifier used for tracing the item, such as the EPC number used in RFID. -->
+                            <cbc:ProductTraceID schemeID="schemeID94" schemeName="schemeName94" schemeAgencyID="schemeAgencyID94" schemeAgencyName="schemeAgencyName94" schemeVersionID="schemeVersionID94" schemeDataURI="http://www.oxygenxml.com/" schemeURI="http://www.oxygenxml.com/">PAC10</cbc:ProductTraceID>
+                        </cac:ItemInstance>
+                    </cac:Item>
+                </cac:GoodsItem>
+            </cac:Package>
+                <cac:Package>
+                <cbc:ID schemeID="schemeID86" schemeName="schemeName86" schemeAgencyID="schemeAgencyID86" schemeAgencyName="schemeAgencyName86" schemeVersionID="schemeVersionID86" schemeDataURI="http://www.oxygenxml.com/" schemeURI="http://www.oxygenxml.com/">PAC11</cbc:ID>
+                <cbc:PackagingTypeCode listID="listID73" listAgencyID="listAgencyID73" listAgencyName="listAgencyName73" listName="listName73"
+                    listVersionID="listVersionID73" name="name73" languageID="en-US" listURI="http://www.oxygenxml.com/"
+                    listSchemeURI="http://www.oxygenxml.com/">PX</cbc:PackagingTypeCode>
+                <cac:GoodsItem>
+                    <!--Goods Item is the description of the Dried Fish-->
+                    <cbc:ID schemeID="schemeID87" schemeName="schemeName87" schemeAgencyID="schemeAgencyID87" schemeAgencyName="schemeAgencyName87" schemeVersionID="schemeVersionID87" schemeDataURI="http://www.oxygenxml.com/" schemeURI="http://www.oxygenxml.com/">PAC12</cbc:ID>
+                    <cbc:Description languageID="en-US" languageLocaleID="languageLocaleID279">Dried fish</cbc:Description>
+                    <!--Weight of one pallet in kg -->
+                    <cbc:GrossWeightMeasure unitCode="unitCode156"
+                        unitCodeListVersionID="unitCodeListVersionID156">600</cbc:GrossWeightMeasure>
+                    <!--Weight of one pallet in kg-->
+                    <cbc:NetWeightMeasure unitCode="unitCode157"
+                        unitCodeListVersionID="unitCodeListVersionID157">590</cbc:NetWeightMeasure>
+                    <!--volume in m3-->
+                    <cbc:GrossVolumeMeasure unitCode="unitCode160"
+                        unitCodeListVersionID="unitCodeListVersionID160">3</cbc:GrossVolumeMeasure>
+                    <cbc:NetVolumeMeasure unitCode="unitCode161"
+                        unitCodeListVersionID="unitCodeListVersionID161">1</cbc:NetVolumeMeasure>
+                    <cac:Item>
+                        <cbc:Description languageID="en-US" languageLocaleID="languageLocaleID280">Description21</cbc:Description>
+                        <cac:CommodityClassification>
+                            <!-- CargoTypeCode	UN/CEFACT 7085 Nature of cargo, coded
+                                1	Documents
+                                2	Low value non-dutiable consignments
+                                3	Low value dutiable consignments
+                                4	High value consignments
+                                5	Other non-containerized
+                                6	Vehicles
+                                7	Roll-on roll-off
+                                8	Palletized
+                                9	Containerized
+                                10	Breakbulk
+                                11	Hazardous cargo
+                                12	General cargo
+                                13	Liquid cargo
+                                14	Temperature controlled cargo
+                                15	Environmental pollutant cargo
+                                16	Not-hazardous cargo
+                                17	Diplomatic
+                                18	Military
+                                19	Obnoxious
+                                20	Out of gauge
+                                21	Household goods and personal effects
+                                22	Frozen cargo
+                                -->             
+                            <!--12 is General Cargo-->
+                            <cbc:CargoTypeCode listID="listID126" listAgencyID="listAgencyID126" listAgencyName="listAgencyName126" listName="listName126" listVersionID="listVersionID126" name="name126" languageID="en-US" listURI="http://www.oxygenxml.com/" listSchemeURI="http://www.oxygenxml.com/">12</cbc:CargoTypeCode>
+                        </cac:CommodityClassification>
+                        <cac:ItemInstance>
+                            <!-- ProductTraceID: An identifier used for tracing the item, such as the EPC number used in RFID. -->
+                            <cbc:ProductTraceID schemeID="schemeID94" schemeName="schemeName94" schemeAgencyID="schemeAgencyID94" schemeAgencyName="schemeAgencyName94" schemeVersionID="schemeVersionID94" schemeDataURI="http://www.oxygenxml.com/" schemeURI="http://www.oxygenxml.com/">PAC13</cbc:ProductTraceID>
+                        </cac:ItemInstance>
+                    </cac:Item>
+                </cac:GoodsItem>
+            </cac:Package>
+                <cac:Package>
+                <cbc:ID schemeID="schemeID86" schemeName="schemeName86" schemeAgencyID="schemeAgencyID86" schemeAgencyName="schemeAgencyName86" schemeVersionID="schemeVersionID86" schemeDataURI="http://www.oxygenxml.com/" schemeURI="http://www.oxygenxml.com/">PAC14</cbc:ID>
+                <cbc:PackagingTypeCode listID="listID73" listAgencyID="listAgencyID73" listAgencyName="listAgencyName73" listName="listName73"
+                    listVersionID="listVersionID73" name="name73" languageID="en-US" listURI="http://www.oxygenxml.com/"
+                    listSchemeURI="http://www.oxygenxml.com/">PX</cbc:PackagingTypeCode>
+                <cac:GoodsItem>
+                    <!--Goods Item is the description of the Dried Fish-->
+                    <cbc:ID schemeID="schemeID87" schemeName="schemeName87" schemeAgencyID="schemeAgencyID87" schemeAgencyName="schemeAgencyName87" schemeVersionID="schemeVersionID87" schemeDataURI="http://www.oxygenxml.com/" schemeURI="http://www.oxygenxml.com/">PAC15</cbc:ID>
+                    <cbc:Description languageID="en-US" languageLocaleID="languageLocaleID279">Dried fish</cbc:Description>
+                    <!--Weight of one pallet in kg -->
+                    <cbc:GrossWeightMeasure unitCode="unitCode156"
+                        unitCodeListVersionID="unitCodeListVersionID156">600</cbc:GrossWeightMeasure>
+                    <!--Weight of one pallet in kg-->
+                    <cbc:NetWeightMeasure unitCode="unitCode157"
+                        unitCodeListVersionID="unitCodeListVersionID157">590</cbc:NetWeightMeasure>
+                    <!--volume in m3-->
+                    <cbc:GrossVolumeMeasure unitCode="unitCode160"
+                        unitCodeListVersionID="unitCodeListVersionID160">3</cbc:GrossVolumeMeasure>
+                    <cbc:NetVolumeMeasure unitCode="unitCode161"
+                        unitCodeListVersionID="unitCodeListVersionID161">1</cbc:NetVolumeMeasure>
+                    <cac:Item>
+                        <cbc:Description languageID="en-US" languageLocaleID="languageLocaleID280">Description21</cbc:Description>
+                        <cac:CommodityClassification>
+                            <!-- CargoTypeCode	UN/CEFACT 7085 Nature of cargo, coded
+                                1	Documents
+                                2	Low value non-dutiable consignments
+                                3	Low value dutiable consignments
+                                4	High value consignments
+                                5	Other non-containerized
+                                6	Vehicles
+                                7	Roll-on roll-off
+                                8	Palletized
+                                9	Containerized
+                                10	Breakbulk
+                                11	Hazardous cargo
+                                12	General cargo
+                                13	Liquid cargo
+                                14	Temperature controlled cargo
+                                15	Environmental pollutant cargo
+                                16	Not-hazardous cargo
+                                17	Diplomatic
+                                18	Military
+                                19	Obnoxious
+                                20	Out of gauge
+                                21	Household goods and personal effects
+                                22	Frozen cargo
+                                -->             
+                            <!--12 is General Cargo-->
+                            <cbc:CargoTypeCode listID="listID126" listAgencyID="listAgencyID126" listAgencyName="listAgencyName126" listName="listName126" listVersionID="listVersionID126" name="name126" languageID="en-US" listURI="http://www.oxygenxml.com/" listSchemeURI="http://www.oxygenxml.com/">12</cbc:CargoTypeCode>
+                        </cac:CommodityClassification>
+                        <cac:ItemInstance>
+                            <!-- ProductTraceID: An identifier used for tracing the item, such as the EPC number used in RFID. -->
+                            <cbc:ProductTraceID schemeID="schemeID94" schemeName="schemeName94" schemeAgencyID="schemeAgencyID94" schemeAgencyName="schemeAgencyName94" schemeVersionID="schemeVersionID94" schemeDataURI="http://www.oxygenxml.com/" schemeURI="http://www.oxygenxml.com/">PAC15</cbc:ProductTraceID>
+                        </cac:ItemInstance>
+                    </cac:Item>
+                </cac:GoodsItem>
+            </cac:Package>
+                <cac:Package>
+                <cbc:ID schemeID="schemeID86" schemeName="schemeName86" schemeAgencyID="schemeAgencyID86" schemeAgencyName="schemeAgencyName86" schemeVersionID="schemeVersionID86" schemeDataURI="http://www.oxygenxml.com/" schemeURI="http://www.oxygenxml.com/">PAC16</cbc:ID>
+                <cbc:PackagingTypeCode listID="listID73" listAgencyID="listAgencyID73" listAgencyName="listAgencyName73" listName="listName73"
+                    listVersionID="listVersionID73" name="name73" languageID="en-US" listURI="http://www.oxygenxml.com/"
+                    listSchemeURI="http://www.oxygenxml.com/">PX</cbc:PackagingTypeCode>
+                <cac:GoodsItem>
+                    <!--Goods Item is the description of the Dried Fish-->
+                    <cbc:ID schemeID="schemeID87" schemeName="schemeName87" schemeAgencyID="schemeAgencyID87" schemeAgencyName="schemeAgencyName87" schemeVersionID="schemeVersionID87" schemeDataURI="http://www.oxygenxml.com/" schemeURI="http://www.oxygenxml.com/">PAC17</cbc:ID>
+                    <cbc:Description languageID="en-US" languageLocaleID="languageLocaleID279">Dried fish</cbc:Description>
+                    <!--Weight of one pallet in kg -->
+                    <cbc:GrossWeightMeasure unitCode="unitCode156"
+                        unitCodeListVersionID="unitCodeListVersionID156">600</cbc:GrossWeightMeasure>
+                    <!--Weight of one pallet in kg-->
+                    <cbc:NetWeightMeasure unitCode="unitCode157"
+                        unitCodeListVersionID="unitCodeListVersionID157">590</cbc:NetWeightMeasure>
+                    <!--volume in m3-->
+                    <cbc:GrossVolumeMeasure unitCode="unitCode160"
+                        unitCodeListVersionID="unitCodeListVersionID160">3</cbc:GrossVolumeMeasure>
+                    <cbc:NetVolumeMeasure unitCode="unitCode161"
+                        unitCodeListVersionID="unitCodeListVersionID161">1</cbc:NetVolumeMeasure>
+                    <cac:Item>
+                        <cbc:Description languageID="en-US" languageLocaleID="languageLocaleID280">Description21</cbc:Description>
+                        <cac:CommodityClassification>
+                            <!-- CargoTypeCode	UN/CEFACT 7085 Nature of cargo, coded
+                                1	Documents
+                                2	Low value non-dutiable consignments
+                                3	Low value dutiable consignments
+                                4	High value consignments
+                                5	Other non-containerized
+                                6	Vehicles
+                                7	Roll-on roll-off
+                                8	Palletized
+                                9	Containerized
+                                10	Breakbulk
+                                11	Hazardous cargo
+                                12	General cargo
+                                13	Liquid cargo
+                                14	Temperature controlled cargo
+                                15	Environmental pollutant cargo
+                                16	Not-hazardous cargo
+                                17	Diplomatic
+                                18	Military
+                                19	Obnoxious
+                                20	Out of gauge
+                                21	Household goods and personal effects
+                                22	Frozen cargo
+                                -->             
+                            <!--12 is General Cargo-->
+                            <cbc:CargoTypeCode listID="listID126" listAgencyID="listAgencyID126" listAgencyName="listAgencyName126" listName="listName126" listVersionID="listVersionID126" name="name126" languageID="en-US" listURI="http://www.oxygenxml.com/" listSchemeURI="http://www.oxygenxml.com/">12</cbc:CargoTypeCode>
+                        </cac:CommodityClassification>
+                        <cac:ItemInstance>
+                            <!-- ProductTraceID: An identifier used for tracing the item, such as the EPC number used in RFID. -->
+                            <cbc:ProductTraceID schemeID="schemeID94" schemeName="schemeName94" schemeAgencyID="schemeAgencyID94" schemeAgencyName="schemeAgencyName94" schemeVersionID="schemeVersionID94" schemeDataURI="http://www.oxygenxml.com/" schemeURI="http://www.oxygenxml.com/">PAC17</cbc:ProductTraceID>
+                        </cac:ItemInstance>
+                    </cac:Item>
+                </cac:GoodsItem>
+            </cac:Package>
+            </cac:TransportEquipment>
+            <cac:TransportMeans>
+                <cbc:JourneyID schemeID="schemeID69" schemeName="schemeName69" schemeAgencyID="schemeAgencyID69" schemeAgencyName="schemeAgencyName69" schemeVersionID="schemeVersionID69" schemeDataURI="http://www.oxygenxml.com/" schemeURI="http://www.oxygenxml.com/">JourneyID0</cbc:JourneyID>
+                <!-- TransportMeansTypeCode
+    31	Truck
+32	Truck, tanker
+33	Tractor
+34	Van
+35	Tiptanker
+36	Truck, dry bulk
+37	Truck, container
+38	Carrier, car
+39	Truck, reefer
+60	Multimodal, type unknown
+70	Fixed transport installation, type unknown
+71	Pipeline
+72	Powerline
+80	Vessel, type unknown
+81	Motor freighter
+82	Motor tanker
+83	Container vessel
+84	Gas tanker
+85	Motor freighter, tug
+86	Motor tanker, tug
+87	Motor freighter with one or more ships alongside
+88	Motor freighter with tanker
+89	Motor freighter pushing one or more freighters
+150	General cargo vessel
+151	Unit carrier
+152	Bulk carrier
+153	Tanker
+154	Liquefied gas tanker
+155	Other special tanker
+157	Cargo and passenger vessel
+159	Passenger ship
+160	Assistance vessel
+170	Other sea-going vessel
+172	Work ship
+173	Push boat
+174	Dredger
+175	Fishing boat
+176	Research and education ship
+177	Navy vessel
+178	Structure, floating
+180	Pleasure boat
+181	Speedboat
+182	Sailing boat with auxiliary motor
+183	Sailing yacht
+184	Boat for sport fishing
+185	Craft, pleasure, longer than 20 metres
+189	Craft, other, recreational
+190	Fast ship
+191	Hydrofoil
+192	Catamaran, fast
+210	Train, railroad
+220	Train, passenger
+230	Train, freight
+310	Truck, mail
+311	Truck dump
+312	Truck, forklift
+313	Loader, shovel
+314	Truck, platform, fixed
+315	Carrier, straddle
+320	Crane, mobile
+330	Bus
+341	Van, delivery
+342	Van, light
+343	Van, furniture
+360	Tractor, industrial
+362	Truck, freezer with isothermic trailer
+363	Truck, isothermic with isothermic trailer
+364	Truck, refrigerated with isothermic trailer
+365	Truck, freezer with refrigerated trailer
+366	Truck, isothermic with refrigerated trailer
+367	Truck, opening floor, with extendable trailer
+368	Truck, rigid, with tank and tank trailer
+369	Truck, bulk with tank trailer
+370	Truck, rigid with tank and bulk trailer
+371	Truck, bulk with bulk trailer
+372	Truck, tautliner with extendable trailer
+373	Truck, tautliner with removable roof and extendable trailer
+374	Truck, bulk truck with extendable trailer
+375	Truck, refrigerated with freezer trailer
+376	Truck, isothermic with freezer trailer
+377	Truck, furniture with trailer
+378	Truck, tautliner with furniture trailer
+379	Truck, tautliner, removable roof with furniture trailer
+380	Truck, tip-up with gondola trailer
+381	Truck, tautliner with gondola trailer
+382	Truck, tautliner, with removable roof and gondola trailer
+383	Truck, opening-floor with gondola trailer
+384	Truck, bulk with gondola trailer
+385	Truck, tip-up with extendable gondola trailer
+386	Truck, tautliner with extendable gondola trailer
+387	Truck, tautliner, removable roof with extendable gondola trailer
+388	Truck, opening floor with extendable gondola trailer
+389	Truck, bulk with extendable gondola trailer
+390	Truck, tip-up truck with opening-floor trailer
+391	Truck, tautliner with opening-floor trailer
+392	Truck, tautliner, removable roof, with opening-floor trailer
+393	Truck, opening-floor with opening-floor trailer
+394	Truck, bulk truck with opening-floor trailer
+395	Truck, with trailer
+396	Truck, tilt, with tilt trailer
+397	Truck, refrigerated, with refrigerated trailer
+398	Truck, freezer with freezer trailer
+399	Truck, removal with removal trailer
+810	Motor freighter pushing at least one tank-ship
+811	Tug, freighter
+812	Tug, tanker
+813	Tug, freighter, coupled
+814	Tug, freighter/tanker, coupled
+815	Freightbarge
+816	Tankbarge
+817	Freightbarge with containers
+818	Tankbarge, gas
+821	Pushtow, one cargo barge
+822	Pushtow, two cargo barges
+823	Pushtow, three cargo barges
+824	Pushtow, four cargo barges
+825	Pushtow, five cargo barges
+826	Pushtow, six cargo barges
+827	Pushtow, seven cargo barges
+828	Pushtow, eight cargo barges
+829	Pushtow, nine cargo barges
+831	Pushtow, one gas/tank barge
+832	Pushtow, two barges at least one tanker or gas barge
+833	Pushtow, three barges at least one tanker or gas barge
+834	Pushtow, four barges at least one tanker or gas barge
+835	Pushtow, five barges at least one tanker or gas barge
+836	Pushtow, six barges at least one tanker or gas barge
+837	Pushtow, seven barges at least one tanker or gas barge
+838	Pushtow, eight barges at least one tanker or gas barge
+839	Pushtow, nine or more barges at least one tanker or gas barge
+840	Tug, single
+841	Tug, one or more tows
+842	Tug, assisting a vessel or linked combination
+843	Pushboat, single
+844	Passenger ship, ferry, red cross ship, cruise ship
+845	Service vessel, police patrol, port services
+846	Vessel, work maintenance craft, floating derrick, cable-ship, buoy-ship, dredge
+847	Object, towed, not otherwise specified
+848	Fishing boat
+849	Bunkership
+850	Barge, tanker, chemical
+851	Object, not otherwise specified
+1501	Grain vessel
+1502	Timber/log carrier
+1503	Wood chips vessel
+1504	Steel products vessel
+1505	Carrier, general cargo/container
+1506	Temperature controlled cargo vessels
+1511	Full container ship/cellular vessel
+1512	RoRo vessel
+1513	Car carrier
+1514	Livestock carrier
+1515	Barge carrier - Lash ship
+1516	Chemical carrier
+1517	Irradiated fuel carrier
+1518	Heavy cargo vessel
+1519	RoRo/Container vessel
+1521	Dry bulk carrier
+1522	Ore carrier
+1523	Cement carrier
+1524	Gravel carrier
+1525	Coal carrier
+1531	Crude oil tanker
+1532	Chemical tanker, coaster
+1533	Chemical tanker, deep sea
+1534	Oil and other derivatives tanker
+1541	LPG tanker
+1542	LNG tanker
+1543	LNG/LPG tanker
+1551	Asphalt/bitumen tanker
+1552	Molasses tanker
+1553	Vegetable oil tanker
+1591	Cruise ship
+1592	Ferry
+1593	Other passenger ship
+1594	Passenger ship, sailing
+1601	Tug, without tow
+1602	Tug, with tow
+1603	Salvage vessel
+1604	Rescue vessel
+1605	Oil combat vessel
+1606	Oil rig
+1607	Hospital vessel
+1711	Pilot boat
+1712	Patrol/measure ship
+1721	Supply vessel
+1723	Offshore support vessel
+1724	Pontoon
+1725	Stone dumping vessel
+1726	Cable layer
+1727	Buoyage vessel
+1728	Icebreaker
+1729	Pipelaying vessel
+1751	Trawler
+1752	Cutter
+1753	Factory ship
+1761	Fishery research vessel
+1762	Climate registration vessel
+1763	Ship for environmental measurement
+1764	Scientific vessel
+1765	Sailing school ship
+1766	Training vessel
+1781	Crane, floating
+1782	Dock, floating
+2201	Train, super express
+2202	Train, sleeper
+2203	Train, passenger, hired group
+2301	Blocktrain
+2302	Train, container
+2303	Train, with one wagon
+2304	Train, with more than one and less than 20 wagons
+2305	Train, with more than 20 wagons
+3100	Truck, tautliner with removal trailer
+3101	Truck, tautliner with removable roof and removal trailer
+3102	Car, with caravan
+3103	Truck, tautliner, 25 tonne
+3104	Truck, tautliner, 25 tonne with removable roof
+3105	Lorry, articulated, flat bed, 25 tonne
+3106	Lorry, articulated, flat bed, 24 tonne, with 10 metre crane
+3107	Lorry, articulated, flat bed, 24 tonne, with 15 metre crane
+3108	Lorry, articulated, flat bed, 24 tonne, with 18 metre crane
+3109	Lorry, articulated, flat bed, 10 tonne
+3110	Truck, tautliner, 25 tonne, with 90 cubic metre trailer
+3111	Truck, tautliner, 25 tonne, with 120 cubic metre trailer
+3112	Lorry, flat with trailer and 10 metre crane
+3113	Lorry, articulated with tank
+3114	Lorry, flat, 15 tonne
+3115	Lorry, flat, 15 tonne with crane
+3116	Truck, isothermic
+3117	Truck, refrigerated
+3118	Van, freezer
+3119	Van, isothermic
+3120	Van, refrigerated
+3121	Truck, bulk
+3122	Truck, tip-up
+3123	Truck, articulated, tip-up
+3124	Truck, rigid, with tank
+3125	Truck, tautliner
+3126	Truck, tautliner, with removable roof
+3127	Truck, with opening floor
+3128	Truck, freezer
+3129	Truck, with crane for moving goods, without trailer
+3130	Truck, with crane for moving goods, with trailer
+3131	Truck, with crane for lifting goods, without trailer
+3132	Truck, with crane for lifting goods, with trailer
+3133	Taxi cab
+3134	Truck, furniture
+3135	Truck, hydrant
+3136	Car
+3137	Truck, with tail-lift
+3138	Armoured vehicle
+3201	Car, elevator
+3301	Bus, with trailer
+3302	Bus, highway
+3303	Bus, sightseeing
+3304	Bus, airport/city
+ -->
+                <!-- 31=truck -->
+                <cbc:TransportMeansTypeCode listID="listID117" listAgencyID="listAgencyID117" listAgencyName="listAgencyName117" listName="listName117" listVersionID="listVersionID117" name="name117" languageID="en-US" listURI="http://www.oxygenxml.com/" listSchemeURI="http://www.oxygenxml.com/">31</cbc:TransportMeansTypeCode>
+            </cac:TransportMeans>
+            <cac:MinimumTemperature>
+                <cbc:AttributeID schemeID="schemeID71" schemeName="schemeName71" schemeAgencyID="schemeAgencyID71" schemeAgencyName="schemeAgencyName71" schemeVersionID="schemeVersionID71" schemeDataURI="http://www.oxygenxml.com/" schemeURI="http://www.oxygenxml.com/">AttributeID11</cbc:AttributeID>
+                <cbc:Measure unitCode="unitCode139" unitCodeListVersionID="unitCodeListVersionID139"
+                    >1</cbc:Measure>
+                <cbc:Description languageID="en-US" languageLocaleID="languageLocaleID249">Min temp in Celsius</cbc:Description>
+            </cac:MinimumTemperature>
+            <cac:MaximumTemperature>
+                <cbc:AttributeID schemeID="schemeID72" schemeName="schemeName72" schemeAgencyID="schemeAgencyID72" schemeAgencyName="schemeAgencyName72" schemeVersionID="schemeVersionID72" schemeDataURI="http://www.oxygenxml.com/" schemeURI="http://www.oxygenxml.com/">AttributeID12</cbc:AttributeID>
+                <cbc:Measure unitCode="unitCode140" unitCodeListVersionID="unitCodeListVersionID140"
+                    >20</cbc:Measure>
+                <cbc:Description languageID="en-US" languageLocaleID="languageLocaleID250">Max temp in Celsius</cbc:Description>
+            </cac:MaximumTemperature>
+            <!-- Reference to all shipments for this TransportHandlingUnit, that is, for this container. -->
+            <cac:ReferencedShipment>
+                <cbc:ID schemeID="schemeID85" schemeName="schemeName85" schemeAgencyID="schemeAgencyID85" schemeAgencyName="schemeAgencyName85" schemeVersionID="schemeVersionID85" schemeDataURI="http://www.oxygenxml.com/" schemeURI="http://www.oxygenxml.com/">ID52</cbc:ID>
+            </cac:ReferencedShipment>
+       </cac:TransportHandlingUnit>
+        <cac:TransportHandlingUnit>
+            <!-- TRansportHandlingUnit is a description of bulk, package, aplletized or containerized cargo-->
+            <!-- In this example: 1 20 ft container-->
+            <cbc:ID schemeID="schemeID42" schemeName="schemeName42" schemeAgencyID="schemeAgencyID42" schemeAgencyName="schemeAgencyName42" schemeVersionID="schemeVersionID42" schemeDataURI="http://www.oxygenxml.com/" schemeURI="http://www.oxygenxml.com/">Id380</cbc:ID>
+            <!-- TransportHandlingUnitTypeCode: 
+              1	Bulk cargo
+              2	Packaged Cargo
+              3	Palletized  Cargo
+              4	Containerized Cargo
+              5	Hazardous cargo
+              6	Out of gauge
+            -->
+            <!--4 is Containerized Cargo-->
+            <cbc:TransportHandlingUnitTypeCode listID="listID100" listAgencyID="listAgencyID100" listAgencyName="listAgencyName100" listName="listName100" listVersionID="listVersionID100" name="name100" languageID="en-US" listURI="http://www.oxygenxml.com/" listSchemeURI="http://www.oxygenxml.com/">4</cbc:TransportHandlingUnitTypeCode>
+            <cbc:HazardousRiskIndicator>false</cbc:HazardousRiskIndicator>
+            <cac:TransportEquipment>
+                <!-- Details on physical Container-->
+                <cbc:ID schemeID="schemeID43" schemeName="schemeName43" schemeAgencyID="schemeAgencyID43" schemeAgencyName="schemeAgencyName43" schemeVersionID="schemeVersionID43" schemeDataURI="http://www.oxygenxml.com/" schemeURI="http://www.oxygenxml.com/">CN</cbc:ID>
+                <!--CN is Container-->
+                <!-- 
+                TransportEquipmentTypeCode	UN/CEFACT 8053 Equipment type code qualifier:
+AA	Ground equipment
+AB	Chain
+AD	Temperature recorder
+AE	Body trailer
+AG	Slipsheet
+AH	No special equipment needed
+AI	Vessel hold
+AJ	Flat rack
+AK	Aircraft
+AL	Medical device
+AM	Refrigerated container
+AN	Synthetic pallet 80*120cm
+AO	Synthetic pallet 100*120cm
+AP	Clothing hanger rack
+AQ	Road/rail trailer
+AT	Overhang wagon
+BL	Blocks
+BPN	Box pallet non-exchangeable
+BPO	Truck being transported
+BPP	Truck and trailer combination being transported
+BPQ	Tractor and trailer being transported
+BPR	Postal bag
+BPS	Letter Tray
+BPT	Roller Cage
+BPU	Flats Tray
+BPV	Out of bag parcel
+BPW	Wheeled Platform
+BPX	Container non-compliant with the Customs Convention on Containers
+BPY	Box pallet EUR Y non exchangeable
+BPZ	Roll Pallet 1
+BR	Barge
+BX	Boxcar
+CH	Chassis
+CN	Container
+DPA	Deadlight (panel)
+DPB	Roll Pallet 2
+EFP	Exchangeable EUR flat pallet
+EYP	Exchangeable EUR Y box pallet
+FPN	Flat pallet EUR non exchangeable
+FPR	Flat pallet (railway property) non-exchangeable
+IL	Lidded stackable rigid tray (CEN TS 14482:2002)
+LAR	Lashing rope
+LU	Load/unload device on equipment
+MPA	Movable panel
+PA	Pallet
+PBP	Identified private box pallet
+PFP	Identified private flat pallet
+PL	Platform
+PPA	Protecting panel
+PST	Portable stove
+RF	Flat car
+RG	Reefer generator
+RGF	Ground facility
+RO	Rope
+RR	Rail car
+SPP	Identified special pallet
+STR	Strap
+SW	Swap body
+TE	Trailer
+TP	Tarpaulin
+TS	Tackles
+TSU	Tarpaulin support
+UL	A device to support a tarpaulin.
+
+                -->
+                <cbc:TransportEquipmentTypeCode listID="listID102" listAgencyID="listAgencyID102" listAgencyName="listAgencyName102" listName="listName102" listVersionID="listVersionID102" name="name102" languageID="en-US" listURI="http://www.oxygenxml.com/" listSchemeURI="http://www.oxygenxml.com/">TransportEquipmentTypeCode0</cbc:TransportEquipmentTypeCode>
+               <cbc:RefrigeratedIndicator>false</cbc:RefrigeratedIndicator>
+                <!-- kg -->
+                <cbc:GrossWeightMeasure unitCode="unitCode99"
+                    unitCodeListVersionID="unitCodeListVersionID99">8000</cbc:GrossWeightMeasure>
+                <!-- m3 -->
+                <cbc:GrossVolumeMeasure unitCode="unitCode100"
+                    unitCodeListVersionID="unitCodeListVersionID100">30</cbc:GrossVolumeMeasure>
+                <cbc:PowerIndicator>false</cbc:PowerIndicator>
+                <!-- PackagingTypeCode	UNECE Package Type Code 
+                    43	Bag, super bulk
+                    1A	Drum, steel
+                    1B	Drum, aluminium
+                    1D	Drum, plywood
+                    1G	Drum, fibre
+                    1W	Drum, wooden
+                    2C	Barrel, wooden
+                    3A	Jerrican, steel
+                    3H	Jerrican, plastic
+                    4A	Box, steel
+                    4B	Box, aluminium
+                    4C	Box, natural wood
+                    4D	Box, plywood
+                    4F	Box, reconstituted wood
+                    4G	Box, fibreboard
+                    4H	Box, plastic
+                    5H	Bag, woven plastic
+                    |	Bag, textile
+                    5M	Bag, paper
+                    6H	Composite packaging, plastic receptacle
+                    6P	Composite packaging, glass receptacle
+                    AA	Intermediate bulk container, rigid plastic
+                    AB	Receptacle, fibre
+                    AC	Receptacle, paper
+                    AD	Receptacle, wooden
+                    AE	Aerosol
+                    AF	Pallet, modular, collars 80cms × 60cms
+                    AG	Pallet, shrinkwrapped
+                    AH	Pallet, 100cms × 110cms
+                    AI	Clamshell
+                    AJ	Cone
+                    AM	Ampoule, non-protected
+                    AP	Ampoule, protected
+                    AT	Atomizer
+                    AV	Capsule
+                    BA	Barrel
+                    BB	Bobbin
+                    BC	Bottlecrate / bottlerack
+                    BD	Board
+                    BE	Bundle
+                    BF	Balloon, non-protected
+                    BG	Bag
+                    BH	Bunch
+                    BI	Bin
+                    BJ	Bucket
+                    BK	Basket
+                    BL	Bale, compressed
+                    BM	Basin
+                    BN	Bale, non-compressed
+                    BO	Bottle, non-protected, cylindrical
+                    BP	Balloon, protected
+                    BQ	Bottle, protected cylindrical
+                    BR	Bar
+                    BS	Bottle, non-protected, bulbous
+                    BT	Bolt
+                    BU	Butt
+                    BV	Bottle, protected bulbous
+                    BW	Box, for liquids
+                    BX	Box
+                    BY	Board, in bundle/bunch/truss
+                    BZ	Bars, in bundle/bunch/truss
+                    CA	Can, rectangular
+                    CB	Crate, beer
+                    CC	Churn
+                    CD	Can, with handle and spout
+                    CE	Creel
+                    CF	Coffer
+                    CG	Cage
+                    CH	Chest
+                    CI	Canister
+                    CJ	Coffin
+                    CK	Cask
+                    CL	Coil
+                    CM	Card
+                    CN	Container, not otherwise specified as transport equipment
+                    CO	Carboy, non-protected
+                    CP	Carboy, protected
+                    CQ	Cartridge
+                    CR	Crate
+                    CS	Case
+                    CT	Carton
+                    CU	Cup
+                    CV	Cover
+                    CW	Cage, roll
+                    CX	Can, cylindrical
+                    CY	Cylinder
+                    CZ	Canvas
+                    DA	Crate, multiple layer, plastic
+                    DB	Crate, multiple layer, wooden
+                    DC	Crate, multiple layer, cardboard
+                    DG	Cage, Commonwealth Handling Equipment Pool  (CHEP)
+                    DH	Box, Commonwealth Handling Equipment Pool (CHEP), Eurobox
+                    DI	Drum, iron
+                    DJ	Demijohn, non-protected
+                    DK	Crate, bulk, cardboard
+                    DL	Crate, bulk, plastic
+                    DM	Crate, bulk, wooden
+                    DN	Dispenser
+                    DP	Demijohn, protected
+                    DR	Drum
+                    DS	Tray, one layer no cover, plastic
+                    DT	Tray, one layer no cover, wooden
+                    DU	Tray, one layer no cover, polystyrene
+                    DV	Tray, one layer no cover, cardboard
+                    DW	Tray, two layers no cover, plastic tray
+                    DX	Tray, two layers no cover, wooden
+                    DY	Tray, two layers no cover, cardboard
+                    EC	Bag, plastic
+                    ED	Case, with pallet base
+                    EE	Case, with pallet base, wooden
+                    EF	Case, with pallet base, cardboard
+                    EG	Case, with pallet base, plastic
+                    EH	Case, with pallet base, metal
+                    EI	Case, isothermic
+                    EN	Envelope
+                    FC	Crate, fruit
+                    FD	Crate, framed
+                    FI	Firkin
+                    FL	Flask
+                    FO	Footlocker
+                    FP	Filmpack
+                    FR	Frame
+                    FT	Foodtainer
+                    FW	Cart, flatbed
+                    FX	Bag, flexible container
+                    GB	Bottle, gas
+                    GI	Girder
+                    GR	Receptacle, glass
+                    GU	Tray, containing horizontally stacked flat items
+                    GZ	Girders, in bundle/bunch/truss
+                    HA	Basket, with handle, plastic
+                    HB	Basket, with handle, wooden
+                    HC	Basket, with handle, cardboard
+                    HG	Hogshead
+                    HR	Hamper
+                    IA	Package, display, wooden
+                    IB	Package, display, cardboard
+                    IC	Package, display, plastic
+                    ID	Package, display, metal
+                    IE	Package, show
+                    IF	Package, flow
+                    IG	Package, paper wrapped
+                    IH	Drum, plastic
+                    IK	Package, cardboard, with bottle grip-holes
+                    IL	Tray, rigid, lidded stackable (CEN TS 14482:2002)
+                    IN	Ingot
+                    IZ	Ingots, in bundle/bunch/truss
+                    JC	Jerrican, rectangular
+                    JG	Jug
+                    JR	Jar
+                    JT	Jutebag
+                    JY	Jerrican, cylindrical
+                    KG	Keg
+                    LG	Log
+                    LT	Lot
+                    LV	Liftvan
+                    LZ	Logs, in bundle/bunch/truss
+                    MB	Bag, multiply
+                    MC	Crate, milk
+                    MR	Receptacle, metal
+                    MS	Sack, multi-wall
+                    MT	Mat
+                    MW	Receptacle, plastic wrapped
+                    MX	Matchbox
+                    NA	Not available
+                    NE	Unpacked or unpackaged
+                    NF	Unpacked or unpackaged, single unit
+                    NG	Unpacked or unpackaged, multiple units
+                    NS	Nest
+                    NT	Net
+                    NU	Net, tube, plastic
+                    NV	Net, tube, textile
+                    OA	Pallet, CHEP 40 cm x 60 cm
+                    OB	Pallet, CHEP 80 cm x 120 cm
+                    OC	Pallet, CHEP 100 cm x 120 cm
+                    OD	Pallet, AS 4068-1993
+                    OE	Pallet, ISO T11
+                    OF	Platform, unspecified weight or dimension
+                    OK	Block
+                    PA	Packet
+                    PB	Pallet, box
+                    PC	Parcel
+                    PD	Pallet, modular, collars 80cms * 100cms
+                    PE	Pallet, modular, collars 80cms * 120cms
+                    PF	Pen
+                    PG	Plate
+                    PH	Pitcher
+                    PI	Pipe
+                    PJ	Punnet
+                    PK	Package
+                    PL	Pail
+                    PN	Plank
+                    PO	Pouch
+                    PR	Receptacle, plastic
+                    PT	Pot
+                    PU	Tray pack
+                    PV	Pipes, in bundle/bunch/truss
+                    PX	Pallet
+                    PY	Plates, in bundle/bunch/truss
+                    PZ	Planks, in bundle/bunch/truss
+                    QA	Drum, steel, non-removable head
+                    QB	Drum, steel, removable head
+                    QC	Drum, aluminium, non-removable head
+                    QD	Drum, aluminium, removable head
+                    QF	Drum, plastic, non-removable head
+                    QG	Drum, plastic, removable head
+                    QH	Barrel, wooden, bung type
+                    QJ	Barrel, wooden, removable head
+                    QK	Jerrican, steel, non-removable head
+                    QL	Jerrican, steel, removable head
+                    QM	Jerrican, plastic, non-removable head
+                    QN	Jerrican, plastic, removable head
+                    QP	Box, wooden, natural wood, ordinary
+                    QQ	Box, wooden, natural wood, with sift proof walls
+                    QR	Box, plastic, expanded
+                    QS	Box, plastic, solid
+                    RD	Rod
+                    RG	Ring
+                    RJ	Rack, clothing hanger
+                    RK	Rack
+                    RL	Reel
+                    RO	Roll
+                    RT	Rednet
+                    RZ	Rods, in bundle/bunch/truss
+                    SA	Sack
+                    SB	Slab
+                    SC	Crate, shallow
+                    SD	Spindle
+                    SE	Sea-chest
+                    SH	Sachet
+                    SI	Skid
+                    SK	Case, skeleton
+                    SL	Slipsheet
+                    SM	Sheetmetal
+                    SO	Spool
+                    SP	Sheet, plastic wrapping
+                    SS	Case, steel
+                    ST	Sheet
+                    SU	Suitcase
+                    SV	Envelope, steel
+                    SW	Shrinkwrapped
+                    SX	Set
+                    SY	Sleeve
+                    SZ	Sheets, in bundle/bunch/truss
+                    TB	Tub
+                    TC	Tea-chest
+                    TD	Tube, collapsible
+                    TI	Tierce TI
+                    TK	Tank, rectangular
+                    TL	Tub, with lid
+                    TN	Tin
+                    TO	Tun
+                    TR	Trunk
+                    TS	Truss
+                    TU	Tube
+                    TV	Tube, with nozzle
+                    TY	Tank, cylindrical
+                    TZ	Tubes, in bundle/bunch/truss
+                    UC	Uncaged
+                    VA	Vat
+                    VG	Bulk, gas (at 1031 mbar and 15 degree C)
+                    VI	Vial
+                    VK	Vanpack
+                    VL	Bulk, liquid
+                    VN	Vehicle
+                    VO	Bulk, solid, large particles ("nodules")
+                    VP	Vacuum-packed
+                    VQ	Bulk, liquefied gas (at abnormal temperature/pressure)
+                    VR	Bulk, solid, granular particles ("grains")
+                    VY	Bulk, solid, fine particles ("powders")
+                    WA	Intermediate bulk container
+                    WB	Wickerbottle
+                    WC	Intermediate bulk container, steel
+                    WD	Intermediate bulk container, aluminium
+                    WF	Intermediate bulk container, metal
+                    WG	Intermediate bulk container, steel, pressurised > 10 kpa
+                    WH	Intermediate bulk container, aluminium, pressurised > 10 kpa
+                    WJ	Intermediate bulk container, metal, pressure 10 kpa
+                    WK	Intermediate bulk container, steel, liquid
+                    WL	Intermediate bulk container, aluminium, liquid
+                    WM	Intermediate bulk container, metal, liquid
+                    WN	Intermediate bulk container, woven plastic, without coat/liner
+                    WP	Intermediate bulk container, woven plastic, coated
+                    WQ	Intermediate bulk container, woven plastic, with liner
+                    WR	Intermediate bulk container, woven plastic, coated and liner
+                    WS	Intermediate bulk container, plastic film
+                    WT	Intermediate bulk container, textile with out coat/liner
+                    WU	Intermediate bulk container, natural wood, with inner liner
+                    WV	Intermediate bulk container, textile, coated
+                    WW	Intermediate bulk container, textile, with liner
+                    WX	Intermediate bulk container, textile, coated and liner
+                    WY	Intermediate bulk container, plywood, with inner liner
+                    WZ	Intermediate bulk container, reconstituted wood, with inner liner
+                    XA	Bag, woven plastic, without inner coat/liner
+                    XB	Bag, woven plastic, sift proof
+                    XC	Bag, woven plastic, water resistant
+                    XD	Bag, plastics film
+                    XF	Bag, textile, without inner coat/liner
+                    XG	Bag, textile, sift proof
+                    XH	Bag, textile, water resistant
+                    XJ	Bag, paper, multi-wall
+                    XK	Bag, paper, multi-wall, water resistant
+                    YA	Composite packaging, plastic receptacle in steel drum
+                    YB	Composite packaging, plastic receptacle in steel crate box
+                    YC	Composite packaging, plastic receptacle in aluminium drum
+                    YD	Composite packaging, plastic receptacle in aluminium crate
+                    YF	Composite packaging, plastic receptacle in wooden box
+                    YG	Composite packaging, plastic receptacle in plywood drum
+                    YH	Composite packaging, plastic receptacle in plywood box
+                    YJ	Composite packaging, plastic receptacle in fibre drum
+                    YK	Composite packaging, plastic receptacle in fibreboard box
+                    YL	Composite packaging, plastic receptacle in plastic drum
+                    YM	Composite packaging, plastic receptacle in solid plastic box
+                    YN	Composite packaging, glass receptacle in steel drum
+                    YP	Composite packaging, glass receptacle in steel crate box
+                    YQ	Composite packaging, glass receptacle in aluminium drum
+                    YR	Composite packaging, glass receptacle in aluminium crate
+                    YS	Composite packaging, glass receptacle in wooden box
+                    YT	Composite packaging, glass receptacle in plywood drum
+                    YV	Composite packaging, glass receptacle in wickerwork hamper
+                    YW	Composite packaging, glass receptacle in fibre drum
+                    YX	Composite packaging, glass receptacle in fibreboard box
+                    YY	Composite packaging, glass receptacle in expandable plastic pack
+                    YZ	Composite packaging, glass receptacle in solid plastic pack
+                    ZA	Intermediate bulk container, paper, multi-wall
+                    ZB	Bag, large
+                    ZC	Intermediate bulk container, paper, multi-wall, water resistant
+                    ZD	Intermediate bulk container, rigid plastic, with structural equipment, solids
+                    ZF	Intermediate bulk container, rigid plastic, freestanding, solids
+                    ZG	Intermediate bulk container, rigid plastic, with structural equipment, pressurised
+                    ZH	Intermediate bulk container, rigid plastic, freestanding, pressurised
+                    ZJ	Intermediate bulk container, rigid plastic, with structural equipment, liquids
+                    ZK	Intermediate bulk container, rigid plastic, freestanding, liquids
+                    ZL	Intermediate bulk container, composite, rigid plastic, solids
+                    ZM	Intermediate bulk container, composite, flexible plastic, solids
+                    ZN	Intermediate bulk container, composite, rigid plastic, pressurised
+                    ZP	Intermediate bulk container, composite, flexible plastic, pressurised
+                    ZQ	Intermediate bulk container, composite, rigid plastic, liquids
+                    ZR	Intermediate bulk container, composite, flexible plastic, liquids
+                    ZS	Intermediate bulk container, composite
+                    ZT	Intermediate bulk container, fibreboard
+                    ZU	Intermediate bulk container, flexible
+                    ZV	Intermediate bulk container, metal, other than steel
+                    ZW	Intermediate bulk container, natural wood
+                    ZX	Intermediate bulk container, plywood
+                    ZY	Intermediate bulk container, reconstituted wood
+                    ZZ	Mutually defined
+
+                    -->
+                <!--PX is Pallet-->
+                <!-- Package is in this case the pallet (with dried fish). -->
+                <!--7 pallets of fish in this container-->
+                <cac:Package>
+                <cbc:ID schemeID="schemeID86" schemeName="schemeName86" schemeAgencyID="schemeAgencyID86" schemeAgencyName="schemeAgencyName86" schemeVersionID="schemeVersionID86" schemeDataURI="http://www.oxygenxml.com/" schemeURI="http://www.oxygenxml.com/">ID530</cbc:ID>
+                <cbc:PackagingTypeCode listID="listID73" listAgencyID="listAgencyID73" listAgencyName="listAgencyName73" listName="listName73"
+                    listVersionID="listVersionID73" name="name73" languageID="en-US" listURI="http://www.oxygenxml.com/"
+                    listSchemeURI="http://www.oxygenxml.com/">PX</cbc:PackagingTypeCode>
+                <cac:GoodsItem>
+                    <!--Goods Item is the description of the Dried Fish-->
+                    <cbc:ID schemeID="schemeID87" schemeName="schemeName87" schemeAgencyID="schemeAgencyID87" schemeAgencyName="schemeAgencyName87" schemeVersionID="schemeVersionID87" schemeDataURI="http://www.oxygenxml.com/" schemeURI="http://www.oxygenxml.com/">ID540</cbc:ID>
+                    <cbc:Description languageID="en-US" languageLocaleID="languageLocaleID279">Dried fish</cbc:Description>
+                    <!--Weight of one pallet in kg -->
+                    <cbc:GrossWeightMeasure unitCode="unitCode156"
+                        unitCodeListVersionID="unitCodeListVersionID156">600</cbc:GrossWeightMeasure>
+                    <!--Weight of one pallet in kg-->
+                    <cbc:NetWeightMeasure unitCode="unitCode157"
+                        unitCodeListVersionID="unitCodeListVersionID157">590</cbc:NetWeightMeasure>
+                    <!--volume in m3-->
+                    <cbc:GrossVolumeMeasure unitCode="unitCode160"
+                        unitCodeListVersionID="unitCodeListVersionID160">3</cbc:GrossVolumeMeasure>
+                    <cbc:NetVolumeMeasure unitCode="unitCode161"
+                        unitCodeListVersionID="unitCodeListVersionID161">1</cbc:NetVolumeMeasure>
+                    <cac:Item>
+                        <cbc:Description languageID="en-US" languageLocaleID="languageLocaleID280">Description21</cbc:Description>
+                        <cac:CommodityClassification>
+                            <!-- CargoTypeCode	UN/CEFACT 7085 Nature of cargo, coded
+                                1	Documents
+                                2	Low value non-dutiable consignments
+                                3	Low value dutiable consignments
+                                4	High value consignments
+                                5	Other non-containerized
+                                6	Vehicles
+                                7	Roll-on roll-off
+                                8	Palletized
+                                9	Containerized
+                                10	Breakbulk
+                                11	Hazardous cargo
+                                12	General cargo
+                                13	Liquid cargo
+                                14	Temperature controlled cargo
+                                15	Environmental pollutant cargo
+                                16	Not-hazardous cargo
+                                17	Diplomatic
+                                18	Military
+                                19	Obnoxious
+                                20	Out of gauge
+                                21	Household goods and personal effects
+                                22	Frozen cargo
+                                -->             
+                            <!--12 is General Cargo-->
+                            <cbc:CargoTypeCode listID="listID126" listAgencyID="listAgencyID126" listAgencyName="listAgencyName126" listName="listName126" listVersionID="listVersionID126" name="name126" languageID="en-US" listURI="http://www.oxygenxml.com/" listSchemeURI="http://www.oxygenxml.com/">12</cbc:CargoTypeCode>
+                        </cac:CommodityClassification>
+                        <cac:ItemInstance>
+                            <!-- ProductTraceID: An identifier used for tracing the item, such as the EPC number used in RFID. -->
+                            <cbc:ProductTraceID schemeID="schemeID94" schemeName="schemeName94" schemeAgencyID="schemeAgencyID94" schemeAgencyName="schemeAgencyName94" schemeVersionID="schemeVersionID94" schemeDataURI="http://www.oxygenxml.com/" schemeURI="http://www.oxygenxml.com/">ProductTraceID3</cbc:ProductTraceID>
+                        </cac:ItemInstance>
+                    </cac:Item>
+                </cac:GoodsItem>
+            </cac:Package>
+                <cac:Package>
+                <cbc:ID schemeID="schemeID86" schemeName="schemeName86" schemeAgencyID="schemeAgencyID86" schemeAgencyName="schemeAgencyName86" schemeVersionID="schemeVersionID86" schemeDataURI="http://www.oxygenxml.com/" schemeURI="http://www.oxygenxml.com/">PAC20</cbc:ID>
+                <cbc:PackagingTypeCode listID="listID73" listAgencyID="listAgencyID73" listAgencyName="listAgencyName73" listName="listName73"
+                    listVersionID="listVersionID73" name="name73" languageID="en-US" listURI="http://www.oxygenxml.com/"
+                    listSchemeURI="http://www.oxygenxml.com/">PX</cbc:PackagingTypeCode>
+                <cac:GoodsItem>
+                    <!--Goods Item is the description of the Dried Fish-->
+                    <cbc:ID schemeID="schemeID87" schemeName="schemeName87" schemeAgencyID="schemeAgencyID87" schemeAgencyName="schemeAgencyName87" schemeVersionID="schemeVersionID87" schemeDataURI="http://www.oxygenxml.com/" schemeURI="http://www.oxygenxml.com/">PAC30</cbc:ID>
+                    <cbc:Description languageID="en-US" languageLocaleID="languageLocaleID279">Dried fish</cbc:Description>
+                    <!--Weight of one pallet in kg -->
+                    <cbc:GrossWeightMeasure unitCode="unitCode156"
+                        unitCodeListVersionID="unitCodeListVersionID156">600</cbc:GrossWeightMeasure>
+                    <!--Weight of one pallet in kg-->
+                    <cbc:NetWeightMeasure unitCode="unitCode157"
+                        unitCodeListVersionID="unitCodeListVersionID157">590</cbc:NetWeightMeasure>
+                    <!--volume in m3-->
+                    <cbc:GrossVolumeMeasure unitCode="unitCode160"
+                        unitCodeListVersionID="unitCodeListVersionID160">3</cbc:GrossVolumeMeasure>
+                    <cbc:NetVolumeMeasure unitCode="unitCode161"
+                        unitCodeListVersionID="unitCodeListVersionID161">1</cbc:NetVolumeMeasure>
+                    <cac:Item>
+                        <cbc:Description languageID="en-US" languageLocaleID="languageLocaleID280">Description21</cbc:Description>
+                        <cac:CommodityClassification>
+                            <!-- CargoTypeCode	UN/CEFACT 7085 Nature of cargo, coded
+                                1	Documents
+                                2	Low value non-dutiable consignments
+                                3	Low value dutiable consignments
+                                4	High value consignments
+                                5	Other non-containerized
+                                6	Vehicles
+                                7	Roll-on roll-off
+                                8	Palletized
+                                9	Containerized
+                                10	Breakbulk
+                                11	Hazardous cargo
+                                12	General cargo
+                                13	Liquid cargo
+                                14	Temperature controlled cargo
+                                15	Environmental pollutant cargo
+                                16	Not-hazardous cargo
+                                17	Diplomatic
+                                18	Military
+                                19	Obnoxious
+                                20	Out of gauge
+                                21	Household goods and personal effects
+                                22	Frozen cargo
+                                -->             
+                            <!--12 is General Cargo-->
+                            <cbc:CargoTypeCode listID="listID126" listAgencyID="listAgencyID126" listAgencyName="listAgencyName126" listName="listName126" listVersionID="listVersionID126" name="name126" languageID="en-US" listURI="http://www.oxygenxml.com/" listSchemeURI="http://www.oxygenxml.com/">12</cbc:CargoTypeCode>
+                        </cac:CommodityClassification>
+                        <cac:ItemInstance>
+                            <!-- ProductTraceID: An identifier used for tracing the item, such as the EPC number used in RFID. -->
+                            <cbc:ProductTraceID schemeID="schemeID94" schemeName="schemeName94" schemeAgencyID="schemeAgencyID94" schemeAgencyName="schemeAgencyName94" schemeVersionID="schemeVersionID94" schemeDataURI="http://www.oxygenxml.com/" schemeURI="http://www.oxygenxml.com/">PAC4</cbc:ProductTraceID>
+                        </cac:ItemInstance>
+                    </cac:Item>
+                </cac:GoodsItem>
+            </cac:Package>
+                <cac:Package>
+                <cbc:ID schemeID="schemeID86" schemeName="schemeName86" schemeAgencyID="schemeAgencyID86" schemeAgencyName="schemeAgencyName86" schemeVersionID="schemeVersionID86" schemeDataURI="http://www.oxygenxml.com/" schemeURI="http://www.oxygenxml.com/">PAC50</cbc:ID>
+                <cbc:PackagingTypeCode listID="listID73" listAgencyID="listAgencyID73" listAgencyName="listAgencyName73" listName="listName73"
+                    listVersionID="listVersionID73" name="name73" languageID="en-US" listURI="http://www.oxygenxml.com/"
+                    listSchemeURI="http://www.oxygenxml.com/">PX</cbc:PackagingTypeCode>
+                <cac:GoodsItem>
+                    <!--Goods Item is the description of the Dried Fish-->
+                    <cbc:ID schemeID="schemeID87" schemeName="schemeName87" schemeAgencyID="schemeAgencyID87" schemeAgencyName="schemeAgencyName87" schemeVersionID="schemeVersionID87" schemeDataURI="http://www.oxygenxml.com/" schemeURI="http://www.oxygenxml.com/">PAC60</cbc:ID>
+                    <cbc:Description languageID="en-US" languageLocaleID="languageLocaleID279">Dried fish</cbc:Description>
+                    <!--Weight of one pallet in kg -->
+                    <cbc:GrossWeightMeasure unitCode="unitCode156"
+                        unitCodeListVersionID="unitCodeListVersionID156">600</cbc:GrossWeightMeasure>
+                    <!--Weight of one pallet in kg-->
+                    <cbc:NetWeightMeasure unitCode="unitCode157"
+                        unitCodeListVersionID="unitCodeListVersionID157">590</cbc:NetWeightMeasure>
+                    <!--volume in m3-->
+                    <cbc:GrossVolumeMeasure unitCode="unitCode160"
+                        unitCodeListVersionID="unitCodeListVersionID160">3</cbc:GrossVolumeMeasure>
+                    <cbc:NetVolumeMeasure unitCode="unitCode161"
+                        unitCodeListVersionID="unitCodeListVersionID161">1</cbc:NetVolumeMeasure>
+                    <cac:Item>
+                        <cbc:Description languageID="en-US" languageLocaleID="languageLocaleID280">Description21</cbc:Description>
+                        <cac:CommodityClassification>
+                            <!-- CargoTypeCode	UN/CEFACT 7085 Nature of cargo, coded
+                                1	Documents
+                                2	Low value non-dutiable consignments
+                                3	Low value dutiable consignments
+                                4	High value consignments
+                                5	Other non-containerized
+                                6	Vehicles
+                                7	Roll-on roll-off
+                                8	Palletized
+                                9	Containerized
+                                10	Breakbulk
+                                11	Hazardous cargo
+                                12	General cargo
+                                13	Liquid cargo
+                                14	Temperature controlled cargo
+                                15	Environmental pollutant cargo
+                                16	Not-hazardous cargo
+                                17	Diplomatic
+                                18	Military
+                                19	Obnoxious
+                                20	Out of gauge
+                                21	Household goods and personal effects
+                                22	Frozen cargo
+                                -->             
+                            <!--12 is General Cargo-->
+                            <cbc:CargoTypeCode listID="listID126" listAgencyID="listAgencyID126" listAgencyName="listAgencyName126" listName="listName126" listVersionID="listVersionID126" name="name126" languageID="en-US" listURI="http://www.oxygenxml.com/" listSchemeURI="http://www.oxygenxml.com/">12</cbc:CargoTypeCode>
+                        </cac:CommodityClassification>
+                        <cac:ItemInstance>
+                            <!-- ProductTraceID: An identifier used for tracing the item, such as the EPC number used in RFID. -->
+                            <cbc:ProductTraceID schemeID="schemeID94" schemeName="schemeName94" schemeAgencyID="schemeAgencyID94" schemeAgencyName="schemeAgencyName94" schemeVersionID="schemeVersionID94" schemeDataURI="http://www.oxygenxml.com/" schemeURI="http://www.oxygenxml.com/">PAC7</cbc:ProductTraceID>
+                        </cac:ItemInstance>
+                    </cac:Item>
+                </cac:GoodsItem>
+            </cac:Package>
+                <cac:Package>
+                <cbc:ID schemeID="schemeID86" schemeName="schemeName86" schemeAgencyID="schemeAgencyID86" schemeAgencyName="schemeAgencyName86" schemeVersionID="schemeVersionID86" schemeDataURI="http://www.oxygenxml.com/" schemeURI="http://www.oxygenxml.com/">PAC80</cbc:ID>
+                <cbc:PackagingTypeCode listID="listID73" listAgencyID="listAgencyID73" listAgencyName="listAgencyName73" listName="listName73"
+                    listVersionID="listVersionID73" name="name73" languageID="en-US" listURI="http://www.oxygenxml.com/"
+                    listSchemeURI="http://www.oxygenxml.com/">PX</cbc:PackagingTypeCode>
+                <cac:GoodsItem>
+                    <!--Goods Item is the description of the Dried Fish-->
+                    <cbc:ID schemeID="schemeID87" schemeName="schemeName87" schemeAgencyID="schemeAgencyID87" schemeAgencyName="schemeAgencyName87" schemeVersionID="schemeVersionID87" schemeDataURI="http://www.oxygenxml.com/" schemeURI="http://www.oxygenxml.com/">PAC90</cbc:ID>
+                    <cbc:Description languageID="en-US" languageLocaleID="languageLocaleID279">Dried fish</cbc:Description>
+                    <!--Weight of one pallet in kg -->
+                    <cbc:GrossWeightMeasure unitCode="unitCode156"
+                        unitCodeListVersionID="unitCodeListVersionID156">600</cbc:GrossWeightMeasure>
+                    <!--Weight of one pallet in kg-->
+                    <cbc:NetWeightMeasure unitCode="unitCode157"
+                        unitCodeListVersionID="unitCodeListVersionID157">590</cbc:NetWeightMeasure>
+                    <!--volume in m3-->
+                    <cbc:GrossVolumeMeasure unitCode="unitCode160"
+                        unitCodeListVersionID="unitCodeListVersionID160">3</cbc:GrossVolumeMeasure>
+                    <cbc:NetVolumeMeasure unitCode="unitCode161"
+                        unitCodeListVersionID="unitCodeListVersionID161">1</cbc:NetVolumeMeasure>
+                    <cac:Item>
+                        <cbc:Description languageID="en-US" languageLocaleID="languageLocaleID280">Description21</cbc:Description>
+                        <cac:CommodityClassification>
+                            <!-- CargoTypeCode	UN/CEFACT 7085 Nature of cargo, coded
+                                1	Documents
+                                2	Low value non-dutiable consignments
+                                3	Low value dutiable consignments
+                                4	High value consignments
+                                5	Other non-containerized
+                                6	Vehicles
+                                7	Roll-on roll-off
+                                8	Palletized
+                                9	Containerized
+                                10	Breakbulk
+                                11	Hazardous cargo
+                                12	General cargo
+                                13	Liquid cargo
+                                14	Temperature controlled cargo
+                                15	Environmental pollutant cargo
+                                16	Not-hazardous cargo
+                                17	Diplomatic
+                                18	Military
+                                19	Obnoxious
+                                20	Out of gauge
+                                21	Household goods and personal effects
+                                22	Frozen cargo
+                                -->             
+                            <!--12 is General Cargo-->
+                            <cbc:CargoTypeCode listID="listID126" listAgencyID="listAgencyID126" listAgencyName="listAgencyName126" listName="listName126" listVersionID="listVersionID126" name="name126" languageID="en-US" listURI="http://www.oxygenxml.com/" listSchemeURI="http://www.oxygenxml.com/">12</cbc:CargoTypeCode>
+                        </cac:CommodityClassification>
+                        <cac:ItemInstance>
+                            <!-- ProductTraceID: An identifier used for tracing the item, such as the EPC number used in RFID. -->
+                            <cbc:ProductTraceID schemeID="schemeID94" schemeName="schemeName94" schemeAgencyID="schemeAgencyID94" schemeAgencyName="schemeAgencyName94" schemeVersionID="schemeVersionID94" schemeDataURI="http://www.oxygenxml.com/" schemeURI="http://www.oxygenxml.com/">PAC10</cbc:ProductTraceID>
+                        </cac:ItemInstance>
+                    </cac:Item>
+                </cac:GoodsItem>
+            </cac:Package>
+                <cac:Package>
+                <cbc:ID schemeID="schemeID86" schemeName="schemeName86" schemeAgencyID="schemeAgencyID86" schemeAgencyName="schemeAgencyName86" schemeVersionID="schemeVersionID86" schemeDataURI="http://www.oxygenxml.com/" schemeURI="http://www.oxygenxml.com/">PAC110</cbc:ID>
+                <cbc:PackagingTypeCode listID="listID73" listAgencyID="listAgencyID73" listAgencyName="listAgencyName73" listName="listName73"
+                    listVersionID="listVersionID73" name="name73" languageID="en-US" listURI="http://www.oxygenxml.com/"
+                    listSchemeURI="http://www.oxygenxml.com/">PX</cbc:PackagingTypeCode>
+                <cac:GoodsItem>
+                    <!--Goods Item is the description of the Dried Fish-->
+                    <cbc:ID schemeID="schemeID87" schemeName="schemeName87" schemeAgencyID="schemeAgencyID87" schemeAgencyName="schemeAgencyName87" schemeVersionID="schemeVersionID87" schemeDataURI="http://www.oxygenxml.com/" schemeURI="http://www.oxygenxml.com/">PAC120</cbc:ID>
+                    <cbc:Description languageID="en-US" languageLocaleID="languageLocaleID279">Dried fish</cbc:Description>
+                    <!--Weight of one pallet in kg -->
+                    <cbc:GrossWeightMeasure unitCode="unitCode156"
+                        unitCodeListVersionID="unitCodeListVersionID156">600</cbc:GrossWeightMeasure>
+                    <!--Weight of one pallet in kg-->
+                    <cbc:NetWeightMeasure unitCode="unitCode157"
+                        unitCodeListVersionID="unitCodeListVersionID157">590</cbc:NetWeightMeasure>
+                    <!--volume in m3-->
+                    <cbc:GrossVolumeMeasure unitCode="unitCode160"
+                        unitCodeListVersionID="unitCodeListVersionID160">3</cbc:GrossVolumeMeasure>
+                    <cbc:NetVolumeMeasure unitCode="unitCode161"
+                        unitCodeListVersionID="unitCodeListVersionID161">1</cbc:NetVolumeMeasure>
+                    <cac:Item>
+                        <cbc:Description languageID="en-US" languageLocaleID="languageLocaleID280">Description21</cbc:Description>
+                        <cac:CommodityClassification>
+                            <!-- CargoTypeCode	UN/CEFACT 7085 Nature of cargo, coded
+                                1	Documents
+                                2	Low value non-dutiable consignments
+                                3	Low value dutiable consignments
+                                4	High value consignments
+                                5	Other non-containerized
+                                6	Vehicles
+                                7	Roll-on roll-off
+                                8	Palletized
+                                9	Containerized
+                                10	Breakbulk
+                                11	Hazardous cargo
+                                12	General cargo
+                                13	Liquid cargo
+                                14	Temperature controlled cargo
+                                15	Environmental pollutant cargo
+                                16	Not-hazardous cargo
+                                17	Diplomatic
+                                18	Military
+                                19	Obnoxious
+                                20	Out of gauge
+                                21	Household goods and personal effects
+                                22	Frozen cargo
+                                -->             
+                            <!--12 is General Cargo-->
+                            <cbc:CargoTypeCode listID="listID126" listAgencyID="listAgencyID126" listAgencyName="listAgencyName126" listName="listName126" listVersionID="listVersionID126" name="name126" languageID="en-US" listURI="http://www.oxygenxml.com/" listSchemeURI="http://www.oxygenxml.com/">12</cbc:CargoTypeCode>
+                        </cac:CommodityClassification>
+                        <cac:ItemInstance>
+                            <!-- ProductTraceID: An identifier used for tracing the item, such as the EPC number used in RFID. -->
+                            <cbc:ProductTraceID schemeID="schemeID94" schemeName="schemeName94" schemeAgencyID="schemeAgencyID94" schemeAgencyName="schemeAgencyName94" schemeVersionID="schemeVersionID94" schemeDataURI="http://www.oxygenxml.com/" schemeURI="http://www.oxygenxml.com/">PAC13</cbc:ProductTraceID>
+                        </cac:ItemInstance>
+                    </cac:Item>
+                </cac:GoodsItem>
+            </cac:Package>
+                <cac:Package>
+                <cbc:ID schemeID="schemeID86" schemeName="schemeName86" schemeAgencyID="schemeAgencyID86" schemeAgencyName="schemeAgencyName86" schemeVersionID="schemeVersionID86" schemeDataURI="http://www.oxygenxml.com/" schemeURI="http://www.oxygenxml.com/">PAC140</cbc:ID>
+                <cbc:PackagingTypeCode listID="listID73" listAgencyID="listAgencyID73" listAgencyName="listAgencyName73" listName="listName73"
+                    listVersionID="listVersionID73" name="name73" languageID="en-US" listURI="http://www.oxygenxml.com/"
+                    listSchemeURI="http://www.oxygenxml.com/">PX</cbc:PackagingTypeCode>
+                <cac:GoodsItem>
+                    <!--Goods Item is the description of the Dried Fish-->
+                    <cbc:ID schemeID="schemeID87" schemeName="schemeName87" schemeAgencyID="schemeAgencyID87" schemeAgencyName="schemeAgencyName87" schemeVersionID="schemeVersionID87" schemeDataURI="http://www.oxygenxml.com/" schemeURI="http://www.oxygenxml.com/">PAC150</cbc:ID>
+                    <cbc:Description languageID="en-US" languageLocaleID="languageLocaleID279">Dried fish</cbc:Description>
+                    <!--Weight of one pallet in kg -->
+                    <cbc:GrossWeightMeasure unitCode="unitCode156"
+                        unitCodeListVersionID="unitCodeListVersionID156">600</cbc:GrossWeightMeasure>
+                    <!--Weight of one pallet in kg-->
+                    <cbc:NetWeightMeasure unitCode="unitCode157"
+                        unitCodeListVersionID="unitCodeListVersionID157">590</cbc:NetWeightMeasure>
+                    <!--volume in m3-->
+                    <cbc:GrossVolumeMeasure unitCode="unitCode160"
+                        unitCodeListVersionID="unitCodeListVersionID160">3</cbc:GrossVolumeMeasure>
+                    <cbc:NetVolumeMeasure unitCode="unitCode161"
+                        unitCodeListVersionID="unitCodeListVersionID161">1</cbc:NetVolumeMeasure>
+                    <cac:Item>
+                        <cbc:Description languageID="en-US" languageLocaleID="languageLocaleID280">Description21</cbc:Description>
+                        <cac:CommodityClassification>
+                            <!-- CargoTypeCode	UN/CEFACT 7085 Nature of cargo, coded
+                                1	Documents
+                                2	Low value non-dutiable consignments
+                                3	Low value dutiable consignments
+                                4	High value consignments
+                                5	Other non-containerized
+                                6	Vehicles
+                                7	Roll-on roll-off
+                                8	Palletized
+                                9	Containerized
+                                10	Breakbulk
+                                11	Hazardous cargo
+                                12	General cargo
+                                13	Liquid cargo
+                                14	Temperature controlled cargo
+                                15	Environmental pollutant cargo
+                                16	Not-hazardous cargo
+                                17	Diplomatic
+                                18	Military
+                                19	Obnoxious
+                                20	Out of gauge
+                                21	Household goods and personal effects
+                                22	Frozen cargo
+                                -->             
+                            <!--12 is General Cargo-->
+                            <cbc:CargoTypeCode listID="listID126" listAgencyID="listAgencyID126" listAgencyName="listAgencyName126" listName="listName126" listVersionID="listVersionID126" name="name126" languageID="en-US" listURI="http://www.oxygenxml.com/" listSchemeURI="http://www.oxygenxml.com/">12</cbc:CargoTypeCode>
+                        </cac:CommodityClassification>
+                        <cac:ItemInstance>
+                            <!-- ProductTraceID: An identifier used for tracing the item, such as the EPC number used in RFID. -->
+                            <cbc:ProductTraceID schemeID="schemeID94" schemeName="schemeName94" schemeAgencyID="schemeAgencyID94" schemeAgencyName="schemeAgencyName94" schemeVersionID="schemeVersionID94" schemeDataURI="http://www.oxygenxml.com/" schemeURI="http://www.oxygenxml.com/">PAC15</cbc:ProductTraceID>
+                        </cac:ItemInstance>
+                    </cac:Item>
+                </cac:GoodsItem>
+            </cac:Package>
+                <cac:Package>
+                <cbc:ID schemeID="schemeID86" schemeName="schemeName86" schemeAgencyID="schemeAgencyID86" schemeAgencyName="schemeAgencyName86" schemeVersionID="schemeVersionID86" schemeDataURI="http://www.oxygenxml.com/" schemeURI="http://www.oxygenxml.com/">PAC160</cbc:ID>
+                <cbc:PackagingTypeCode listID="listID73" listAgencyID="listAgencyID73" listAgencyName="listAgencyName73" listName="listName73"
+                    listVersionID="listVersionID73" name="name73" languageID="en-US" listURI="http://www.oxygenxml.com/"
+                    listSchemeURI="http://www.oxygenxml.com/">PX</cbc:PackagingTypeCode>
+                <cac:GoodsItem>
+                    <!--Goods Item is the description of the Dried Fish-->
+                    <cbc:ID schemeID="schemeID87" schemeName="schemeName87" schemeAgencyID="schemeAgencyID87" schemeAgencyName="schemeAgencyName87" schemeVersionID="schemeVersionID87" schemeDataURI="http://www.oxygenxml.com/" schemeURI="http://www.oxygenxml.com/">PAC170</cbc:ID>
+                    <cbc:Description languageID="en-US" languageLocaleID="languageLocaleID279">Dried fish</cbc:Description>
+                    <!--Weight of one pallet in kg -->
+                    <cbc:GrossWeightMeasure unitCode="unitCode156"
+                        unitCodeListVersionID="unitCodeListVersionID156">600</cbc:GrossWeightMeasure>
+                    <!--Weight of one pallet in kg-->
+                    <cbc:NetWeightMeasure unitCode="unitCode157"
+                        unitCodeListVersionID="unitCodeListVersionID157">590</cbc:NetWeightMeasure>
+                    <!--volume in m3-->
+                    <cbc:GrossVolumeMeasure unitCode="unitCode160"
+                        unitCodeListVersionID="unitCodeListVersionID160">3</cbc:GrossVolumeMeasure>
+                    <cbc:NetVolumeMeasure unitCode="unitCode161"
+                        unitCodeListVersionID="unitCodeListVersionID161">1</cbc:NetVolumeMeasure>
+                    <cac:Item>
+                        <cbc:Description languageID="en-US" languageLocaleID="languageLocaleID280">Description21</cbc:Description>
+                        <cac:CommodityClassification>
+                            <!-- CargoTypeCode	UN/CEFACT 7085 Nature of cargo, coded
+                                1	Documents
+                                2	Low value non-dutiable consignments
+                                3	Low value dutiable consignments
+                                4	High value consignments
+                                5	Other non-containerized
+                                6	Vehicles
+                                7	Roll-on roll-off
+                                8	Palletized
+                                9	Containerized
+                                10	Breakbulk
+                                11	Hazardous cargo
+                                12	General cargo
+                                13	Liquid cargo
+                                14	Temperature controlled cargo
+                                15	Environmental pollutant cargo
+                                16	Not-hazardous cargo
+                                17	Diplomatic
+                                18	Military
+                                19	Obnoxious
+                                20	Out of gauge
+                                21	Household goods and personal effects
+                                22	Frozen cargo
+                                -->             
+                            <!--12 is General Cargo-->
+                            <cbc:CargoTypeCode listID="listID126" listAgencyID="listAgencyID126" listAgencyName="listAgencyName126" listName="listName126" listVersionID="listVersionID126" name="name126" languageID="en-US" listURI="http://www.oxygenxml.com/" listSchemeURI="http://www.oxygenxml.com/">12</cbc:CargoTypeCode>
+                        </cac:CommodityClassification>
+                        <cac:ItemInstance>
+                            <!-- ProductTraceID: An identifier used for tracing the item, such as the EPC number used in RFID. -->
+                            <cbc:ProductTraceID schemeID="schemeID94" schemeName="schemeName94" schemeAgencyID="schemeAgencyID94" schemeAgencyName="schemeAgencyName94" schemeVersionID="schemeVersionID94" schemeDataURI="http://www.oxygenxml.com/" schemeURI="http://www.oxygenxml.com/">PAC17</cbc:ProductTraceID>
+                        </cac:ItemInstance>
+                    </cac:Item>
+                </cac:GoodsItem>
+            </cac:Package>
+            </cac:TransportEquipment>
+            <cac:TransportMeans>
+                <cbc:JourneyID schemeID="schemeID69" schemeName="schemeName69" schemeAgencyID="schemeAgencyID69" schemeAgencyName="schemeAgencyName69" schemeVersionID="schemeVersionID69" schemeDataURI="http://www.oxygenxml.com/" schemeURI="http://www.oxygenxml.com/">JourneyID0</cbc:JourneyID>
+                <!-- TransportMeansTypeCode
+    31	Truck
+32	Truck, tanker
+33	Tractor
+34	Van
+35	Tiptanker
+36	Truck, dry bulk
+37	Truck, container
+38	Carrier, car
+39	Truck, reefer
+60	Multimodal, type unknown
+70	Fixed transport installation, type unknown
+71	Pipeline
+72	Powerline
+80	Vessel, type unknown
+81	Motor freighter
+82	Motor tanker
+83	Container vessel
+84	Gas tanker
+85	Motor freighter, tug
+86	Motor tanker, tug
+87	Motor freighter with one or more ships alongside
+88	Motor freighter with tanker
+89	Motor freighter pushing one or more freighters
+150	General cargo vessel
+151	Unit carrier
+152	Bulk carrier
+153	Tanker
+154	Liquefied gas tanker
+155	Other special tanker
+157	Cargo and passenger vessel
+159	Passenger ship
+160	Assistance vessel
+170	Other sea-going vessel
+172	Work ship
+173	Push boat
+174	Dredger
+175	Fishing boat
+176	Research and education ship
+177	Navy vessel
+178	Structure, floating
+180	Pleasure boat
+181	Speedboat
+182	Sailing boat with auxiliary motor
+183	Sailing yacht
+184	Boat for sport fishing
+185	Craft, pleasure, longer than 20 metres
+189	Craft, other, recreational
+190	Fast ship
+191	Hydrofoil
+192	Catamaran, fast
+210	Train, railroad
+220	Train, passenger
+230	Train, freight
+310	Truck, mail
+311	Truck dump
+312	Truck, forklift
+313	Loader, shovel
+314	Truck, platform, fixed
+315	Carrier, straddle
+320	Crane, mobile
+330	Bus
+341	Van, delivery
+342	Van, light
+343	Van, furniture
+360	Tractor, industrial
+362	Truck, freezer with isothermic trailer
+363	Truck, isothermic with isothermic trailer
+364	Truck, refrigerated with isothermic trailer
+365	Truck, freezer with refrigerated trailer
+366	Truck, isothermic with refrigerated trailer
+367	Truck, opening floor, with extendable trailer
+368	Truck, rigid, with tank and tank trailer
+369	Truck, bulk with tank trailer
+370	Truck, rigid with tank and bulk trailer
+371	Truck, bulk with bulk trailer
+372	Truck, tautliner with extendable trailer
+373	Truck, tautliner with removable roof and extendable trailer
+374	Truck, bulk truck with extendable trailer
+375	Truck, refrigerated with freezer trailer
+376	Truck, isothermic with freezer trailer
+377	Truck, furniture with trailer
+378	Truck, tautliner with furniture trailer
+379	Truck, tautliner, removable roof with furniture trailer
+380	Truck, tip-up with gondola trailer
+381	Truck, tautliner with gondola trailer
+382	Truck, tautliner, with removable roof and gondola trailer
+383	Truck, opening-floor with gondola trailer
+384	Truck, bulk with gondola trailer
+385	Truck, tip-up with extendable gondola trailer
+386	Truck, tautliner with extendable gondola trailer
+387	Truck, tautliner, removable roof with extendable gondola trailer
+388	Truck, opening floor with extendable gondola trailer
+389	Truck, bulk with extendable gondola trailer
+390	Truck, tip-up truck with opening-floor trailer
+391	Truck, tautliner with opening-floor trailer
+392	Truck, tautliner, removable roof, with opening-floor trailer
+393	Truck, opening-floor with opening-floor trailer
+394	Truck, bulk truck with opening-floor trailer
+395	Truck, with trailer
+396	Truck, tilt, with tilt trailer
+397	Truck, refrigerated, with refrigerated trailer
+398	Truck, freezer with freezer trailer
+399	Truck, removal with removal trailer
+810	Motor freighter pushing at least one tank-ship
+811	Tug, freighter
+812	Tug, tanker
+813	Tug, freighter, coupled
+814	Tug, freighter/tanker, coupled
+815	Freightbarge
+816	Tankbarge
+817	Freightbarge with containers
+818	Tankbarge, gas
+821	Pushtow, one cargo barge
+822	Pushtow, two cargo barges
+823	Pushtow, three cargo barges
+824	Pushtow, four cargo barges
+825	Pushtow, five cargo barges
+826	Pushtow, six cargo barges
+827	Pushtow, seven cargo barges
+828	Pushtow, eight cargo barges
+829	Pushtow, nine cargo barges
+831	Pushtow, one gas/tank barge
+832	Pushtow, two barges at least one tanker or gas barge
+833	Pushtow, three barges at least one tanker or gas barge
+834	Pushtow, four barges at least one tanker or gas barge
+835	Pushtow, five barges at least one tanker or gas barge
+836	Pushtow, six barges at least one tanker or gas barge
+837	Pushtow, seven barges at least one tanker or gas barge
+838	Pushtow, eight barges at least one tanker or gas barge
+839	Pushtow, nine or more barges at least one tanker or gas barge
+840	Tug, single
+841	Tug, one or more tows
+842	Tug, assisting a vessel or linked combination
+843	Pushboat, single
+844	Passenger ship, ferry, red cross ship, cruise ship
+845	Service vessel, police patrol, port services
+846	Vessel, work maintenance craft, floating derrick, cable-ship, buoy-ship, dredge
+847	Object, towed, not otherwise specified
+848	Fishing boat
+849	Bunkership
+850	Barge, tanker, chemical
+851	Object, not otherwise specified
+1501	Grain vessel
+1502	Timber/log carrier
+1503	Wood chips vessel
+1504	Steel products vessel
+1505	Carrier, general cargo/container
+1506	Temperature controlled cargo vessels
+1511	Full container ship/cellular vessel
+1512	RoRo vessel
+1513	Car carrier
+1514	Livestock carrier
+1515	Barge carrier - Lash ship
+1516	Chemical carrier
+1517	Irradiated fuel carrier
+1518	Heavy cargo vessel
+1519	RoRo/Container vessel
+1521	Dry bulk carrier
+1522	Ore carrier
+1523	Cement carrier
+1524	Gravel carrier
+1525	Coal carrier
+1531	Crude oil tanker
+1532	Chemical tanker, coaster
+1533	Chemical tanker, deep sea
+1534	Oil and other derivatives tanker
+1541	LPG tanker
+1542	LNG tanker
+1543	LNG/LPG tanker
+1551	Asphalt/bitumen tanker
+1552	Molasses tanker
+1553	Vegetable oil tanker
+1591	Cruise ship
+1592	Ferry
+1593	Other passenger ship
+1594	Passenger ship, sailing
+1601	Tug, without tow
+1602	Tug, with tow
+1603	Salvage vessel
+1604	Rescue vessel
+1605	Oil combat vessel
+1606	Oil rig
+1607	Hospital vessel
+1711	Pilot boat
+1712	Patrol/measure ship
+1721	Supply vessel
+1723	Offshore support vessel
+1724	Pontoon
+1725	Stone dumping vessel
+1726	Cable layer
+1727	Buoyage vessel
+1728	Icebreaker
+1729	Pipelaying vessel
+1751	Trawler
+1752	Cutter
+1753	Factory ship
+1761	Fishery research vessel
+1762	Climate registration vessel
+1763	Ship for environmental measurement
+1764	Scientific vessel
+1765	Sailing school ship
+1766	Training vessel
+1781	Crane, floating
+1782	Dock, floating
+2201	Train, super express
+2202	Train, sleeper
+2203	Train, passenger, hired group
+2301	Blocktrain
+2302	Train, container
+2303	Train, with one wagon
+2304	Train, with more than one and less than 20 wagons
+2305	Train, with more than 20 wagons
+3100	Truck, tautliner with removal trailer
+3101	Truck, tautliner with removable roof and removal trailer
+3102	Car, with caravan
+3103	Truck, tautliner, 25 tonne
+3104	Truck, tautliner, 25 tonne with removable roof
+3105	Lorry, articulated, flat bed, 25 tonne
+3106	Lorry, articulated, flat bed, 24 tonne, with 10 metre crane
+3107	Lorry, articulated, flat bed, 24 tonne, with 15 metre crane
+3108	Lorry, articulated, flat bed, 24 tonne, with 18 metre crane
+3109	Lorry, articulated, flat bed, 10 tonne
+3110	Truck, tautliner, 25 tonne, with 90 cubic metre trailer
+3111	Truck, tautliner, 25 tonne, with 120 cubic metre trailer
+3112	Lorry, flat with trailer and 10 metre crane
+3113	Lorry, articulated with tank
+3114	Lorry, flat, 15 tonne
+3115	Lorry, flat, 15 tonne with crane
+3116	Truck, isothermic
+3117	Truck, refrigerated
+3118	Van, freezer
+3119	Van, isothermic
+3120	Van, refrigerated
+3121	Truck, bulk
+3122	Truck, tip-up
+3123	Truck, articulated, tip-up
+3124	Truck, rigid, with tank
+3125	Truck, tautliner
+3126	Truck, tautliner, with removable roof
+3127	Truck, with opening floor
+3128	Truck, freezer
+3129	Truck, with crane for moving goods, without trailer
+3130	Truck, with crane for moving goods, with trailer
+3131	Truck, with crane for lifting goods, without trailer
+3132	Truck, with crane for lifting goods, with trailer
+3133	Taxi cab
+3134	Truck, furniture
+3135	Truck, hydrant
+3136	Car
+3137	Truck, with tail-lift
+3138	Armoured vehicle
+3201	Car, elevator
+3301	Bus, with trailer
+3302	Bus, highway
+3303	Bus, sightseeing
+3304	Bus, airport/city
+ -->
+                <!-- 31=truck -->
+                <cbc:TransportMeansTypeCode listID="listID117" listAgencyID="listAgencyID117" listAgencyName="listAgencyName117" listName="listName117" listVersionID="listVersionID117" name="name117" languageID="en-US" listURI="http://www.oxygenxml.com/" listSchemeURI="http://www.oxygenxml.com/">31</cbc:TransportMeansTypeCode>
+            </cac:TransportMeans>
+            <cac:MinimumTemperature>
+                <cbc:AttributeID schemeID="schemeID71" schemeName="schemeName71" schemeAgencyID="schemeAgencyID71" schemeAgencyName="schemeAgencyName71" schemeVersionID="schemeVersionID71" schemeDataURI="http://www.oxygenxml.com/" schemeURI="http://www.oxygenxml.com/">AttributeID11</cbc:AttributeID>
+                <cbc:Measure unitCode="unitCode139" unitCodeListVersionID="unitCodeListVersionID139"
+                    >1</cbc:Measure>
+                <cbc:Description languageID="en-US" languageLocaleID="languageLocaleID249">Min temp in Celsius</cbc:Description>
+            </cac:MinimumTemperature>
+            <cac:MaximumTemperature>
+                <cbc:AttributeID schemeID="schemeID72" schemeName="schemeName72" schemeAgencyID="schemeAgencyID72" schemeAgencyName="schemeAgencyName72" schemeVersionID="schemeVersionID72" schemeDataURI="http://www.oxygenxml.com/" schemeURI="http://www.oxygenxml.com/">AttributeID12</cbc:AttributeID>
+                <cbc:Measure unitCode="unitCode140" unitCodeListVersionID="unitCodeListVersionID140"
+                    >20</cbc:Measure>
+                <cbc:Description languageID="en-US" languageLocaleID="languageLocaleID250">Max temp in Celsius</cbc:Description>
+            </cac:MaximumTemperature>
+            <!-- Reference to all shipments for this TransportHandlingUnit, that is, for this container. -->
+            <cac:ReferencedShipment>
+                <cbc:ID schemeID="schemeID85" schemeName="schemeName85" schemeAgencyID="schemeAgencyID85" schemeAgencyName="schemeAgencyName85" schemeVersionID="schemeVersionID85" schemeDataURI="http://www.oxygenxml.com/" schemeURI="http://www.oxygenxml.com/">ID52</cbc:ID>
+            </cac:ReferencedShipment>
+       </cac:TransportHandlingUnit>
+        <!--ConsolidatedShipment is the reference to the product order between Consignor and Consigne. Sales PO number or Purchasing PO number -->
+        <cac:ConsolidatedShipment>
+            <cbc:ID schemeID="schemeID99" schemeName="schemeName99" schemeAgencyID="schemeAgencyID99" schemeAgencyName="schemeAgencyName99" schemeVersionID="schemeVersionID99" schemeDataURI="http://www.oxygenxml.com/" schemeURI="http://www.oxygenxml.com/">12345</cbc:ID>
+        </cac:ConsolidatedShipment>
+        <!-- No PlannedPickupTransportEvent: Event rules are set up based on other attribues, for instance locations, time, amount, size,..-->
+        <!-- receiver of goods !-->
+        <cac:ConsigneeParty>
+            <cac:PartyIdentification>
+                <cbc:ID schemeID="schemeID8" schemeName="schemeName8" schemeAgencyID="schemeAgencyID8" schemeAgencyName="schemeAgencyName8" schemeVersionID="schemeVersionID8" schemeDataURI="http://www.oxygenxml.com/" schemeURI="http://www.oxygenxml.com/">102</cbc:ID>
+            </cac:PartyIdentification>
+            <cac:PartyName>
+                <cbc:Name languageID="en-US" languageLocaleID="languageLocaleID25">Skutvika container terminal</cbc:Name>
+            </cac:PartyName>
+            <cac:PostalAddress>
+                <cbc:CityName languageID="en-US" languageLocaleID="languageLocaleID29">Aalesund</cbc:CityName>
+                <cbc:PostalZone languageID="en-US" languageLocaleID="languageLocaleID30">6005</cbc:PostalZone>
+                <cac:Country>
+                    <cbc:IdentificationCode listID="listID8" listAgencyID="listAgencyID8" listAgencyName="listAgencyName8" listName="listName8" listVersionID="listVersionID8" name="name8" languageID="en-US" listURI="http://www.oxygenxml.com/" listSchemeURI="http://www.oxygenxml.com/">NO</cbc:IdentificationCode>
+                    <cbc:Name languageID="en-US" languageLocaleID="languageLocaleID32">Norway</cbc:Name>
+                </cac:Country>
+            </cac:PostalAddress>
+            <cac:Contact>
+                <cbc:ID schemeID="schemeID9" schemeName="schemeName9" schemeAgencyID="schemeAgencyID9" schemeAgencyName="schemeAgencyName9" schemeVersionID="schemeVersionID9" schemeDataURI="http://www.oxygenxml.com/" schemeURI="http://www.oxygenxml.com/">ID5</cbc:ID>
+                <cbc:Name languageID="en-US" languageLocaleID="languageLocaleID33">Arne Røst</cbc:Name>
+                <cbc:Telephone languageID="en-US" languageLocaleID="languageLocaleID34">+47 70 10 15 51</cbc:Telephone>
+                <cbc:Telefax languageID="en-US" languageLocaleID="languageLocaleID35">+47 70 10 15 60</cbc:Telefax>
+            </cac:Contact>
+        </cac:ConsigneeParty>
+        <!-- sender/owner of goods !-->
+        <cac:ConsignorParty>
+            <cac:PartyIdentification>
+                <cbc:ID schemeID="schemeID8" schemeName="schemeName8" schemeAgencyID="schemeAgencyID8" schemeAgencyName="schemeAgencyName8" schemeVersionID="schemeVersionID8" schemeDataURI="http://www.oxygenxml.com/" schemeURI="http://www.oxygenxml.com/">101</cbc:ID>
+            </cac:PartyIdentification>
+            <cac:PartyName>
+                <cbc:Name languageID="en-US" languageLocaleID="languageLocaleID25">WEST NORWAY FISH EXPORT</cbc:Name>
+            </cac:PartyName>
+            <cac:PostalAddress>
+                <cbc:Postbox languageID="en-US" languageLocaleID="languageLocaleID26">327</cbc:Postbox>
+                <cbc:StreetName languageID="en-US" languageLocaleID="languageLocaleID27">Løvenvoldgate</cbc:StreetName>
+                <cbc:BuildingNumber languageID="en-US" languageLocaleID="languageLocaleID28">11</cbc:BuildingNumber>
+                <cbc:CityName languageID="en-US" languageLocaleID="languageLocaleID29">Aalesund</cbc:CityName>
+                <cbc:PostalZone languageID="en-US" languageLocaleID="languageLocaleID30">6002</cbc:PostalZone>
+                <cac:Country>
+                    <cbc:IdentificationCode listID="listID8" listAgencyID="listAgencyID8" listAgencyName="listAgencyName8" listName="listName8" listVersionID="listVersionID8" name="name8" languageID="en-US" listURI="http://www.oxygenxml.com/" listSchemeURI="http://www.oxygenxml.com/">NO</cbc:IdentificationCode>
+                    <cbc:Name languageID="en-US" languageLocaleID="languageLocaleID32">Norway</cbc:Name>
+                </cac:Country>
+            </cac:PostalAddress>
+            <cac:Contact>
+                <cbc:ID schemeID="schemeID9" schemeName="schemeName9" schemeAgencyID="schemeAgencyID9" schemeAgencyName="schemeAgencyName9" schemeVersionID="schemeVersionID9" schemeDataURI="http://www.oxygenxml.com/" schemeURI="http://www.oxygenxml.com/">ID5</cbc:ID>
+                <cbc:Name languageID="en-US" languageLocaleID="languageLocaleID33">Arne Røst</cbc:Name>
+                <cbc:Telephone languageID="en-US" languageLocaleID="languageLocaleID34">+47 70 10 15 51</cbc:Telephone>
+                <cbc:Telefax languageID="en-US" languageLocaleID="languageLocaleID35">+47 70 10 15 60</cbc:Telefax>
+            </cac:Contact>
+        </cac:ConsignorParty>
+    </cac:Consignment>
+</ns2:TransportExecutionPlanCoreProfile>
