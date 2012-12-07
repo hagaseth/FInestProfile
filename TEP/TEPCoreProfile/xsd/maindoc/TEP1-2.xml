@@ -108,6 +108,12 @@
     <cac:TransportServiceDescriptionDocumentReference>
         <cbc:ID>TSD1-2</cbc:ID>
     </cac:TransportServiceDescriptionDocumentReference>
+    <cac:AdditionalDocumentReference>
+        <!-- Reference to the TCP that this TEP is contained in -->
+        <cbc:ID>TCP1</cbc:ID>
+        <!--441= transport routing information. -->
+        <cbc:DocumentTypeCode>441</cbc:DocumentTypeCode>
+    </cac:AdditionalDocumentReference>
     <!-- Possibly reference to contract -->
     <cac:TransportContract>
         <cbc:ID>ID2012</cbc:ID>

@@ -126,6 +126,12 @@
         <!-- 121	Transport loading instruction !-->
         <cbc:DocumentTypeCode>121</cbc:DocumentTypeCode>
     </cac:AdditionalDocumentReference>
+    <cac:AdditionalDocumentReference>
+        <!-- Reference to the TCP that this TEP is contained in -->
+        <cbc:ID>TCP2</cbc:ID>
+        <!--441= transport routing information. -->
+        <cbc:DocumentTypeCode>441</cbc:DocumentTypeCode>
+    </cac:AdditionalDocumentReference>
     <!-- Possibly reference to contract -->
     <cac:TransportContract>
         <cbc:ID>ID2022</cbc:ID>
