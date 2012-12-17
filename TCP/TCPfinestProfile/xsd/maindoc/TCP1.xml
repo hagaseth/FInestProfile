@@ -15,13 +15,13 @@
  xmlns:ns2="http://uri.etsi.org/01903/v1.4.1#"
  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
  xsi:schemaLocation="urn:oasis:names:specification:ubl:schema:xsd:GoodsItemItineraryCoreProfile-2 UBL-TCPfinestProfile.xsd">
-    <cbc:UBLVersionID>UBLVersionID0</cbc:UBLVersionID>
-    <cbc:CustomizationID>CustomizationID0</cbc:CustomizationID>
-    <cbc:ProfileID>ProfileID0</cbc:ProfileID>
-    <cbc:ID>ID0</cbc:ID>
-    <cbc:IssueDate>2006-05-04</cbc:IssueDate>
-    <cbc:IssueTime>01:01:01.001</cbc:IssueTime>
-    <cbc:VersionID>VersionID0</cbc:VersionID>
+    <cbc:UBLVersionID>2.1</cbc:UBLVersionID>
+    <cbc:CustomizationID>1.0</cbc:CustomizationID>
+    <cbc:ProfileID>FInest</cbc:ProfileID>
+    <cbc:ID>TCP1</cbc:ID>
+    <cbc:IssueDate>2012-04-13</cbc:IssueDate>
+    <cbc:IssueTime>10:00:00</cbc:IssueTime>
+    <cbc:VersionID>1</cbc:VersionID>
     <cbc:TransportExecutionPlanReferenceID>NA</cbc:TransportExecutionPlanReferenceID>
      <cac:TransportationSegment>
         <cbc:SequenceNumeric>1</cbc:SequenceNumeric>
