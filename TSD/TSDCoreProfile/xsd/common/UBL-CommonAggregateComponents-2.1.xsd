@@ -4206,6 +4206,57 @@
          </xsd:documentation>
       </xsd:annotation>
       <xsd:sequence>
+         <xsd:element ref="cbc:WebsiteURI" minOccurs="0" maxOccurs="1">
+            <xsd:annotation>
+               <xsd:documentation>
+                  <ccts:Component>
+                     <ccts:ComponentType>BBIE</ccts:ComponentType>
+                     <ccts:DictionaryEntryName>Party. Website_ URI. Identifier</ccts:DictionaryEntryName>
+                     <ccts:Definition>The Uniform Resource Identifier (URI) of the party.</ccts:Definition>
+                     <ccts:Cardinality>0..1</ccts:Cardinality>
+                     <ccts:ObjectClass>Party</ccts:ObjectClass>
+                     <ccts:PropertyTermQualifier>Website</ccts:PropertyTermQualifier>
+                     <ccts:PropertyTerm>URI</ccts:PropertyTerm>
+                     <ccts:RepresentationTerm>Identifier</ccts:RepresentationTerm>
+                     <ccts:DataType>Identifier. Type</ccts:DataType>
+                  </ccts:Component>
+               </xsd:documentation>
+            </xsd:annotation>
+         </xsd:element>
+         <xsd:element ref="cbc:EndpointID" minOccurs="0" maxOccurs="1">
+            <xsd:annotation>
+               <xsd:documentation>
+                  <ccts:Component>
+                     <ccts:ComponentType>BBIE</ccts:ComponentType>
+                     <ccts:DictionaryEntryName>Party. Endpoint Identifier. Identifier</ccts:DictionaryEntryName>
+                     <ccts:Definition>Identifies the end point of the routing service, e.g., EAN Location Number, GLN.</ccts:Definition>
+                     <ccts:Cardinality>0..1</ccts:Cardinality>
+                     <ccts:ObjectClass>Party</ccts:ObjectClass>
+                     <ccts:PropertyTerm>Endpoint Identifier</ccts:PropertyTerm>
+                     <ccts:RepresentationTerm>Identifier</ccts:RepresentationTerm>
+                     <ccts:DataType>Identifier. Type</ccts:DataType>
+                     <ccts:Examples>5790002221134</ccts:Examples>
+                  </ccts:Component>
+               </xsd:documentation>
+            </xsd:annotation>
+         </xsd:element>
+         <xsd:element ref="cbc:IndustryClassificationCode" minOccurs="0" maxOccurs="1">
+            <xsd:annotation>
+               <xsd:documentation>
+                  <ccts:Component>
+                     <ccts:ComponentType>BBIE</ccts:ComponentType>
+                     <ccts:DictionaryEntryName>Party. Industry Classification Code. Code</ccts:DictionaryEntryName>
+                     <ccts:Definition>Indicates the role of a Party</ccts:Definition>
+                     <ccts:Cardinality>0..1</ccts:Cardinality>
+                     <ccts:ObjectClass>Party</ccts:ObjectClass>
+                     <ccts:PropertyTerm>Industry Classification Code</ccts:PropertyTerm>
+                     <ccts:RepresentationTerm>Code</ccts:RepresentationTerm>
+                     <ccts:DataType>Code. Type</ccts:DataType>
+                     <ccts:Examples>Public authority , NAIC codes</ccts:Examples>
+                  </ccts:Component>
+               </xsd:documentation>
+            </xsd:annotation>
+         </xsd:element>
          <xsd:element ref="cac:PartyIdentification">
             <xsd:annotation>
                <xsd:documentation>
@@ -5340,6 +5391,83 @@
                      <ccts:Cardinality>0..n</ccts:Cardinality>
                      <ccts:ObjectClass>Shipment Stage</ccts:ObjectClass>
                      <ccts:PropertyTermQualifier>Requested Waypoint</ccts:PropertyTermQualifier>
+                     <ccts:PropertyTerm>Transport Event</ccts:PropertyTerm>
+                     <ccts:AssociatedObjectClass>Transport Event</ccts:AssociatedObjectClass>
+                     <ccts:RepresentationTerm>Transport Event</ccts:RepresentationTerm>
+                  </ccts:Component>
+               </xsd:documentation>
+            </xsd:annotation>
+         </xsd:element>
+         <xsd:element ref="cac:RequestedPickupTransportEvent" minOccurs="0" maxOccurs="1">
+            <xsd:annotation>
+               <xsd:documentation>
+                  <ccts:Component>
+                     <ccts:ComponentType>ASBIE</ccts:ComponentType>
+                     <ccts:DictionaryEntryName>Consignment. Requested Pickup_ Transport Event.
+                        Transport Event</ccts:DictionaryEntryName>
+                     <ccts:Definition>Describes the pickup event as requested by the party
+                        requesting for a transport service (Transport User). </ccts:Definition>
+                     <ccts:Cardinality>0..1</ccts:Cardinality>
+                     <ccts:ObjectClass>Consignment</ccts:ObjectClass>
+                     <ccts:PropertyTermQualifier>Requested Pickup</ccts:PropertyTermQualifier>
+                     <ccts:PropertyTerm>Transport Event</ccts:PropertyTerm>
+                     <ccts:AssociatedObjectClass>Transport Event</ccts:AssociatedObjectClass>
+                     <ccts:RepresentationTerm>Transport Event</ccts:RepresentationTerm>
+                  </ccts:Component>
+               </xsd:documentation>
+            </xsd:annotation>
+         </xsd:element>
+         <xsd:element ref="cac:RequestedDeliveryTransportEvent" minOccurs="0" maxOccurs="1">
+            <xsd:annotation>
+               <xsd:documentation>
+                  <ccts:Component>
+                     <ccts:ComponentType>ASBIE</ccts:ComponentType>
+                     <ccts:DictionaryEntryName>Consignment. Requested Delivery_ Transport Event.
+                        Transport Event</ccts:DictionaryEntryName>
+                     <ccts:Definition>Describes the delivery event as requested by the party
+                        requesting for a transport service (Transport User). </ccts:Definition>
+                     <ccts:Cardinality>0..1</ccts:Cardinality>
+                     <ccts:ObjectClass>Consignment</ccts:ObjectClass>
+                     <ccts:PropertyTermQualifier>Requested Delivery</ccts:PropertyTermQualifier>
+                     <ccts:PropertyTerm>Transport Event</ccts:PropertyTerm>
+                     <ccts:AssociatedObjectClass>Transport Event</ccts:AssociatedObjectClass>
+                     <ccts:RepresentationTerm>Transport Event</ccts:RepresentationTerm>
+                  </ccts:Component>
+               </xsd:documentation>
+            </xsd:annotation>
+         </xsd:element>
+         <xsd:element ref="cac:PlannedPickupTransportEvent" minOccurs="0" maxOccurs="1">
+            <xsd:annotation>
+               <xsd:documentation>
+                  <ccts:Component>
+                     <ccts:ComponentType>ASBIE</ccts:ComponentType>
+                     <ccts:DictionaryEntryName>Consignment. Planned Pickup_ Transport Event.
+                        Transport Event</ccts:DictionaryEntryName>
+                     <ccts:Definition>Describes the pickup event as planned by the party responsible
+                        for providing the transport service (Transport Service Provider). </ccts:Definition>
+                     <ccts:Cardinality>0..1</ccts:Cardinality>
+                     <ccts:ObjectClass>Consignment</ccts:ObjectClass>
+                     <ccts:PropertyTermQualifier>Planned Pickup</ccts:PropertyTermQualifier>
+                     <ccts:PropertyTerm>Transport Event</ccts:PropertyTerm>
+                     <ccts:AssociatedObjectClass>Transport Event</ccts:AssociatedObjectClass>
+                     <ccts:RepresentationTerm>Transport Event</ccts:RepresentationTerm>
+                  </ccts:Component>
+               </xsd:documentation>
+            </xsd:annotation>
+         </xsd:element>
+         <xsd:element ref="cac:PlannedDeliveryTransportEvent" minOccurs="0" maxOccurs="1">
+            <xsd:annotation>
+               <xsd:documentation>
+                  <ccts:Component>
+                     <ccts:ComponentType>ASBIE</ccts:ComponentType>
+                     <ccts:DictionaryEntryName>Consignment. Planned Delivery_ Transport Event.
+                        Transport Event</ccts:DictionaryEntryName>
+                     <ccts:Definition>Describes the delivery event as planned from by the party
+                        responsible for providing the transport service (Transport Service
+                        Provider). </ccts:Definition>
+                     <ccts:Cardinality>0..1</ccts:Cardinality>
+                     <ccts:ObjectClass>Consignment</ccts:ObjectClass>
+                     <ccts:PropertyTermQualifier>Planned Delivery</ccts:PropertyTermQualifier>
                      <ccts:PropertyTerm>Transport Event</ccts:PropertyTerm>
                      <ccts:AssociatedObjectClass>Transport Event</ccts:AssociatedObjectClass>
                      <ccts:RepresentationTerm>Transport Event</ccts:RepresentationTerm>

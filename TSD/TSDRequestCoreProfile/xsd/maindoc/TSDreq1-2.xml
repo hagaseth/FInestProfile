@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ns2:TransportServiceDescriptionRequestCoreProfile xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+ xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+ xmlns:ccts="urn:un:unece:uncefact:documentation:2"
+ xmlns:udt="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2"
+ xmlns:sac="urn:oasis:names:specification:ubl:schema:xsd:SignatureAggregateComponents-2"
+ xmlns:qdt="urn:oasis:names:specification:ubl:schema:xsd:QualifiedDataTypes-2"
+ xmlns:ccts-cct="urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2"
+ xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2"
+ xmlns:ds="http://www.w3.org/2000/09/xmldsig#"
+ xmlns:sbc="urn:oasis:names:specification:ubl:schema:xsd:SignatureBasicComponents-2"
+ xmlns:xades="http://uri.etsi.org/01903/v1.3.2#"
+ xmlns:ns0="urn:oasis:names:specification:ubl:schema:xsd:CommonSignatureComponents-2"
+ xmlns:ns1="http://uri.etsi.org/01903/v1.4.1#"
+ xmlns:ns2="urn:oasis:names:specification:ubl:schema:xsd:TransportServiceDescriptionRequestCoreProfile-2"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="urn:oasis:names:specification:ubl:schema:xsd:TransportServiceDescriptionRequestCoreProfile-2 file:/T:/Prosjekt/P2801/280158%20FInest/04%20Analyser%20og%20draft/WP7/D7.4%20Prototype%20implementation/datamodel-FInest-19-10-2012/prototype/FinestProfile-12112012/TSD/TSDRequestCoreProfile/xsd/maindoc/UBL-TSDRequest-FInest.xsd">
+    <cbc:UBLVersionID>2.1</cbc:UBLVersionID>
+    <cbc:ProfileID>FInest</cbc:ProfileID>
+    <cbc:ID>TSDreq1-2</cbc:ID>
+    <cbc:IssueDate>2012-03-12</cbc:IssueDate>
+    <cbc:IssueTime>01:01:01.001</cbc:IssueTime>
+    <cac:SenderParty>
+<!-- This is the TransportUserParty. However, the sender of the TSD is in fact the TPM -->
+        <cbc:EndpointID>TPM</cbc:EndpointID>
+        <cac:PartyIdentification>
+            <cbc:ID>101</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+            <cbc:Name>WEST NORWAY FISH EXPORT</cbc:Name>
+        </cac:PartyName>
+        <cac:PostalAddress>
+            <cbc:Postbox>327</cbc:Postbox>
+            <cbc:StreetName>Løvenvoldgate</cbc:StreetName>
+            <cbc:BuildingNumber>11</cbc:BuildingNumber>
+            <cbc:CityName>Aalesund</cbc:CityName>
+            <cbc:PostalZone>6002</cbc:PostalZone>
+            <cac:Country>
+                <cbc:IdentificationCode>NO</cbc:IdentificationCode>
+                <cbc:Name>Norway</cbc:Name>
+            </cac:Country>
+        </cac:PostalAddress>
+        <cac:Contact>
+            <cbc:ID>ID5</cbc:ID>
+            <cbc:Name>Arne Røst</cbc:Name>
+            <cbc:Telephone>+47 70 10 15 51</cbc:Telephone>
+            <cbc:Telefax>+47 70 10 15 60</cbc:Telefax>
+        </cac:Contact>
+    </cac:SenderParty>
+    <cac:ReceiverParty>
+        <cbc:EndpointID>ECM</cbc:EndpointID>
+        <cac:PartyIdentification>
+            <cbc:ID>3743</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+            <cbc:Name>ECM</cbc:Name>
+        </cac:PartyName>
+    </cac:ReceiverParty>
+    <cac:TransportationService>
+        <!-- 13 Agent service: -->
+        <cbc:TransportServiceCode>13</cbc:TransportServiceCode>
+        <cbc:TransportationServiceDescription>Cargo agent service handling container transport from Ålesund to Brazil</cbc:TransportationServiceDescription>
+        <cbc:Name>Cargo agent service</cbc:Name>
+        <cbc:SequenceNumeric>1</cbc:SequenceNumeric>
+        <cac:TransportEquipment>
+            <cbc:ID>ID11</cbc:ID>
+            <cbc:Description>Container</cbc:Description>
+            <!--CN is Container-->
+            <!--  TransportEquipmentTypeCode	UN/CEFACT 8053 Equipment type code qualifier: -->
+            <cbc:TransportEquipmentTypeCode>CN</cbc:TransportEquipmentTypeCode>
+            <cbc:GrossWeightMeasure unitCode="kg">20000</cbc:GrossWeightMeasure>
+            <!-- m3 -->
+            <cbc:GrossVolumeMeasure unitCode="cubic metre">30</cbc:GrossVolumeMeasure>
+        </cac:TransportEquipment>
+        <cac:TransportEquipment>
+            <cbc:ID>ID112</cbc:ID>
+            <cbc:Description>Refrigated Container</cbc:Description>
+            <cbc:TransportEquipmentTypeCode>CN</cbc:TransportEquipmentTypeCode>
+            <cbc:RefrigeratedIndicator>true</cbc:RefrigeratedIndicator>
+            <cbc:GrossWeightMeasure unitCode="kg">30000</cbc:GrossWeightMeasure>
+            <!-- m3 -->
+            <cbc:GrossVolumeMeasure unitCode="cubic metre">65</cbc:GrossVolumeMeasure>
+            <cbc:PowerIndicator>true</cbc:PowerIndicator>
+        </cac:TransportEquipment>
+        <cac:CommodityClassification>
+            <!-- CargoTypeCode	UN/CEFACT 7085 Nature of cargo, coded
+                                -->
+            <!--12 is General Cargo-->
+            <cbc:CargoTypeCode>12</cbc:CargoTypeCode>
+        </cac:CommodityClassification>
+        <cac:CommodityClassification>
+            <!-- CargoTypeCode	UN/CEFACT 7085 Nature of cargo, coded
+                                -->
+            <!--9	Containerized-->
+            <cbc:CargoTypeCode>9</cbc:CargoTypeCode>
+        </cac:CommodityClassification>
+        <!-- Set to be the estimated duration of the transportation that is 
+            organized in this cargo agent service -->
+        <cac:EstimatedDurationPeriod>
+            <cbc:StartDate>2012-05-07</cbc:StartDate>
+            <cbc:StartTime>10:00:00.00</cbc:StartTime>
+            <cbc:EndDate>2012-05-11</cbc:EndDate>
+            <cbc:EndTime>16:00:00.00</cbc:EndTime>
+        </cac:EstimatedDurationPeriod>
+    </cac:TransportationService>
+</ns2:TransportServiceDescriptionRequestCoreProfile>

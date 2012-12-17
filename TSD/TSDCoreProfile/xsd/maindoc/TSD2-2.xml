@@ -23,7 +23,9 @@
     <cbc:IssueDate>2012-03-12</cbc:IssueDate>
     <cbc:IssueTime>01:01:01.001</cbc:IssueTime>
     <cbc:ServiceName>Container Loading at Skutvika</cbc:ServiceName>
+    <cbc:ResponseCode>1</cbc:ResponseCode>
     <cac:SenderParty>
+        <cbc:EndpointID>ECM</cbc:EndpointID>
         <cac:PartyIdentification>
             <cbc:ID>3743</cbc:ID>
         </cac:PartyIdentification>
@@ -32,6 +34,7 @@
         </cac:PartyName>
     </cac:SenderParty>
     <cac:ReceiverParty>
+        <cbc:EndpointID>TPM</cbc:EndpointID>
         <cac:PartyIdentification>
             <cbc:ID>200</cbc:ID>
         </cac:PartyIdentification>

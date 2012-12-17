@@ -25,9 +25,11 @@
     <!-- This TSD is sent by the LSP as a response to a TSDrequest received from the LSC -->
     <!-- The TSDrequest contains the exact description of the transport demand -->
     <cbc:ServiceName>Truck transport</cbc:ServiceName>
-    <!-- ResponseCode, ex. No relevant TSD is received for a TSDrequest -->
-    <cbc:ResponseCode>ResponseCode0</cbc:ResponseCode>
+    <!-- ResponseCode=0= no relevant TSD is received for a TSDrequest -->
+    <!-- ResponseCode=1= this TSD is ready for use in planning -->
+    <cbc:ResponseCode>1</cbc:ResponseCode>
     <cac:SenderParty>
+        <cbc:EndpointID>ECM</cbc:EndpointID>
         <cac:PartyIdentification>
             <cbc:ID>3743</cbc:ID>
         </cac:PartyIdentification>
@@ -36,6 +38,7 @@
         </cac:PartyName>
     </cac:SenderParty>
     <cac:ReceiverParty>
+        <cbc:EndpointID>TPM</cbc:EndpointID>
         <cac:PartyIdentification>
             <cbc:ID>200</cbc:ID>
         </cac:PartyIdentification>

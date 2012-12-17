@@ -34,6 +34,7 @@
     Sender means sender of the TEP, as this can be different from the LSC or LSP
     -->
     <cac:SenderParty>
+        <cbc:EndpointID>TPM</cbc:EndpointID>
         <cac:PartyIdentification>
             <cbc:ID>200</cbc:ID>
         </cac:PartyIdentification>
@@ -45,6 +46,7 @@
         Receiver means receiver of the TEP, as this can be different from the LSC or LSP
     -->
     <cac:ReceiverParty>
+        <cbc:EndpointID>BCM</cbc:EndpointID>
         <cac:PartyIdentification>
             <cbc:ID>201</cbc:ID>
         </cac:PartyIdentification>

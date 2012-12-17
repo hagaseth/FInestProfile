@@ -3850,6 +3850,57 @@
          </xsd:documentation>
       </xsd:annotation>
       <xsd:sequence>
+         <xsd:element ref="cbc:WebsiteURI" minOccurs="0" maxOccurs="1">
+            <xsd:annotation>
+               <xsd:documentation>
+                  <ccts:Component>
+                     <ccts:ComponentType>BBIE</ccts:ComponentType>
+                     <ccts:DictionaryEntryName>Party. Website_ URI. Identifier</ccts:DictionaryEntryName>
+                     <ccts:Definition>The Uniform Resource Identifier (URI) of the party.</ccts:Definition>
+                     <ccts:Cardinality>0..1</ccts:Cardinality>
+                     <ccts:ObjectClass>Party</ccts:ObjectClass>
+                     <ccts:PropertyTermQualifier>Website</ccts:PropertyTermQualifier>
+                     <ccts:PropertyTerm>URI</ccts:PropertyTerm>
+                     <ccts:RepresentationTerm>Identifier</ccts:RepresentationTerm>
+                     <ccts:DataType>Identifier. Type</ccts:DataType>
+                  </ccts:Component>
+               </xsd:documentation>
+            </xsd:annotation>
+         </xsd:element>
+         <xsd:element ref="cbc:EndpointID" minOccurs="0" maxOccurs="1">
+            <xsd:annotation>
+               <xsd:documentation>
+                  <ccts:Component>
+                     <ccts:ComponentType>BBIE</ccts:ComponentType>
+                     <ccts:DictionaryEntryName>Party. Endpoint Identifier. Identifier</ccts:DictionaryEntryName>
+                     <ccts:Definition>Identifies the end point of the routing service, e.g., EAN Location Number, GLN.</ccts:Definition>
+                     <ccts:Cardinality>0..1</ccts:Cardinality>
+                     <ccts:ObjectClass>Party</ccts:ObjectClass>
+                     <ccts:PropertyTerm>Endpoint Identifier</ccts:PropertyTerm>
+                     <ccts:RepresentationTerm>Identifier</ccts:RepresentationTerm>
+                     <ccts:DataType>Identifier. Type</ccts:DataType>
+                     <ccts:Examples>5790002221134</ccts:Examples>
+                  </ccts:Component>
+               </xsd:documentation>
+            </xsd:annotation>
+         </xsd:element>
+         <xsd:element ref="cbc:IndustryClassificationCode" minOccurs="0" maxOccurs="1">
+            <xsd:annotation>
+               <xsd:documentation>
+                  <ccts:Component>
+                     <ccts:ComponentType>BBIE</ccts:ComponentType>
+                     <ccts:DictionaryEntryName>Party. Industry Classification Code. Code</ccts:DictionaryEntryName>
+                     <ccts:Definition>Indicates the role of a Party</ccts:Definition>
+                     <ccts:Cardinality>0..1</ccts:Cardinality>
+                     <ccts:ObjectClass>Party</ccts:ObjectClass>
+                     <ccts:PropertyTerm>Industry Classification Code</ccts:PropertyTerm>
+                     <ccts:RepresentationTerm>Code</ccts:RepresentationTerm>
+                     <ccts:DataType>Code. Type</ccts:DataType>
+                     <ccts:Examples>Public authority , NAIC codes</ccts:Examples>
+                  </ccts:Component>
+               </xsd:documentation>
+            </xsd:annotation>
+         </xsd:element>
          <xsd:element ref="cac:PartyIdentification" maxOccurs="unbounded">
             <xsd:annotation>
                <xsd:documentation>

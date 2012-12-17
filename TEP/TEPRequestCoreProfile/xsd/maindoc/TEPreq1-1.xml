@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ns2:TransportExecutionPlanCoreProfile xmlns:ds="http://www.w3.org/2000/09/xmldsig#"
-    xmlns:udt="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2"
-    xmlns:ccts="urn:un:unece:uncefact:documentation:2"
-    xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
-    xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
-    xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2"
-    xmlns:ccts-cct="urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2"
-    xmlns:sac="urn:oasis:names:specification:ubl:schema:xsd:SignatureAggregateComponents-2"
-    xmlns:qdt="urn:oasis:names:specification:ubl:schema:xsd:QualifiedDataTypes-2"
-    xmlns:xades="http://uri.etsi.org/01903/v1.3.2#"
-    xmlns:sbc="urn:oasis:names:specification:ubl:schema:xsd:SignatureBasicComponents-2"
-    xmlns:ns0="urn:oasis:names:specification:ubl:schema:xsd:CommonSignatureComponents-2"
-    xmlns:ns1="http://uri.etsi.org/01903/v1.4.1#"
-    xmlns:ns2="urn:oasis:names:specification:ubl:schema:xsd:TransportExecutionPlanCoreProfile-2"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="urn:oasis:names:specification:ubl:schema:xsd:TransportExecutionPlanCoreProfile-2 file:/T:/Prosjekt/P2801/280158%20FInest/04%20Analyser%20og%20draft/WP7/D7.4%20Prototype%20implementation/datamodel-FInest-19-10-2012/prototype/FinestProfile-12112012/TEP/TEPCoreProfile/xsd/maindoc/UBL-TEPfinestProfile.xsd">
+<ns2:TransportExecutionPlanRequestCoreProfile xmlns:ds="http://www.w3.org/2000/09/xmldsig#"
+ xmlns:ccts="urn:un:unece:uncefact:documentation:2"
+ xmlns:cct="urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2"
+ xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+ xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+ xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2"
+ xmlns:udt="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2"
+ xmlns:sac="urn:oasis:names:specification:ubl:schema:xsd:SignatureAggregateComponents-2"
+ xmlns:sbc="urn:oasis:names:specification:ubl:schema:xsd:SignatureBasicComponents-2"
+ xmlns:xades="http://uri.etsi.org/01903/v1.3.2#"
+ xmlns:qdt="urn:oasis:names:specification:ubl:schema:xsd:QualifiedDataTypes-2"
+ xmlns:ns0="urn:oasis:names:specification:ubl:schema:xsd:CommonSignatureComponents-2"
+ xmlns:ns1="http://uri.etsi.org/01903/v1.4.1#"
+ xmlns:ns2="urn:oasis:names:specification:ubl:schema:xsd:TransportExecutionPlanRequestCoreProfile-2"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="urn:oasis:names:specification:ubl:schema:xsd:TransportExecutionPlanRequestCoreProfile-2 file:/T:/Prosjekt/P2801/280158%20FInest/04%20Analyser%20og%20draft/WP7/D7.4%20Prototype%20implementation/datamodel-FInest-19-10-2012/prototype/FinestProfile-12112012/TEP/TEPRequestCoreProfile/xsd/maindoc/UBL-TEPRequestFinestProfile.xsd">
     <cbc:UBLVersionID>2.1</cbc:UBLVersionID>
     <cbc:CustomizationID>1.0</cbc:CustomizationID>
     <cbc:ProfileID>FInest</cbc:ProfileID>
-    <cbc:ID>TEP-1-1</cbc:ID>
-    <cbc:VersionID>1</cbc:VersionID>
+    <cbc:ID>TEP-REQ-1-1</cbc:ID>
+    <cbc:VersionID>0</cbc:VersionID>
     <cbc:IssueDate>2012-04-13</cbc:IssueDate>
-    <cbc:IssueTime>10:00:00</cbc:IssueTime>
+    <cbc:IssueTime>10:05:10+01:00</cbc:IssueTime>
     <!-- DocumentStatusCode
     1	Cancelled
     2	Disputed
@@ -33,17 +33,9 @@
     8	Confirmed
     9	Rejected
     10	Completed
-    -->
+    -->    
     <cbc:DocumentStatusCode>8</cbc:DocumentStatusCode>
-    <!-- this is the sender of the TEP. This will be the LSC or the LSP, dependent on 
-    which of them sends the last confirmation.
-    2-stage TEP exchange means that Sender is the LSP
-    3-stage TEP exchange means that Sender is the LSC-->
-    <!-- This example: Sender is the TPM,
-    Sender means sender of the TEP, as this can be different from the LSC or LSP
-    -->
     <cac:SenderParty>
-        <cbc:EndpointID>TPM</cbc:EndpointID>
         <cac:PartyIdentification>
             <cbc:ID>200</cbc:ID>
         </cac:PartyIdentification>
@@ -51,16 +43,12 @@
             <cbc:Name>TPM</cbc:Name>
         </cac:PartyName>
     </cac:SenderParty>
-    <!-- This example: Receiver is the BCM
-        Receiver means receiver of the TEP, as this can be different from the LSC or LSP
-    -->
     <cac:ReceiverParty>
-        <cbc:EndpointID>ECM</cbc:EndpointID>
         <cac:PartyIdentification>
-            <cbc:ID>201</cbc:ID>
+            <cbc:ID>9201</cbc:ID>
         </cac:PartyIdentification>
         <cac:PartyName>
-            <cbc:Name>BCM</cbc:Name>
+            <cbc:Name>LSP</cbc:Name>
         </cac:PartyName>
     </cac:ReceiverParty>
     <cac:TransportUserParty>
@@ -111,10 +99,68 @@
             <cbc:ElectronicMail>leif.kaare.nogva@transferd.no</cbc:ElectronicMail>
         </cac:Contact>
     </cac:TransportServiceProviderParty>
-    <cac:TransportExecutionPlanRequestDocumentReference>
-        <!-- This is the reference to the TEP request sent from LSC to LSP. -->
-        <cbc:ID>TEP-REQ-1-1</cbc:ID>
-    </cac:TransportExecutionPlanRequestDocumentReference>
+    <cac:PayeeParty>
+        <cac:PartyIdentification>
+            <cbc:ID>ID13</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+            <cbc:Name>Name16</cbc:Name>
+        </cac:PartyName>
+        <cac:PostalAddress>
+            <cbc:Postbox>Postbox4</cbc:Postbox>
+            <cbc:StreetName>StreetName4</cbc:StreetName>
+            <cbc:BuildingNumber>BuildingNumber4</cbc:BuildingNumber>
+            <cbc:CityName>CityName4</cbc:CityName>
+            <cbc:PostalZone>PostalZone4</cbc:PostalZone>
+            <cac:AddressLine>
+                <cbc:Line>Line4</cbc:Line>
+            </cac:AddressLine>
+            <cac:Country>
+                <cbc:IdentificationCode>IdentificationCode4</cbc:IdentificationCode>
+                <cbc:Name>Name17</cbc:Name>
+            </cac:Country>
+            <cac:LocationCoordinate>
+                <cbc:CoordinateSystemCode>CoordinateSystemCode4</cbc:CoordinateSystemCode>
+                <cbc:LatitudeDegreesMeasure unitCode="unitCode16">0</cbc:LatitudeDegreesMeasure>
+                <cbc:LatitudeMinutesMeasure unitCode="unitCode17">0</cbc:LatitudeMinutesMeasure>
+                <cbc:LatitudeDirectionCode>LatitudeDirectionCode4</cbc:LatitudeDirectionCode>
+                <cbc:LongitudeDegreesMeasure unitCode="unitCode18">0</cbc:LongitudeDegreesMeasure>
+                <cbc:LongitudeMinutesMeasure unitCode="unitCode19">0</cbc:LongitudeMinutesMeasure>
+                <cbc:LongitudeDirectionCode>LongitudeDirectionCode4</cbc:LongitudeDirectionCode>
+            </cac:LocationCoordinate>
+        </cac:PostalAddress>
+        <cac:Contact>
+            <cbc:ID>ID14</cbc:ID>
+            <cbc:Name>Name18</cbc:Name>
+            <cbc:Telephone>Telephone8</cbc:Telephone>
+            <cbc:Telefax>Telefax8</cbc:Telefax>
+            <cbc:ElectronicMail>ElectronicMail8</cbc:ElectronicMail>
+            <cac:OtherCommunication>
+                <cbc:ChannelCode>ChannelCode8</cbc:ChannelCode>
+                <cbc:Channel>Channel8</cbc:Channel>
+                <cbc:Value>Value8</cbc:Value>
+            </cac:OtherCommunication>
+        </cac:Contact>
+        <cac:Person>
+            <cbc:FirstName>FirstName4</cbc:FirstName>
+            <cbc:FamilyName>FamilyName4</cbc:FamilyName>
+            <cac:Contact>
+                <cbc:ID>ID15</cbc:ID>
+                <cbc:Name>Name19</cbc:Name>
+                <cbc:Telephone>Telephone9</cbc:Telephone>
+                <cbc:Telefax>Telefax9</cbc:Telefax>
+                <cbc:ElectronicMail>ElectronicMail9</cbc:ElectronicMail>
+                <cac:OtherCommunication>
+                    <cbc:ChannelCode>ChannelCode9</cbc:ChannelCode>
+                    <cbc:Channel>Channel9</cbc:Channel>
+                    <cbc:Value>Value9</cbc:Value>
+                </cac:OtherCommunication>
+            </cac:Contact>
+        </cac:Person>
+    </cac:PayeeParty>
+    <cac:TransportExecutionPlanDocumentReference>
+        <cbc:ID>TEP-1-1</cbc:ID>
+    </cac:TransportExecutionPlanDocumentReference>
     <cac:TransportServiceDescriptionDocumentReference>
         <cbc:ID>TSD1-1</cbc:ID>
     </cac:TransportServiceDescriptionDocumentReference>
@@ -131,30 +177,12 @@
             <cbc:ID>ID21</cbc:ID>
         </cac:ContractDocumentReference>
     </cac:TransportContract>
-    <!-- Used in the negotiation process
-        <cac:TransportServiceProviderResponseDeadlinePeriod>
-        <cbc:StartDate>2006-05-04</cbc:StartDate>
-        <cbc:StartTime>01:01:01.001</cbc:StartTime>
-        <cbc:EndDate>2006-05-04</cbc:EndDate>
-        <cbc:EndTime>01:01:01.001</cbc:EndTime>
-        <cbc:DurationMeasure unitCode="unitCode20">0</cbc:DurationMeasure>
+    <cac:TransportServiceProviderResponseDeadlinePeriod>
+        <cbc:StartDate>2012-04-13</cbc:StartDate>
+        <cbc:StartTime>12:00:00</cbc:StartTime>
+        <cbc:EndDate>2012-04-30</cbc:EndDate>
+        <cbc:EndTime>12:00:00</cbc:EndTime>
     </cac:TransportServiceProviderResponseDeadlinePeriod>
-    <cac:TransportUserResponseDeadlinePeriod>
-        <cbc:StartDate>2006-05-04</cbc:StartDate>
-        <cbc:StartTime>01:01:01.001</cbc:StartTime>
-        <cbc:EndDate>2006-05-04</cbc:EndDate>
-        <cbc:EndTime>01:01:01.001</cbc:EndTime>
-        <cbc:DurationMeasure unitCode="unitCode21">0</cbc:DurationMeasure>
-    </cac:TransportUserResponseDeadlinePeriod>
-
-    -->
-    <!--    Used in the negotiation process    <cac:ValidityPeriod>
-        <cbc:StartDate>2012-04-20</cbc:StartDate>
-        <cbc:StartTime>01:01:01.001</cbc:StartTime>
-        <cbc:EndDate>2012-06-04</cbc:EndDate>
-        <cbc:EndTime>01:01:01.001</cbc:EndTime>
-    </cac:ValidityPeriod> -->
-    <!-- More details can be copied from the TSD.TransportationService. Reference to the TSD is found in TransportServiceDescriptionDocumentReference -->
     <cac:MainTransportationService>
         <!-- TransportServiceCode: 3 Transport       -->
         <cbc:TransportServiceCode>3</cbc:TransportServiceCode>
@@ -201,31 +229,6 @@
             </cac:Country>
         </cac:Address>
     </cac:ToLocation>
-    <cac:TransportExecutionTerms>
-        <cac:DeliveryTerms>
-            <cac:DeliveryLocation>
-                <cbc:ID>101</cbc:ID>
-                <cac:Address>
-                    <cbc:CityName>Aalesund</cbc:CityName>
-                    <cbc:PostalZone>6005</cbc:PostalZone>
-                    <cac:AddressLine>
-                        <cbc:Line>Skutvika container terminal</cbc:Line>
-                    </cac:AddressLine>
-                    <cac:Country>
-                        <cbc:IdentificationCode>NO</cbc:IdentificationCode>
-                        <cbc:Name>Norway</cbc:Name>
-                    </cac:Country>
-                </cac:Address>
-            </cac:DeliveryLocation>
-        </cac:DeliveryTerms>
-        <cac:ServiceChargePaymentTerms>
-            <!-- Note is used to hold the Agreed incoterms, if relevant -->
-            <cbc:Note>FOB</cbc:Note>
-            <!--  COST * (€ / TEU**) : 300 . 2 containers = 600 euro ** 1 TEU (=1/2 40ft Container) = 8 000 Kg !-->
-            <cbc:Amount currencyID="Euro">600</cbc:Amount>
-            <cbc:PaymentDueDate>2012-06-01</cbc:PaymentDueDate>
-        </cac:ServiceChargePaymentTerms>
-    </cac:TransportExecutionTerms>
     <cac:Consignment>
         <!-- 2 containers each containing 7 pallets of dried fish -->
         <cbc:ID>ID31</cbc:ID>
@@ -973,4 +976,4 @@
             </cac:Contact>
         </cac:ConsignorParty>
     </cac:Consignment>
-</ns2:TransportExecutionPlanCoreProfile>
+</ns2:TransportExecutionPlanRequestCoreProfile>

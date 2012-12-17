@@ -871,6 +871,24 @@
                </xsd:documentation>
             </xsd:annotation>
          </xsd:element>
+         <xsd:element ref="cbc:TotalTransportHandlingUnitQuantity" minOccurs="0" maxOccurs="1">
+            <xsd:annotation>
+               <xsd:documentation>
+                  <ccts:Component>
+                     <ccts:ComponentType>BBIE</ccts:ComponentType>
+                     <ccts:DictionaryEntryName>Consignment. Total_ Transport Handling Unit Quantity. Quantity</ccts:DictionaryEntryName>
+                     <ccts:Definition>Count of the number of pieces of transport handling equipment in a consignment, such as pallets, boxes, and cases.</ccts:Definition>
+                     <ccts:Cardinality>0..1</ccts:Cardinality>
+                     <ccts:ObjectClass>Consignment</ccts:ObjectClass>
+                     <ccts:PropertyTermQualifier>Total</ccts:PropertyTermQualifier>
+                     <ccts:PropertyTerm>Transport Handling Unit Quantity</ccts:PropertyTerm>
+                     <ccts:RepresentationTerm>Quantity</ccts:RepresentationTerm>
+                     <ccts:DataType>Quantity. Type</ccts:DataType>
+                     <ccts:AlternativeBusinessTerms>Number of THUs</ccts:AlternativeBusinessTerms>
+                  </ccts:Component>
+               </xsd:documentation>
+            </xsd:annotation>
+         </xsd:element>
          <xsd:element ref="cac:MainCarriageShipmentStage" minOccurs="0" maxOccurs="unbounded">
             <xsd:annotation>
                <xsd:documentation>
@@ -1527,6 +1545,22 @@
                </xsd:documentation>
             </xsd:annotation>
          </xsd:element>
+         <xsd:element ref="cbc:DocumentTypeCode" minOccurs="0" maxOccurs="1">
+            <xsd:annotation>
+               <xsd:documentation>
+                  <ccts:Component>
+                     <ccts:ComponentType>BBIE</ccts:ComponentType>
+                     <ccts:DictionaryEntryName>Document Reference. Document Type Code. Code</ccts:DictionaryEntryName>
+                     <ccts:Definition>A code identifying the type of document being referenced. </ccts:Definition>
+                     <ccts:Cardinality>0..1</ccts:Cardinality>
+                     <ccts:ObjectClass>Document Reference</ccts:ObjectClass>
+                     <ccts:PropertyTerm>Document Type Code</ccts:PropertyTerm>
+                     <ccts:RepresentationTerm>Code</ccts:RepresentationTerm>
+                     <ccts:DataType>Code. Type</ccts:DataType>
+                  </ccts:Component>
+               </xsd:documentation>
+            </xsd:annotation>
+         </xsd:element>
       </xsd:sequence>
    </xsd:complexType>
    <xsd:complexType name="EmissionCalculationMethodType">
@@ -2099,6 +2133,24 @@
                      <ccts:RepresentationTerm>Text</ccts:RepresentationTerm>
                      <ccts:DataType>Text. Type</ccts:DataType>
                      <ccts:AlternativeBusinessTerms>Description of goods (WCO ID 137)</ccts:AlternativeBusinessTerms>
+                  </ccts:Component>
+               </xsd:documentation>
+            </xsd:annotation>
+         </xsd:element>
+         <xsd:element ref="cbc:HazardousRiskIndicator" minOccurs="0" maxOccurs="1">
+            <xsd:annotation>
+               <xsd:documentation>
+                  <ccts:Component>
+                     <ccts:ComponentType>BBIE</ccts:ComponentType>
+                     <ccts:DictionaryEntryName>Goods Item. Hazardous Risk_ Indicator. Indicator</ccts:DictionaryEntryName>
+                     <ccts:Definition>Indicates whether the goods item includes hazardous items (dangerous goods).</ccts:Definition>
+                     <ccts:Cardinality>0..1</ccts:Cardinality>
+                     <ccts:ObjectClass>Goods Item</ccts:ObjectClass>
+                     <ccts:PropertyTermQualifier>Hazardous Risk</ccts:PropertyTermQualifier>
+                     <ccts:PropertyTerm>Indicator</ccts:PropertyTerm>
+                     <ccts:RepresentationTerm>Indicator</ccts:RepresentationTerm>
+                     <ccts:DataType>Indicator. Type</ccts:DataType>
+                     <ccts:Examples>default is negative</ccts:Examples>
                   </ccts:Component>
                </xsd:documentation>
             </xsd:annotation>
@@ -3783,6 +3835,57 @@
          </xsd:documentation>
       </xsd:annotation>
       <xsd:sequence>
+         <xsd:element ref="cbc:WebsiteURI" minOccurs="0" maxOccurs="1">
+            <xsd:annotation>
+               <xsd:documentation>
+                  <ccts:Component>
+                     <ccts:ComponentType>BBIE</ccts:ComponentType>
+                     <ccts:DictionaryEntryName>Party. Website_ URI. Identifier</ccts:DictionaryEntryName>
+                     <ccts:Definition>The Uniform Resource Identifier (URI) of the party.</ccts:Definition>
+                     <ccts:Cardinality>0..1</ccts:Cardinality>
+                     <ccts:ObjectClass>Party</ccts:ObjectClass>
+                     <ccts:PropertyTermQualifier>Website</ccts:PropertyTermQualifier>
+                     <ccts:PropertyTerm>URI</ccts:PropertyTerm>
+                     <ccts:RepresentationTerm>Identifier</ccts:RepresentationTerm>
+                     <ccts:DataType>Identifier. Type</ccts:DataType>
+                  </ccts:Component>
+               </xsd:documentation>
+            </xsd:annotation>
+         </xsd:element>
+         <xsd:element ref="cbc:EndpointID" minOccurs="0" maxOccurs="1">
+            <xsd:annotation>
+               <xsd:documentation>
+                  <ccts:Component>
+                     <ccts:ComponentType>BBIE</ccts:ComponentType>
+                     <ccts:DictionaryEntryName>Party. Endpoint Identifier. Identifier</ccts:DictionaryEntryName>
+                     <ccts:Definition>Identifies the end point of the routing service, e.g., EAN Location Number, GLN.</ccts:Definition>
+                     <ccts:Cardinality>0..1</ccts:Cardinality>
+                     <ccts:ObjectClass>Party</ccts:ObjectClass>
+                     <ccts:PropertyTerm>Endpoint Identifier</ccts:PropertyTerm>
+                     <ccts:RepresentationTerm>Identifier</ccts:RepresentationTerm>
+                     <ccts:DataType>Identifier. Type</ccts:DataType>
+                     <ccts:Examples>5790002221134</ccts:Examples>
+                  </ccts:Component>
+               </xsd:documentation>
+            </xsd:annotation>
+         </xsd:element>
+         <xsd:element ref="cbc:IndustryClassificationCode" minOccurs="0" maxOccurs="1">
+            <xsd:annotation>
+               <xsd:documentation>
+                  <ccts:Component>
+                     <ccts:ComponentType>BBIE</ccts:ComponentType>
+                     <ccts:DictionaryEntryName>Party. Industry Classification Code. Code</ccts:DictionaryEntryName>
+                     <ccts:Definition>Indicates the role of a Party</ccts:Definition>
+                     <ccts:Cardinality>0..1</ccts:Cardinality>
+                     <ccts:ObjectClass>Party</ccts:ObjectClass>
+                     <ccts:PropertyTerm>Industry Classification Code</ccts:PropertyTerm>
+                     <ccts:RepresentationTerm>Code</ccts:RepresentationTerm>
+                     <ccts:DataType>Code. Type</ccts:DataType>
+                     <ccts:Examples>Public authority , NAIC codes</ccts:Examples>
+                  </ccts:Component>
+               </xsd:documentation>
+            </xsd:annotation>
+         </xsd:element>
          <xsd:element ref="cac:PartyIdentification" maxOccurs="unbounded">
             <xsd:annotation>
                <xsd:documentation>

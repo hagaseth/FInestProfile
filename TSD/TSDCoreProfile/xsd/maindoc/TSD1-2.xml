@@ -23,8 +23,9 @@
     <cbc:IssueTime>01:01:01.001</cbc:IssueTime>
     <cbc:ServiceName>Cargo agent service</cbc:ServiceName>
     <!-- ResponseCode, ex. No relevant TSD is received for a TSDrequest -->
-    <cbc:ResponseCode>ResponseCode0</cbc:ResponseCode>
+    <cbc:ResponseCode>1</cbc:ResponseCode>
     <cac:SenderParty>
+        <cbc:EndpointID>ECM</cbc:EndpointID>
         <cac:PartyIdentification>
             <cbc:ID>3743</cbc:ID>
         </cac:PartyIdentification>
@@ -33,6 +34,7 @@
         </cac:PartyName>
     </cac:SenderParty>
     <cac:ReceiverParty>
+        <cbc:EndpointID>TPM</cbc:EndpointID>
         <cac:PartyIdentification>
             <cbc:ID>200</cbc:ID>
         </cac:PartyIdentification>
