@@ -1,25 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ns2:TransportServiceDescriptionRequestCoreProfile xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
- xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+<ns2:TransportServiceDescriptionRequestCoreProfile xmlns:sac="urn:oasis:names:specification:ubl:schema:xsd:SignatureAggregateComponents-2"
  xmlns:ccts="urn:un:unece:uncefact:documentation:2"
- xmlns:udt="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2"
- xmlns:sac="urn:oasis:names:specification:ubl:schema:xsd:SignatureAggregateComponents-2"
- xmlns:qdt="urn:oasis:names:specification:ubl:schema:xsd:QualifiedDataTypes-2"
- xmlns:ccts-cct="urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2"
- xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2"
  xmlns:ds="http://www.w3.org/2000/09/xmldsig#"
- xmlns:sbc="urn:oasis:names:specification:ubl:schema:xsd:SignatureBasicComponents-2"
+ xmlns:udt="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2"
+ xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+ xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+ xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2"
+ xmlns:qdt="urn:oasis:names:specification:ubl:schema:xsd:QualifiedDataTypes-2"
  xmlns:xades="http://uri.etsi.org/01903/v1.3.2#"
+ xmlns:cct="urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2"
+ xmlns:sbc="urn:oasis:names:specification:ubl:schema:xsd:SignatureBasicComponents-2"
  xmlns:ns0="urn:oasis:names:specification:ubl:schema:xsd:CommonSignatureComponents-2"
  xmlns:ns1="http://uri.etsi.org/01903/v1.4.1#"
  xmlns:ns2="urn:oasis:names:specification:ubl:schema:xsd:TransportServiceDescriptionRequestCoreProfile-2"
  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
  xsi:schemaLocation="urn:oasis:names:specification:ubl:schema:xsd:TransportServiceDescriptionRequestCoreProfile-2 file:/T:/Prosjekt/P2801/280158%20FInest/04%20Analyser%20og%20draft/WP7/D7.4%20Prototype%20implementation/datamodel-FInest-19-10-2012/prototype/FinestProfile-12112012/TSD/TSDRequestCoreProfile/xsd/maindoc/UBL-TSDRequest-FInest.xsd">
     <cbc:UBLVersionID>2.1</cbc:UBLVersionID>
+    <cbc:CustomizationID>1.0</cbc:CustomizationID>
     <cbc:ProfileID>FInest</cbc:ProfileID>
-    <cbc:ID>TSDreq1-2</cbc:ID>
-    <cbc:IssueDate>2012-03-12</cbc:IssueDate>
-    <cbc:IssueTime>01:01:01.001</cbc:IssueTime>
+    <cbc:ID>TSDreq2-3wn</cbc:ID>
+    <cbc:IssueDate>2012-04-13</cbc:IssueDate>
+    <cbc:IssueTime>10:05:10+01:00</cbc:IssueTime>
     <cac:SenderParty>
         <cbc:EndpointID>TPM</cbc:EndpointID>
         <cac:PartyIdentification>
@@ -56,39 +57,46 @@
         </cac:PartyName>
     </cac:ReceiverParty>
     <cac:TransportationService>
-        <!-- 13 Agent service: -->
-        <cbc:TransportServiceCode>13</cbc:TransportServiceCode>
-        <cbc:TransportationServiceDescription>Cargo agent service handling container transport from Ålesund to Brazil</cbc:TransportationServiceDescription>
-        <cbc:Name>Cargo agent service</cbc:Name>
+        <!-- TransportServiceCode: 3 Transport: -->
+        <cbc:TransportServiceCode>3</cbc:TransportServiceCode>
+        <cbc:TransportationServiceDescription>Feedering service from West Norway to Rotterdam</cbc:TransportationServiceDescription>
+        <cbc:Name>Container Feeder Service</cbc:Name>
         <cbc:SequenceNumeric>1</cbc:SequenceNumeric>
-        <cac:TransportEquipment>
-            <cbc:ID>ID11</cbc:ID>
-            <cbc:Description>Container</cbc:Description>
-            <!--CN is Container-->
-            <!--  TransportEquipmentTypeCode	UN/CEFACT 8053 Equipment type code qualifier: -->
-            <cbc:TransportEquipmentTypeCode>CN</cbc:TransportEquipmentTypeCode>
-            <cbc:GrossWeightMeasure unitCode="kg">20000</cbc:GrossWeightMeasure>
-            <!-- m3 -->
-            <cbc:GrossVolumeMeasure unitCode="cubic metre">30</cbc:GrossVolumeMeasure>
-        </cac:TransportEquipment>
-        <cac:CommodityClassification>
-            <!-- CargoTypeCode	UN/CEFACT 7085 Nature of cargo, coded
-                                -->
-            <!--9	Containerized-->
-            <cbc:CargoTypeCode>9</cbc:CargoTypeCode>
-        </cac:CommodityClassification>
-        <cac:ShipmentStage> 
-            <cac:RequestedArrivalTransportEvent>
+        <cac:ShipmentStage>
+            <cac:RequestedDepartureTransportEvent>
                 <cac:Location>
-                    <cbc:ID>104</cbc:ID>
+                    <cbc:ID>101</cbc:ID>
                     <cac:Address>
-                        <cbc:CityName>Rotterdam</cbc:CityName>
+                        <cbc:CityName>Aalesund</cbc:CityName>
+                        <cbc:PostalZone>6005</cbc:PostalZone>
                         <cac:AddressLine>
-                            <cbc:Line>Rotterdam-Maersk terminal</cbc:Line>
+                            <cbc:Line>Skutvika container terminal</cbc:Line>
                         </cac:AddressLine>
                         <cac:Country>
-                            <cbc:IdentificationCode>NL</cbc:IdentificationCode>
-                            <cbc:Name>Netherlands</cbc:Name>
+                            <cbc:IdentificationCode>NO</cbc:IdentificationCode>
+                            <cbc:Name>Norway</cbc:Name>
+                        </cac:Country>
+                    </cac:Address>
+                </cac:Location>
+                <cac:Period>
+                    <cbc:StartDate>2012-05-08</cbc:StartDate>
+                    <cbc:StartTime>14:00:00.00</cbc:StartTime>
+                    <cbc:EndDate>2012-05-08</cbc:EndDate>
+                    <cbc:EndTime>14:00:00.00</cbc:EndTime>
+                </cac:Period>
+            </cac:RequestedDepartureTransportEvent>
+            <cac:RequestedArrivalTransportEvent>
+                <cac:Location>
+                    <cbc:ID>101</cbc:ID>
+                    <cac:Address>
+                        <cbc:CityName>Aalesund</cbc:CityName>
+                        <cbc:PostalZone>6005</cbc:PostalZone>
+                        <cac:AddressLine>
+                            <cbc:Line>Skutvika container terminal</cbc:Line>
+                        </cac:AddressLine>
+                        <cac:Country>
+                            <cbc:IdentificationCode>NO</cbc:IdentificationCode>
+                            <cbc:Name>Norway</cbc:Name>
                         </cac:Country>
                     </cac:Address>
                 </cac:Location>
@@ -99,6 +107,28 @@
                     <cbc:EndTime>14:00:00.00</cbc:EndTime>
                 </cac:Period>
             </cac:RequestedArrivalTransportEvent>
+            <cac:RequestedLoadingTransportEvent>
+                <cac:Location>
+                    <cbc:ID>101</cbc:ID>
+                    <cac:Address>
+                        <cbc:CityName>Aalesund</cbc:CityName>
+                        <cbc:PostalZone>6005</cbc:PostalZone>
+                        <cac:AddressLine>
+                            <cbc:Line>Skutvika container terminal</cbc:Line>
+                        </cac:AddressLine>
+                        <cac:Country>
+                            <cbc:IdentificationCode>NO</cbc:IdentificationCode>
+                            <cbc:Name>Norway</cbc:Name>
+                        </cac:Country>
+                    </cac:Address>
+                </cac:Location>
+                <cac:Period>
+                    <cbc:StartDate>2012-05-08</cbc:StartDate>
+                    <cbc:StartTime>10:00:00.00</cbc:StartTime>
+                    <cbc:EndDate>2012-05-08</cbc:EndDate>
+                    <cbc:EndTime>14:00:00.00</cbc:EndTime>
+                </cac:Period>
+            </cac:RequestedLoadingTransportEvent>
             <cac:RequestedDischargeTransportEvent>
                 <cac:Location>
                     <cbc:ID>104</cbc:ID>
@@ -119,12 +149,10 @@
                     <cbc:EndDate>2012-05-11</cbc:EndDate>
                     <cbc:EndTime>16:00:00.00</cbc:EndTime>
                 </cac:Period>
-            </cac:RequestedDischargeTransportEvent>          
-        </cac:ShipmentStage>    
-            <!-- Set to be the estimated duration of the transportation that is 
-            organized in this cargo agent service -->
+            </cac:RequestedDischargeTransportEvent>            
+        </cac:ShipmentStage>
         <cac:EstimatedDurationPeriod>
-            <cbc:StartDate>2012-05-07</cbc:StartDate>
+            <cbc:StartDate>2012-05-08</cbc:StartDate>
             <cbc:StartTime>10:00:00.00</cbc:StartTime>
             <cbc:EndDate>2012-05-11</cbc:EndDate>
             <cbc:EndTime>16:00:00.00</cbc:EndTime>

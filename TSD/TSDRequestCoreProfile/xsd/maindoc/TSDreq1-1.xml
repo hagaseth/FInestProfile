@@ -1,20 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ns2:TransportServiceDescriptionRequestCoreProfile xmlns:ccts="urn:un:unece:uncefact:documentation:2"
- xmlns:cct="urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2"
- xmlns:qdt="urn:oasis:names:specification:ubl:schema:xsd:QualifiedDataTypes-2"
- xmlns:udt="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2"
- xmlns:sac="urn:oasis:names:specification:ubl:schema:xsd:SignatureAggregateComponents-2"
- xmlns:ds="http://www.w3.org/2000/09/xmldsig#"
- xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
- xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
- xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2"
- xmlns:xades="http://uri.etsi.org/01903/v1.3.2#"
- xmlns:sbc="urn:oasis:names:specification:ubl:schema:xsd:SignatureBasicComponents-2"
- xmlns:ns0="urn:oasis:names:specification:ubl:schema:xsd:CommonSignatureComponents-2"
- xmlns:ns1="http://uri.etsi.org/01903/v1.4.1#"
- xmlns:ns2="urn:oasis:names:specification:ubl:schema:xsd:TransportServiceDescriptionRequestCoreProfile-2"
- xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:schemaLocation="urn:oasis:names:specification:ubl:schema:xsd:TransportServiceDescriptionRequestCoreProfile-2 UBL-TSDRequest-FInest.xsd">
+<ns2:TransportServiceDescriptionRequestCoreProfile
+    xmlns:ccts="urn:un:unece:uncefact:documentation:2"
+    xmlns:cct="urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2"
+    xmlns:qdt="urn:oasis:names:specification:ubl:schema:xsd:QualifiedDataTypes-2"
+    xmlns:udt="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2"
+    xmlns:sac="urn:oasis:names:specification:ubl:schema:xsd:SignatureAggregateComponents-2"
+    xmlns:ds="http://www.w3.org/2000/09/xmldsig#"
+    xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+    xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+    xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2"
+    xmlns:xades="http://uri.etsi.org/01903/v1.3.2#"
+    xmlns:sbc="urn:oasis:names:specification:ubl:schema:xsd:SignatureBasicComponents-2"
+    xmlns:ns0="urn:oasis:names:specification:ubl:schema:xsd:CommonSignatureComponents-2"
+    xmlns:ns1="http://uri.etsi.org/01903/v1.4.1#"
+    xmlns:ns2="urn:oasis:names:specification:ubl:schema:xsd:TransportServiceDescriptionRequestCoreProfile-2"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="urn:oasis:names:specification:ubl:schema:xsd:TransportServiceDescriptionRequestCoreProfile-2 UBL-TSDRequest-FInest.xsd">
     <cbc:UBLVersionID>2.1</cbc:UBLVersionID>
     <cbc:ProfileID>FInest</cbc:ProfileID>
     <cbc:ID>TSDreq1-1</cbc:ID>
@@ -79,17 +80,51 @@
             <!--12 is General Cargo-->
             <cbc:CargoTypeCode>12</cbc:CargoTypeCode>
         </cac:CommodityClassification>
-        <cac:CommodityClassification>
-            <!-- CargoTypeCode	UN/CEFACT 7085 Nature of cargo, coded
-                                -->
-            <!--9	Containerized-->
-            <cbc:CargoTypeCode>9</cbc:CargoTypeCode>
-        </cac:CommodityClassification>
         <cac:ShipmentStage>
-            <cbc:ID>ID15</cbc:ID>
-       </cac:ShipmentStage>
-        <!-- TransportEvent: Not given in this TSD since this is a reply to a request from
-        the LSC. The actual planned events are negotiated in the TEP.-->
+            <cac:RequestedPickupTransportEvent>
+                <cac:Location>
+                    <cbc:ID>10011</cbc:ID>
+                    <cac:Address>
+                        <cbc:StreetName>Tranvågen</cbc:StreetName>
+                        <cbc:BuildingNumber>6</cbc:BuildingNumber>
+                        <cbc:CityName>Fiskarstrand</cbc:CityName>
+                        <cbc:PostalZone>6035</cbc:PostalZone>
+                        <cac:Country>
+                            <cbc:IdentificationCode>NO</cbc:IdentificationCode>
+                            <cbc:Name>Norway</cbc:Name>
+                        </cac:Country>
+                    </cac:Address>
+                </cac:Location>
+                <cac:Period>
+                    <cbc:StartDate>2012-05-06</cbc:StartDate>
+                    <cbc:StartTime>10:00:00.00</cbc:StartTime>
+                    <cbc:EndDate>2012-05-06</cbc:EndDate>
+                    <cbc:EndTime>14:00:00.00</cbc:EndTime>
+                </cac:Period>
+            </cac:RequestedPickupTransportEvent>
+            <cac:RequestedDeliveryTransportEvent>
+                <cac:Location>
+                    <cbc:ID>101</cbc:ID>
+                    <cac:Address>
+                        <cbc:CityName>Aalesund</cbc:CityName>
+                        <cbc:PostalZone>6005</cbc:PostalZone>
+                        <cac:AddressLine>
+                            <cbc:Line>Skutvika container terminal</cbc:Line>
+                        </cac:AddressLine>
+                        <cac:Country>
+                            <cbc:IdentificationCode>NO</cbc:IdentificationCode>
+                            <cbc:Name>Norway</cbc:Name>
+                        </cac:Country>
+                    </cac:Address>
+                </cac:Location>
+                <cac:Period>
+                    <cbc:StartDate>2012-05-07</cbc:StartDate>
+                    <cbc:StartTime>10:00:00.00</cbc:StartTime>
+                    <cbc:EndDate>2012-05-07</cbc:EndDate>
+                    <cbc:EndTime>14:00:00.00</cbc:EndTime>
+                </cac:Period>
+            </cac:RequestedDeliveryTransportEvent>
+        </cac:ShipmentStage>
         <cac:EstimatedDurationPeriod>
             <cbc:StartDate>2012-05-06</cbc:StartDate>
             <cbc:StartTime>10:00:00.00</cbc:StartTime>

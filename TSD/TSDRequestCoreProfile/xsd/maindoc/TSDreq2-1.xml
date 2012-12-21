@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ns2:TransportServiceDescriptionRequestCoreProfile xmlns:sac="urn:oasis:names:specification:ubl:schema:xsd:SignatureAggregateComponents-2"
+ xmlns:ccts="urn:un:unece:uncefact:documentation:2"
+ xmlns:ds="http://www.w3.org/2000/09/xmldsig#"
+ xmlns:udt="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2"
+ xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+ xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+ xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2"
+ xmlns:qdt="urn:oasis:names:specification:ubl:schema:xsd:QualifiedDataTypes-2"
+ xmlns:xades="http://uri.etsi.org/01903/v1.3.2#"
+ xmlns:cct="urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2"
+ xmlns:sbc="urn:oasis:names:specification:ubl:schema:xsd:SignatureBasicComponents-2"
+ xmlns:ns0="urn:oasis:names:specification:ubl:schema:xsd:CommonSignatureComponents-2"
+ xmlns:ns1="http://uri.etsi.org/01903/v1.4.1#"
+ xmlns:ns2="urn:oasis:names:specification:ubl:schema:xsd:TransportServiceDescriptionRequestCoreProfile-2"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="urn:oasis:names:specification:ubl:schema:xsd:TransportServiceDescriptionRequestCoreProfile-2 file:/T:/Prosjekt/P2801/280158%20FInest/04%20Analyser%20og%20draft/WP7/D7.4%20Prototype%20implementation/datamodel-FInest-19-10-2012/prototype/FinestProfile-12112012/TSD/TSDRequestCoreProfile/xsd/maindoc/UBL-TSDRequest-FInest.xsd">
+    <cbc:UBLVersionID>2.1</cbc:UBLVersionID>
+    <cbc:ProfileID>FInest</cbc:ProfileID>
+    <cbc:ID>TSDreq2-1</cbc:ID>
+    <cbc:IssueDate>2012-03-12</cbc:IssueDate>
+    <cbc:IssueTime>01:01:01.001</cbc:IssueTime>
+    <cac:SenderParty>
+        <cbc:EndpointID>TPM</cbc:EndpointID>
+        <cac:PartyIdentification>
+            <cbc:ID>107</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+            <!-- Tyrholm and Farstad working as cargo agent -->
+            <cbc:Name>Tyrholm and Farstad</cbc:Name>
+        </cac:PartyName>
+        <cac:PostalAddress>
+            <cbc:Postbox>1313</cbc:Postbox>
+            <cbc:CityName>AAlesund</cbc:CityName>
+            <cbc:PostalZone>6001</cbc:PostalZone>
+            <cac:Country>
+                <cbc:IdentificationCode>NO</cbc:IdentificationCode>
+                <cbc:Name>Norway</cbc:Name>
+            </cac:Country>
+        </cac:PostalAddress>
+        <cac:Contact>
+            <cbc:ID>ID4</cbc:ID>
+            <cbc:Name>AAge Gangsoey</cbc:Name>
+            <cbc:Telephone>+47 91 57 66 10</cbc:Telephone>
+            <cbc:ElectronicMail>aage.gangsoy@tyrholm.no</cbc:ElectronicMail>
+        </cac:Contact>
+    </cac:SenderParty>
+    <cac:ReceiverParty>
+        <cbc:EndpointID>ECM</cbc:EndpointID>
+        <cac:PartyIdentification>
+            <cbc:ID>3743</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+            <cbc:Name>ECM</cbc:Name>
+        </cac:PartyName>
+    </cac:ReceiverParty>
+    <cac:TransportationService>
+        <!-- TransportServiceCode:
+        -->
+        <!-- 20 Warehousing: -->
+        <cbc:TransportServiceCode>20</cbc:TransportServiceCode>
+        <cbc:TransportationServiceDescription>Container storage at Skutvika Terminal in Aalesund.</cbc:TransportationServiceDescription>
+        <cbc:Name>Container Storage</cbc:Name>
+        <cbc:SequenceNumeric>1</cbc:SequenceNumeric>
+        <cac:TransportEvent>
+             <!-- 13=Storage -->   
+            <cbc:TransportEventTypeCode>13</cbc:TransportEventTypeCode>
+            <cac:Location>
+                <!--14 Goods item storage location-->
+                <!-- LocationTypeCode UN/CEFACT Location function code qualifier:
+        -->
+                <cbc:ID>101</cbc:ID>
+                <cac:Address>
+                    <cbc:CityName>Aalesund</cbc:CityName>
+                    <cbc:PostalZone>6005</cbc:PostalZone>
+                    <cac:AddressLine>
+                        <cbc:Line>Skutvika container terminal</cbc:Line>
+                    </cac:AddressLine>
+                    <cac:Country>
+                        <cbc:IdentificationCode>NO</cbc:IdentificationCode>
+                        <cbc:Name>Norway</cbc:Name>
+                    </cac:Country>
+                </cac:Address>
+                <cac:LocationCoordinate>
+                    <cbc:LatitudeDegreesMeasure unitCode="DD">62.4722284</cbc:LatitudeDegreesMeasure>
+                    <cbc:LongitudeDegreesMeasure unitCode="DD">6.149482</cbc:LongitudeDegreesMeasure>
+                </cac:LocationCoordinate>
+            </cac:Location>
+        </cac:TransportEvent>
+        <cac:EstimatedDurationPeriod>
+            <cbc:StartDate>2012-05-07</cbc:StartDate>
+            <cbc:StartTime>10:00:00.00</cbc:StartTime>
+            <cbc:EndDate>2012-05-08</cbc:EndDate>
+            <cbc:EndTime>14:00:00.00</cbc:EndTime>
+        </cac:EstimatedDurationPeriod>        
+    </cac:TransportationService>
+</ns2:TransportServiceDescriptionRequestCoreProfile>
