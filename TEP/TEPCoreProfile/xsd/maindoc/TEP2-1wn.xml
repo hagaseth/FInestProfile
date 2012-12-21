@@ -196,6 +196,10 @@
                 <cbc:Name>Norway</cbc:Name>
             </cac:Country>
         </cac:Address>
+        <cac:LocationCoordinate>
+            <cbc:LatitudeDegreesMeasure unitCode="DD">62.4722284</cbc:LatitudeDegreesMeasure>
+            <cbc:LongitudeDegreesMeasure unitCode="DD">6.149482</cbc:LongitudeDegreesMeasure>
+        </cac:LocationCoordinate>
     </cac:AtLocation>
     <cac:TransportExecutionTerms>
         <cac:ServiceChargePaymentTerms>
