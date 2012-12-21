@@ -167,6 +167,8 @@
    <xsd:element name="RequestedDeliveryTransportEvent" type="TransportEventType"/>
    <xsd:element name="RequestedDepartureTransportEvent" type="TransportEventType"/>
    <xsd:element name="RequestedPickupTransportEvent" type="TransportEventType"/>
+   <xsd:element name="RequestedLoadingTransportEvent" type="TransportEventType"/>
+   <xsd:element name="RequestedDischargeTransportEvent" type="TransportEventType"/>
    <xsd:element name="RequestedStatusLocation" type="LocationType"/>
    <xsd:element name="RequestedStatusPeriod" type="PeriodType"/>
    <xsd:element name="RequestedWaypointTransportEvent" type="TransportEventType"/>
@@ -5849,6 +5851,44 @@
                      <ccts:Cardinality>0..1</ccts:Cardinality>
                      <ccts:ObjectClass>Consignment</ccts:ObjectClass>
                      <ccts:PropertyTermQualifier>Requested Delivery</ccts:PropertyTermQualifier>
+                     <ccts:PropertyTerm>Transport Event</ccts:PropertyTerm>
+                     <ccts:AssociatedObjectClass>Transport Event</ccts:AssociatedObjectClass>
+                     <ccts:RepresentationTerm>Transport Event</ccts:RepresentationTerm>
+                  </ccts:Component>
+               </xsd:documentation>
+            </xsd:annotation>
+         </xsd:element>
+         <xsd:element ref="cac:RequestedLoadingTransportEvent" minOccurs="0" maxOccurs="1">
+            <xsd:annotation>
+               <xsd:documentation>
+                  <ccts:Component>
+                     <ccts:ComponentType>ASBIE</ccts:ComponentType>
+                     <ccts:DictionaryEntryName>Consignment. Requested Loading Transport Event.
+                        Transport Event</ccts:DictionaryEntryName>
+                     <ccts:Definition>Describes the loading event as requested by the party
+                        requesting for a transport service (Transport User). </ccts:Definition>
+                     <ccts:Cardinality>0..1</ccts:Cardinality>
+                     <ccts:ObjectClass>Consignment</ccts:ObjectClass>
+                     <ccts:PropertyTermQualifier>Requested Loading</ccts:PropertyTermQualifier>
+                     <ccts:PropertyTerm>Transport Event</ccts:PropertyTerm>
+                     <ccts:AssociatedObjectClass>Transport Event</ccts:AssociatedObjectClass>
+                     <ccts:RepresentationTerm>Transport Event</ccts:RepresentationTerm>
+                  </ccts:Component>
+               </xsd:documentation>
+            </xsd:annotation>
+         </xsd:element>
+         <xsd:element ref="cac:RequestedDischargeTransportEvent" minOccurs="0" maxOccurs="1">
+            <xsd:annotation>
+               <xsd:documentation>
+                  <ccts:Component>
+                     <ccts:ComponentType>ASBIE</ccts:ComponentType>
+                     <ccts:DictionaryEntryName>Consignment. Requested Discharge Transport Event.
+                        Transport Event</ccts:DictionaryEntryName>
+                     <ccts:Definition>Describes the discharge event as requested by the party
+                        requesting for a transport service (Transport User). </ccts:Definition>
+                     <ccts:Cardinality>0..1</ccts:Cardinality>
+                     <ccts:ObjectClass>Consignment</ccts:ObjectClass>
+                     <ccts:PropertyTermQualifier>Requested Discharge</ccts:PropertyTermQualifier>
                      <ccts:PropertyTerm>Transport Event</ccts:PropertyTerm>
                      <ccts:AssociatedObjectClass>Transport Event</ccts:AssociatedObjectClass>
                      <ccts:RepresentationTerm>Transport Event</ccts:RepresentationTerm>
