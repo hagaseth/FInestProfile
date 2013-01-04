@@ -31,20 +31,51 @@
     <cac:SenderParty>
         <cbc:EndpointID>ECM</cbc:EndpointID>
         <cac:PartyIdentification>
-            <cbc:ID>3743</cbc:ID>
+            <cbc:ID>102</cbc:ID>
         </cac:PartyIdentification>
         <cac:PartyName>
-            <cbc:Name>ECM</cbc:Name>
+            <cbc:Name>Skutvika container terminal</cbc:Name>
         </cac:PartyName>
+        <cac:PostalAddress>
+            <cbc:CityName>Aalesund</cbc:CityName>
+            <cbc:PostalZone>6005</cbc:PostalZone>
+            <cac:Country>
+                <cbc:IdentificationCode>NO</cbc:IdentificationCode>
+                <cbc:Name>Norway</cbc:Name>
+            </cac:Country>
+        </cac:PostalAddress>
+        <cac:Contact>
+            <cbc:ID>ID421</cbc:ID>
+            <cbc:Name>Jan Erik Iversen</cbc:Name>
+            <cbc:Telephone>97 04 55 35 </cbc:Telephone>
+            <cbc:ElectronicMail>jan.erik.iversen@tyrholm.no</cbc:ElectronicMail>
+        </cac:Contact>
     </cac:SenderParty>
     <cac:ReceiverParty>
         <cbc:EndpointID>TPM</cbc:EndpointID>
         <cac:PartyIdentification>
-            <cbc:ID>200</cbc:ID>
+            <cbc:ID>101</cbc:ID>
         </cac:PartyIdentification>
         <cac:PartyName>
-            <cbc:Name>TPM</cbc:Name>
+            <cbc:Name>WEST NORWAY FISH EXPORT</cbc:Name>
         </cac:PartyName>
+        <cac:PostalAddress>
+            <cbc:Postbox>327</cbc:Postbox>
+            <cbc:StreetName>Løvenvoldgate</cbc:StreetName>
+            <cbc:BuildingNumber>11</cbc:BuildingNumber>
+            <cbc:CityName>Aalesund</cbc:CityName>
+            <cbc:PostalZone>6002</cbc:PostalZone>
+            <cac:Country>
+                <cbc:IdentificationCode>NO</cbc:IdentificationCode>
+                <cbc:Name>Norway</cbc:Name>
+            </cac:Country>
+        </cac:PostalAddress>
+        <cac:Contact>
+            <cbc:ID>ID5</cbc:ID>
+            <cbc:Name>Arne Røst</cbc:Name>
+            <cbc:Telephone>+47 70 10 15 51</cbc:Telephone>
+            <cbc:Telefax>+47 70 10 15 60</cbc:Telefax>
+        </cac:Contact>
     </cac:ReceiverParty>
     <cac:TransportServiceDescriptionRequestDocumentReference>
         <cbc:ID>TSDreq1-1</cbc:ID>
@@ -94,16 +125,463 @@
         <cbc:Name>Truck transport</cbc:Name>
         <cbc:SequenceNumeric>1</cbc:SequenceNumeric>
         <cac:TransportEquipment>
-            <cbc:ID>ID11</cbc:ID>
-            <cbc:Description>Container</cbc:Description>
+            <!-- Details on physical Container-->
+            <cbc:ID>TE1</cbc:ID>
+            <cbc:Description>Container with pallets of dried fish</cbc:Description>
             <!--CN is Container-->
-            <!-- TransportEquipmentTypeCode	UN/CEFACT 8053 Equipment type code qualifier:-->
+            <!-- 
+                TransportEquipmentTypeCode	UN/CEFACT 8053 Equipment type code qualifier:
+                -->
             <cbc:TransportEquipmentTypeCode>CN</cbc:TransportEquipmentTypeCode>
-            <!-- 22G0 	GENERAL PURPOSE CONT. Find other attribute for this -->
-            <!--            <cbc:SizeTypeCode>22G0</cbc:SizeTypeCode> -->
-            <cbc:GrossWeightMeasure unitCode="kg">20000</cbc:GrossWeightMeasure>
+            <cbc:RefrigeratedIndicator>false</cbc:RefrigeratedIndicator>
+            <!-- kg -->
+            <cbc:GrossWeightMeasure unitCode="kg">8000</cbc:GrossWeightMeasure>
             <!-- m3 -->
             <cbc:GrossVolumeMeasure unitCode="cubic metre">30</cbc:GrossVolumeMeasure>
+            <cbc:PowerIndicator>false</cbc:PowerIndicator>
+            <!--PX is Pallet-->
+            <!-- Package is in this case the pallet (with dried fish). -->
+            <!--7 pallets of fish in this container-->
+            <cac:Package>
+                <cbc:ID>ID53</cbc:ID>
+                <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
+                <cac:GoodsItem>
+                    <!--Goods Item is the description of the Dried Fish-->
+                    <cbc:ID>ID54</cbc:ID>
+                    <cbc:Description>Dried fish</cbc:Description>
+                    <!-- Dangerous goods yes or no -->
+                    <cbc:HazardousRiskIndicator>false</cbc:HazardousRiskIndicator>
+                    <!--Weight of one pallet in kg -->
+                    <cbc:GrossWeightMeasure unitCode="kg">600</cbc:GrossWeightMeasure>
+                    <!--Weight of one pallet in kg-->
+                    <cbc:NetWeightMeasure unitCode="kg">590</cbc:NetWeightMeasure>
+                    <!--volume in m3-->
+                    <cbc:GrossVolumeMeasure unitCode="cubic metre">3</cbc:GrossVolumeMeasure>
+                    <cbc:NetVolumeMeasure unitCode="cubic metre">1</cbc:NetVolumeMeasure>
+                    <cac:Item>
+                        <cbc:Name>Dried and Salted Fillet</cbc:Name>
+                        <cbc:ModelName>2 X 5kgs</cbc:ModelName>
+                        <cac:CommodityClassification>
+                            <!-- CargoTypeCode	UN/CEFACT 7085 Nature of cargo, coded
+                                -->
+                            <!--12 is General Cargo-->
+                            <cbc:CargoTypeCode>12</cbc:CargoTypeCode>
+                        </cac:CommodityClassification>
+                        <!-- UNDGcode: United Nations Dangerous Goods Number   See CommonFrameWorkCodes.doc for code values-->
+                        <!-- HazardousCategoryCode -->
+                        <!-- Not in use here
+                            <cac:HazardousItem>
+                                <cbc:AdditionalInformation>Some description</cbc:AdditionalInformation>
+                                <cbc:UNDGCode>SomeCodeFromList</cbc:UNDGCode>
+                                <cbc:HazardousCategoryCode>HazardousCategoryCode0</cbc:HazardousCategoryCode>
+                            </cac:HazardousItem>
+                            -->
+                    </cac:Item>
+                </cac:GoodsItem>
+            </cac:Package>
+            <cac:Package>
+                <cbc:ID>PAC2</cbc:ID>
+                <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
+                <cac:GoodsItem>
+                    <!--Goods Item is the description of the Dried Fish-->
+                    <cbc:ID>PAC3</cbc:ID>
+                    <cbc:Description>Dried fish</cbc:Description>
+                    <!--Weight of one pallet in kg -->
+                    <cbc:GrossWeightMeasure unitCode="kg">600</cbc:GrossWeightMeasure>
+                    <!--Weight of one pallet in kg-->
+                    <cbc:NetWeightMeasure unitCode="kg">590</cbc:NetWeightMeasure>
+                    <!--volume in m3-->
+                    <cbc:GrossVolumeMeasure unitCode="cubic metre">3</cbc:GrossVolumeMeasure>
+                    <cbc:NetVolumeMeasure unitCode="cubic metre">1</cbc:NetVolumeMeasure>
+                    <cac:Item>
+                        <cbc:Name>Dried and Salted Fillet</cbc:Name>
+                        <cbc:ModelName>2 X 5kgs</cbc:ModelName>
+                        <cac:CommodityClassification>
+                            <!-- CargoTypeCode	UN/CEFACT 7085 Nature of cargo, coded
+                                -->
+                            <!--12 is General Cargo-->
+                            <cbc:CargoTypeCode>12</cbc:CargoTypeCode>
+                        </cac:CommodityClassification>
+                    </cac:Item>
+                </cac:GoodsItem>
+            </cac:Package>
+            <cac:Package>
+                <cbc:ID>PAC5</cbc:ID>
+                <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
+                <cac:GoodsItem>
+                    <!--Goods Item is the description of the Dried Fish-->
+                    <cbc:ID>PAC6</cbc:ID>
+                    <cbc:Description>Dried fish</cbc:Description>
+                    <!--Weight of one pallet in kg -->
+                    <cbc:GrossWeightMeasure unitCode="kg">600</cbc:GrossWeightMeasure>
+                    <!--Weight of one pallet in kg-->
+                    <cbc:NetWeightMeasure unitCode="kg">590</cbc:NetWeightMeasure>
+                    <!--volume in m3-->
+                    <cbc:GrossVolumeMeasure unitCode="cubic metre">3</cbc:GrossVolumeMeasure>
+                    <cbc:NetVolumeMeasure unitCode="cubic metre">1</cbc:NetVolumeMeasure>
+                    <cac:Item>
+                        <cbc:Name>Dried and Salted Fillet</cbc:Name>
+                        <cbc:ModelName>2 X 5kgs</cbc:ModelName>
+                        <cac:CommodityClassification>
+                            <!-- CargoTypeCode	UN/CEFACT 7085 Nature of cargo, coded
+                                -->
+                            <!--12 is General Cargo-->
+                            <cbc:CargoTypeCode>12</cbc:CargoTypeCode>
+                        </cac:CommodityClassification>
+                    </cac:Item>
+                </cac:GoodsItem>
+            </cac:Package>
+            <cac:Package>
+                <cbc:ID>PAC8</cbc:ID>
+                <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
+                <cac:GoodsItem>
+                    <!--Goods Item is the description of the Dried Fish-->
+                    <cbc:ID>PAC9</cbc:ID>
+                    <cbc:Description>Dried fish</cbc:Description>
+                    <!--Weight of one pallet in kg -->
+                    <cbc:GrossWeightMeasure unitCode="kg">600</cbc:GrossWeightMeasure>
+                    <!--Weight of one pallet in kg-->
+                    <cbc:NetWeightMeasure unitCode="kg">590</cbc:NetWeightMeasure>
+                    <!--volume in m3-->
+                    <cbc:GrossVolumeMeasure unitCode="cubic metre">3</cbc:GrossVolumeMeasure>
+                    <cbc:NetVolumeMeasure unitCode="cubic metre">1</cbc:NetVolumeMeasure>
+                    <cac:Item>
+                        <cbc:Name>Dried and Salted Fillet</cbc:Name>
+                        <cbc:ModelName>2 X 5kgs</cbc:ModelName>
+                        <cac:CommodityClassification>
+                            <!-- CargoTypeCode	UN/CEFACT 7085 Nature of cargo, coded
+                                -->
+                            <!--12 is General Cargo-->
+                            <cbc:CargoTypeCode>12</cbc:CargoTypeCode>
+                        </cac:CommodityClassification>
+                    </cac:Item>
+                </cac:GoodsItem>
+            </cac:Package>
+            <cac:Package>
+                <cbc:ID>PAC11</cbc:ID>
+                <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
+                <cac:GoodsItem>
+                    <!--Goods Item is the description of the Dried Fish-->
+                    <cbc:ID>PAC12</cbc:ID>
+                    <cbc:Description>Dried fish</cbc:Description>
+                    <!--Weight of one pallet in kg -->
+                    <cbc:GrossWeightMeasure unitCode="kg">600</cbc:GrossWeightMeasure>
+                    <!--Weight of one pallet in kg-->
+                    <cbc:NetWeightMeasure unitCode="kg">590</cbc:NetWeightMeasure>
+                    <!--volume in m3-->
+                    <cbc:GrossVolumeMeasure unitCode="cubic metre">3</cbc:GrossVolumeMeasure>
+                    <cbc:NetVolumeMeasure unitCode="cubic metre">1</cbc:NetVolumeMeasure>
+                    <cac:Item>
+                        <cbc:Name>Dried and Salted Fillet</cbc:Name>
+                        <cbc:ModelName>2 X 5kgs</cbc:ModelName>
+                        <cac:CommodityClassification>
+                            <!-- CargoTypeCode	UN/CEFACT 7085 Nature of cargo, coded
+                                -->
+                            <!--12 is General Cargo-->
+                            <cbc:CargoTypeCode>12</cbc:CargoTypeCode>
+                        </cac:CommodityClassification>
+                    </cac:Item>
+                </cac:GoodsItem>
+            </cac:Package>
+            <cac:Package>
+                <cbc:ID>PAC14</cbc:ID>
+                <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
+                <cac:GoodsItem>
+                    <!--Goods Item is the description of the Dried Fish-->
+                    <cbc:ID>PAC15</cbc:ID>
+                    <cbc:Description>Dried fish</cbc:Description>
+                    <!--Weight of one pallet in kg -->
+                    <cbc:GrossWeightMeasure unitCode="kg">600</cbc:GrossWeightMeasure>
+                    <!--Weight of one pallet in kg-->
+                    <cbc:NetWeightMeasure unitCode="kg">590</cbc:NetWeightMeasure>
+                    <!--volume in m3-->
+                    <cbc:GrossVolumeMeasure unitCode="cubic metre">3</cbc:GrossVolumeMeasure>
+                    <cbc:NetVolumeMeasure unitCode="cubic metre">1</cbc:NetVolumeMeasure>
+                    <cac:Item>
+                        <cbc:Name>Dried and Salted Fillet</cbc:Name>
+                        <cbc:ModelName>2 X 5kgs</cbc:ModelName>
+                        <cac:CommodityClassification>
+                            <!-- CargoTypeCode	UN/CEFACT 7085 Nature of cargo, coded
+                                -->
+                            <!--12 is General Cargo-->
+                            <cbc:CargoTypeCode>12</cbc:CargoTypeCode>
+                        </cac:CommodityClassification>
+                    </cac:Item>
+                </cac:GoodsItem>
+            </cac:Package>
+            <cac:Package>
+                <cbc:ID>PAC16</cbc:ID>
+                <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
+                <cac:GoodsItem>
+                    <!--Goods Item is the description of the Dried Fish-->
+                    <cbc:ID>PAC17</cbc:ID>
+                    <cbc:Description>Dried fish</cbc:Description>
+                    <!--Weight of one pallet in kg -->
+                    <cbc:GrossWeightMeasure unitCode="kg">600</cbc:GrossWeightMeasure>
+                    <!--Weight of one pallet in kg-->
+                    <cbc:NetWeightMeasure unitCode="kg">590</cbc:NetWeightMeasure>
+                    <!--volume in m3-->
+                    <cbc:GrossVolumeMeasure unitCode="cubic metre">3</cbc:GrossVolumeMeasure>
+                    <cbc:NetVolumeMeasure unitCode="cubic metre">1</cbc:NetVolumeMeasure>
+                    <cac:Item>
+                        <cbc:Name>Dried and Salted Fillet</cbc:Name>
+                        <cbc:ModelName>2 X 5kgs</cbc:ModelName>
+                        <cac:CommodityClassification>
+                            <!-- CargoTypeCode	UN/CEFACT 7085 Nature of cargo, coded
+                                -->
+                            <!--12 is General Cargo-->
+                            <cbc:CargoTypeCode>12</cbc:CargoTypeCode>
+                        </cac:CommodityClassification>
+                    </cac:Item>
+                </cac:GoodsItem>
+            </cac:Package>
+        </cac:TransportEquipment>
+        <cac:TransportEquipment>
+            <!-- Details on physical Container-->
+            <cbc:ID>TE2</cbc:ID>
+            <!--CN is Container-->
+            <!-- 
+                TransportEquipmentTypeCode	UN/CEFACT 8053 Equipment type code qualifier:
+                -->
+            <cbc:Description>Container with pallets of dried fish</cbc:Description>
+            <cbc:TransportEquipmentTypeCode>CN</cbc:TransportEquipmentTypeCode>
+            <cbc:RefrigeratedIndicator>false</cbc:RefrigeratedIndicator>
+            <!-- kg -->
+            <cbc:GrossWeightMeasure unitCode="kg">8000</cbc:GrossWeightMeasure>
+            <!-- m3 -->
+            <cbc:GrossVolumeMeasure unitCode="cubic metre">30</cbc:GrossVolumeMeasure>
+            <cbc:PowerIndicator>false</cbc:PowerIndicator>
+            <!-- PackagingTypeCode	UNECE Package Type Code 
+                    -->
+            <!--PX is Pallet-->
+            <!-- Package is in this case the pallet (with dried fish). -->
+            <!--7 pallets of fish in this container-->
+            <cac:Package>
+                <cbc:ID>ID530</cbc:ID>
+                <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
+                <cac:GoodsItem>
+                    <!--Goods Item is the description of the Dried Fish-->
+                    <cbc:ID>ID540</cbc:ID>
+                    <cbc:Description>Dried fish</cbc:Description>
+                    <!--Weight of one pallet in kg -->
+                    <cbc:GrossWeightMeasure unitCode="kg">600</cbc:GrossWeightMeasure>
+                    <!--Weight of one pallet in kg-->
+                    <cbc:NetWeightMeasure unitCode="kg">590</cbc:NetWeightMeasure>
+                    <!--volume in m3-->
+                    <cbc:GrossVolumeMeasure unitCode="cubic metre">3</cbc:GrossVolumeMeasure>
+                    <cbc:NetVolumeMeasure unitCode="cubic metre">1</cbc:NetVolumeMeasure>
+                    <cac:Item>
+                        <cbc:Name>Dried and Salted Fillet</cbc:Name>
+                        <cbc:ModelName>2 X 5kgs</cbc:ModelName>
+                        <cac:CommodityClassification>
+                            <!-- CargoTypeCode	UN/CEFACT 7085 Nature of cargo, coded
+                                -->
+                            <!--12 is General Cargo-->
+                            <cbc:CargoTypeCode>12</cbc:CargoTypeCode>
+                        </cac:CommodityClassification>
+                   </cac:Item>
+                </cac:GoodsItem>
+            </cac:Package>
+            <cac:Package>
+                <cbc:ID>PAC20</cbc:ID>
+                <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
+                <cac:GoodsItem>
+                    <!--Goods Item is the description of the Dried Fish-->
+                    <cbc:ID>PAC30</cbc:ID>
+                    <cbc:Description>Dried fish</cbc:Description>
+                    <!--Weight of one pallet in kg -->
+                    <cbc:GrossWeightMeasure unitCode="kg">600</cbc:GrossWeightMeasure>
+                    <!--Weight of one pallet in kg-->
+                    <cbc:NetWeightMeasure unitCode="kg">590</cbc:NetWeightMeasure>
+                    <!--volume in m3-->
+                    <cbc:GrossVolumeMeasure unitCode="cubic metre">3</cbc:GrossVolumeMeasure>
+                    <cbc:NetVolumeMeasure unitCode="cubic metre">1</cbc:NetVolumeMeasure>
+                    <cac:Item>
+                        <cbc:Name>Dried and Salted Fillet</cbc:Name>
+                        <cbc:ModelName>2 X 5kgs</cbc:ModelName>
+                        <cac:CommodityClassification>
+                            <!-- CargoTypeCode	UN/CEFACT 7085 Nature of cargo, coded
+                                -->
+                            <!--12 is General Cargo-->
+                            <cbc:CargoTypeCode>12</cbc:CargoTypeCode>
+                        </cac:CommodityClassification>
+                   </cac:Item>
+                </cac:GoodsItem>
+            </cac:Package>
+            <cac:Package>
+                <cbc:ID>PAC50</cbc:ID>
+                <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
+                <cac:GoodsItem>
+                    <!--Goods Item is the description of the Dried Fish-->
+                    <cbc:ID>PAC60</cbc:ID>
+                    <cbc:Description>Dried fish</cbc:Description>
+                    <!--Weight of one pallet in kg -->
+                    <cbc:GrossWeightMeasure unitCode="kg">600</cbc:GrossWeightMeasure>
+                    <!--Weight of one pallet in kg-->
+                    <cbc:NetWeightMeasure unitCode="kg">590</cbc:NetWeightMeasure>
+                    <!--volume in m3-->
+                    <cbc:GrossVolumeMeasure unitCode="cubic metre">3</cbc:GrossVolumeMeasure>
+                    <cbc:NetVolumeMeasure unitCode="cubic metre">1</cbc:NetVolumeMeasure>
+                    <cac:Item>
+                        <cbc:Name>Dried and Salted Fillet</cbc:Name>
+                        <cbc:ModelName>2 X 5kgs</cbc:ModelName>
+                        <cac:CommodityClassification>
+                            <!-- CargoTypeCode	UN/CEFACT 7085 Nature of cargo, coded
+                                -->
+                            <!--12 is General Cargo-->
+                            <cbc:CargoTypeCode>12</cbc:CargoTypeCode>
+                        </cac:CommodityClassification>
+                  </cac:Item>
+                </cac:GoodsItem>
+            </cac:Package>
+            <cac:Package>
+                <cbc:ID>PAC80</cbc:ID>
+                <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
+                <cac:GoodsItem>
+                    <!--Goods Item is the description of the Dried Fish-->
+                    <cbc:ID>PAC90</cbc:ID>
+                    <cbc:Description>Dried fish</cbc:Description>
+                    <!--Weight of one pallet in kg -->
+                    <cbc:GrossWeightMeasure unitCode="kg">600</cbc:GrossWeightMeasure>
+                    <!--Weight of one pallet in kg-->
+                    <cbc:NetWeightMeasure unitCode="kg">590</cbc:NetWeightMeasure>
+                    <!--volume in m3-->
+                    <cbc:GrossVolumeMeasure unitCode="cubic metre">3</cbc:GrossVolumeMeasure>
+                    <cbc:NetVolumeMeasure unitCode="cubic metre">1</cbc:NetVolumeMeasure>
+                    <cac:Item>
+                        <cbc:Name>Dried and Salted Fillet</cbc:Name>
+                        <cbc:ModelName>2 X 5kgs</cbc:ModelName>
+                        <cac:CommodityClassification>
+                            <!-- CargoTypeCode	UN/CEFACT 7085 Nature of cargo, coded
+                                1	Documents
+                                2	Low value non-dutiable consignments
+                                3	Low value dutiable consignments
+                                4	High value consignments
+                                5	Other non-containerized
+                                6	Vehicles
+                                7	Roll-on roll-off
+                                8	Palletized
+                                9	Containerized
+                                10	Breakbulk
+                                11	Hazardous cargo
+                                12	General cargo
+                                13	Liquid cargo
+                                14	Temperature controlled cargo
+                                15	Environmental pollutant cargo
+                                16	Not-hazardous cargo
+                                17	Diplomatic
+                                18	Military
+                                19	Obnoxious
+                                20	Out of gauge
+                                21	Household goods and personal effects
+                                22	Frozen cargo
+                                -->
+                            <!--12 is General Cargo-->
+                            <cbc:CargoTypeCode>12</cbc:CargoTypeCode>
+                        </cac:CommodityClassification>
+                     </cac:Item>
+                </cac:GoodsItem>
+            </cac:Package>
+            <cac:Package>
+                <cbc:ID>PAC110</cbc:ID>
+                <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
+                <cac:GoodsItem>
+                    <!--Goods Item is the description of the Dried Fish-->
+                    <cbc:ID>PAC120</cbc:ID>
+                    <cbc:Description>Dried fish</cbc:Description>
+                    <!--Weight of one pallet in kg -->
+                    <cbc:GrossWeightMeasure unitCode="kg">600</cbc:GrossWeightMeasure>
+                    <!--Weight of one pallet in kg-->
+                    <cbc:NetWeightMeasure unitCode="kg">590</cbc:NetWeightMeasure>
+                    <!--volume in m3-->
+                    <cbc:GrossVolumeMeasure unitCode="cubic metre">3</cbc:GrossVolumeMeasure>
+                    <cbc:NetVolumeMeasure unitCode="cubic metre">1</cbc:NetVolumeMeasure>
+                    <cac:Item>
+                        <cbc:Name>Dried and Salted Fillet</cbc:Name>
+                        <cbc:ModelName>2 X 5kgs</cbc:ModelName>
+                        <cac:CommodityClassification>
+                            <!-- CargoTypeCode	UN/CEFACT 7085 Nature of cargo, coded
+                                -->
+                            <!--12 is General Cargo-->
+                            <cbc:CargoTypeCode>12</cbc:CargoTypeCode>
+                        </cac:CommodityClassification>
+                   </cac:Item>
+                </cac:GoodsItem>
+            </cac:Package>
+            <cac:Package>
+                <cbc:ID>PAC140</cbc:ID>
+                <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
+                <cac:GoodsItem>
+                    <!--Goods Item is the description of the Dried Fish-->
+                    <cbc:ID>PAC150</cbc:ID>
+                    <cbc:Description>Dried fish</cbc:Description>
+                    <!--Weight of one pallet in kg -->
+                    <cbc:GrossWeightMeasure unitCode="kg">600</cbc:GrossWeightMeasure>
+                    <!--Weight of one pallet in kg-->
+                    <cbc:NetWeightMeasure unitCode="kg">590</cbc:NetWeightMeasure>
+                    <!--volume in m3-->
+                    <cbc:GrossVolumeMeasure unitCode="cubic metre">3</cbc:GrossVolumeMeasure>
+                    <cbc:NetVolumeMeasure unitCode="cubic metre">1</cbc:NetVolumeMeasure>
+                    <cac:Item>
+                        <cbc:Name>Dried and Salted Fillet</cbc:Name>
+                        <cbc:ModelName>2 X 5kgs</cbc:ModelName>
+                        <cac:CommodityClassification>
+                            <!-- CargoTypeCode	UN/CEFACT 7085 Nature of cargo, coded
+                                -->
+                            <!--12 is General Cargo-->
+                            <cbc:CargoTypeCode>12</cbc:CargoTypeCode>
+                        </cac:CommodityClassification>
+                  </cac:Item>
+                </cac:GoodsItem>
+            </cac:Package>
+            <cac:Package>
+                <cbc:ID>PAC160</cbc:ID>
+                <cbc:PackagingTypeCode>PX</cbc:PackagingTypeCode>
+                <cac:GoodsItem>
+                    <!--Goods Item is the description of the Dried Fish-->
+                    <cbc:ID>PAC170</cbc:ID>
+                    <cbc:Description>Dried fish</cbc:Description>
+                    <!--Weight of one pallet in kg -->
+                    <cbc:GrossWeightMeasure unitCode="kg">600</cbc:GrossWeightMeasure>
+                    <!--Weight of one pallet in kg-->
+                    <cbc:NetWeightMeasure unitCode="kg">590</cbc:NetWeightMeasure>
+                    <!--volume in m3-->
+                    <cbc:GrossVolumeMeasure unitCode="cubic metre">3</cbc:GrossVolumeMeasure>
+                    <cbc:NetVolumeMeasure unitCode="cubic metre">1</cbc:NetVolumeMeasure>
+                    <cac:Item>
+                        <cbc:Name>Dried and Salted Fillet</cbc:Name>
+                        <cbc:ModelName>2 X 5kgs</cbc:ModelName>
+                        <cac:CommodityClassification>
+                            <!-- CargoTypeCode	UN/CEFACT 7085 Nature of cargo, coded
+                                1	Documents
+                                2	Low value non-dutiable consignments
+                                3	Low value dutiable consignments
+                                4	High value consignments
+                                5	Other non-containerized
+                                6	Vehicles
+                                7	Roll-on roll-off
+                                8	Palletized
+                                9	Containerized
+                                10	Breakbulk
+                                11	Hazardous cargo
+                                12	General cargo
+                                13	Liquid cargo
+                                14	Temperature controlled cargo
+                                15	Environmental pollutant cargo
+                                16	Not-hazardous cargo
+                                17	Diplomatic
+                                18	Military
+                                19	Obnoxious
+                                20	Out of gauge
+                                21	Household goods and personal effects
+                                22	Frozen cargo
+                                -->
+                            <!--12 is General Cargo-->
+                            <cbc:CargoTypeCode>12</cbc:CargoTypeCode>
+                        </cac:CommodityClassification>
+                   </cac:Item>
+                </cac:GoodsItem>
+            </cac:Package>
         </cac:TransportEquipment>
         <cac:CommodityClassification>
             <!-- CargoTypeCode	UN/CEFACT 7085 Nature of cargo, coded
@@ -126,6 +604,49 @@
                 <!-- 37	Truck, container -->
                 <cbc:TransportMeansTypeCode>37</cbc:TransportMeansTypeCode>
             </cac:TransportMeans>
+            <cac:PlannedPickupTransportEvent>
+                <cac:Location>
+                    <cbc:ID>10011</cbc:ID>
+                    <cac:Address>
+                        <cbc:StreetName>Tranvågen</cbc:StreetName>
+                        <cbc:BuildingNumber>6</cbc:BuildingNumber>
+                        <cbc:CityName>Fiskarstrand</cbc:CityName>
+                        <cbc:PostalZone>6035</cbc:PostalZone>
+                        <cac:Country>
+                            <cbc:IdentificationCode>NO</cbc:IdentificationCode>
+                            <cbc:Name>Norway</cbc:Name>
+                        </cac:Country>
+                    </cac:Address>
+                </cac:Location>
+                <cac:Period>
+                    <cbc:StartDate>2012-05-06</cbc:StartDate>
+                    <cbc:StartTime>10:00:00.00</cbc:StartTime>
+                    <cbc:EndDate>2012-05-06</cbc:EndDate>
+                    <cbc:EndTime>14:00:00.00</cbc:EndTime>
+                </cac:Period>
+            </cac:PlannedPickupTransportEvent>
+            <cac:PlannedDeliveryTransportEvent>
+                <cac:Location>
+                    <cbc:ID>101</cbc:ID>
+                    <cac:Address>
+                        <cbc:CityName>Aalesund</cbc:CityName>
+                        <cbc:PostalZone>6005</cbc:PostalZone>
+                        <cac:AddressLine>
+                            <cbc:Line>Skutvika container terminal</cbc:Line>
+                        </cac:AddressLine>
+                        <cac:Country>
+                            <cbc:IdentificationCode>NO</cbc:IdentificationCode>
+                            <cbc:Name>Norway</cbc:Name>
+                        </cac:Country>
+                    </cac:Address>
+                </cac:Location>
+                <cac:Period>
+                    <cbc:StartDate>2012-05-07</cbc:StartDate>
+                    <cbc:StartTime>10:00:00.00</cbc:StartTime>
+                    <cbc:EndDate>2012-05-07</cbc:EndDate>
+                    <cbc:EndTime>14:00:00.00</cbc:EndTime>
+                </cac:Period>
+            </cac:PlannedDeliveryTransportEvent>
         </cac:ShipmentStage>
         <!-- TransportEvent: Not given in this TSD since this is a reply to a request from
         the LSC. The actual planned events are negotiated in the TEP.-->

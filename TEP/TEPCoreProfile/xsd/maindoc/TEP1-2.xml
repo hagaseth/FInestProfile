@@ -902,6 +902,28 @@
         <cac:ConsolidatedShipment>
             <cbc:ID>1234512</cbc:ID>
         </cac:ConsolidatedShipment>
+        <cac:PlannedPickupTransportEvent>
+            <cac:Location>
+                <cbc:ID>101</cbc:ID>
+                <cac:Address>
+                    <cbc:CityName>Aalesund</cbc:CityName>
+                    <cbc:PostalZone>6005</cbc:PostalZone>
+                    <cac:AddressLine>
+                        <cbc:Line>Skutvika container terminal</cbc:Line>
+                    </cac:AddressLine>
+                    <cac:Country>
+                        <cbc:IdentificationCode>NO</cbc:IdentificationCode>
+                        <cbc:Name>Norway</cbc:Name>
+                    </cac:Country>
+                </cac:Address>
+            </cac:Location>
+            <cac:Period>
+                <cbc:StartDate>2012-05-07</cbc:StartDate>
+                <cbc:StartTime>10:00:00.00</cbc:StartTime>
+                <cbc:EndDate>2012-05-07</cbc:EndDate>
+                <cbc:EndTime>14:00:00.00</cbc:EndTime>
+            </cac:Period>
+        </cac:PlannedPickupTransportEvent>
         <!-- receiver of goods !-->
         <cac:ConsigneeParty>
             <cac:PartyIdentification>

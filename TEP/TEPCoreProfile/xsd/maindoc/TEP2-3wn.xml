@@ -999,5 +999,6 @@
                 <cbc:Telephone>+47 70 10 15 51</cbc:Telephone>
                 <cbc:Telefax>+47 70 10 15 60</cbc:Telefax>
             </cac:Contact>
+        </cac:ConsignorParty>
     </cac:Consignment>
 </ns2:TransportExecutionPlanCoreProfile>
